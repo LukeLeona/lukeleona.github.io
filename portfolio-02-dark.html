@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" class="max-width-d">
+  
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>I am Lukas</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Retrina Group" />
+    <!--  FavIcon  -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <!-- Malihu Jquery Custom ScrollBar Css -->
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- Magnific Popup Css -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!--  Custom Style Css  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--  Color Css  -->
+    <link rel="stylesheet" href="assets/colors/golden.css" id="option-color">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@4.3.0/build/index.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+
+    <style>
+body {
+    background-color: #232324;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+.blog-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #343539;
+    border-radius: 16px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.chart-block {
+    margin-top: 50px;
+}
+
+.chart-block {
+    margin-top: 50px;
+    max-width: 600px;   /* controls width */
+}
+
+.chart-block canvas {
+    height: 400px !important;  /* controls height */
+}
+.highlight-yellow {
+    color: #dba423; /* your gold/yellow accent */
+    font-weight: 600;
+}
+
+.map-container {
+    max-width: 700px;
+    margin-top: 40px;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+.luzon {
+    fill: #555;
+}
+
+.visayas {
+    fill: #777;
+}
+
+.mindanao {
+    fill: #dba423; /* highlight gold */
+}
+
+
+</style>
+
+  </head>
+  <body class="ajax-page-visible dark-arshia max-width-d">
+    <div id="ajax-page" class="ajax-page-content">
+      <div class="single-portfolio-wrapper">
+        <div class="container">
+          <!-- Ajax-page-nav Start -->
+          <div class="ajax-page-nav">
+            <div class="nav-item ajax-page-prev-next">
+              
+              <a class="ajax-page-load" href="portfolio-01-dark.html">
+                <i class="bi bi-chevron-right"></i>
+              </a>
+            </div>
+            <div class="nav-item ajax-page-close-button">
+              <a class="ajax-page-close-button" href="webdesigner-dark.html#portfolio">
+                <i class="bi bi-x"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Ajax-page-nav End -->
+          <!--  Single Portfolio Start  -->
+          <div class="portfolio-page-title">
+            <h1>Beyond Rankings: LET Performance Trends</h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-7 post-content">
+              <div class="single-post">
+                 <div class="owl-carousel portfolio-page-carousel">
+                  <!-- Item 01 -->
+                  <div class="entry-image">
+                    <img src="assets/img/blog-img-02.png" alt="/">
+                  </div>
+                  <!-- Item 02 -->
+                  <div class="entry-image">
+                    <img src="assets/img/blog-img-01.png" alt="/">
+                  </div>
+             
+                </div>
+ <!-- PROJECT OVERVIEW -->
+<section class="mt-5">
+    <h2>Project Overview</h2>
+
+    <p>
+        This project presents a comprehensive analysis of the 
+        <span class="highlight-yellow">Top 10 LET Passers in the Philippines (2018–2023)</span>, 
+        aiming to uncover performance patterns, institutional dominance, 
+        and regional trends in board examination outcomes.
+    </p>
+
+    <p>
+        Through a structured application of 
+        <span class="highlight-yellow">frequency distribution</span>, 
+        <span class="highlight-yellow">time-series trend analysis</span>, 
+        and <span class="highlight-yellow">descriptive statistical measures</span> 
+        (mean, median, mode, variance, and standard deviation), 
+        the study transforms raw ranking data into measurable insights.
+    </p>
+
+    <p>
+        Rather than focusing solely on rankings, this analysis emphasizes 
+        <span class="highlight-yellow">data-driven evaluation of academic performance</span>, 
+        challenging assumptions about regional educational superiority 
+        and highlighting evidence-based comparisons across institutions.
+    </p>
+
+     <p>
+        🔗<strong>Project Repository:</strong> 
+        <a href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Descriptive%20Analytics" target="_blank" style="color:#dba423;">
+            GitHub – LET Performance Analysis (2018–2023)
+        </a>
+    </p>
+
+</section>
+
+<!-- BEST SCHOOLS -->
+<section class="mt-5">
+    <h2 class="highlight-yellow">Top Performing Universities (Frequency)</h2>
+
+    <div class="chart-block">
+        <canvas id="schoolChart"></canvas>
+    </div>
+
+    <ul>
+        <li>University of Mindanao – Davao City (50 appearances)</li>
+        <li>University of Southeastern Philippines – Tagum (43)</li>
+        <li>University of Southeastern Philippines – Davao City (35)</li>
+        <li>Mindanao State University – General Santos (28)</li>
+        <li>University of the Philippines – Diliman (23)</li>
+    </ul>
+</section>
+
+<!-- GENDER DISTRIBUTION -->
+<section class="mt-5">
+    <h2>Gender Distribution</h2>
+
+    <div class="chart-block">
+        <canvas id="genderChart"></canvas>
+    </div>
+
+    <p>
+        Female passers (550) outnumbered male passers (308), 
+        representing <span class="highlight-yellow">64.1%</span> of the total.
+    </p>
+</section>
+
+<!-- RATING TREND -->
+<section class="mt-5">
+    <h2 class="highlight-yellow">Average Rating Trend (2018–2023)</h2>
+
+    <div class="chart-block">
+        <canvas id="trendChart"></canvas>
+    </div>
+
+    <p>
+        October 2022 achieved the highest average rating, while 
+        March 2018 recorded the lowest average rating during the observed period.
+    </p>
+</section>
+
+<!-- ISLAND DISTRIBUTION -->
+<section class="mt-5">
+    <h2>Distribution by Island</h2>
+
+    <div class="chart-block">
+        <canvas id="islandChart"></canvas>
+    </div>
+
+    <p>
+        Mindanao leads with <span class="highlight-yellow">55.6%</span>, 
+        followed by Luzon (27.6%) and Visayas (16.8%).
+    </p>
+</section>
+
+<!-- SCHOOL TYPE -->
+<section class="mt-5">
+    <h2>Private vs Public Schools</h2>
+
+    <div class="chart-block">
+        <canvas id="typeChart"></canvas>
+    </div>
+
+    <p>
+        Private schools account for 52.9%, while public schools represent 47.1%.
+        The difference is not statistically significant.
+    </p>
+</section>
+
+<!-- DESCRIPTIVE STATISTICS -->
+<section class="mt-5">
+    <h2 class="highlight-yellow">Descriptive Statistics</h2>
+
+    <h4>Measures of Central Tendency</h4>
+    <ul>
+        <li>Mean Rating: <span class="highlight-yellow">91.41</span></li>
+        <li>Median Rating: 91.4</li>
+        <li>Mode Rating: 91.4</li>
+    </ul>
+
+    <h4>Measures of Dispersion</h4>
+    <ul>
+        <li>Variance: 1.87</li>
+        <li>Standard Deviation: 1.36</li>
+        <li>Range: 8.0</li>
+    </ul>
+
+    <hr>
+
+    <h5>Per Level Comparison</h5>
+    <ul>
+        <li><b>Elementary Mean:</b> 91.18 | SD: 1.71</li>
+        <li><b>Secondary Mean:</b> 91.64 | SD: 0.86</li>
+    </ul>
+</section>
+
+
+<section class="mt-5">
+    <h2 class="highlight-yellow">Geographical Distribution of Top LET Performers</h2>
+
+    <div class="map-container">
+        <object type="image/svg+xml" data="assets/img/philippines-map.svg" id="phMap"></object>
+    </div>
+
+    <div class="mt-4">
+
+        <h4 class="highlight-yellow">Key Finding</h4>
+        <p>
+            The data clearly reveals the strong dominance of 
+            <span class="highlight-yellow">Mindanao-based universities</span> 
+            in LET Top 10 placements from 2018–2023, accounting for the 
+            highest frequency of appearances among the three island groups.
+        </p>
+
+        <h4 class="highlight-yellow mt-4">Why This Matters</h4>
+        <p>
+            This geographic concentration suggests that certain regional 
+            institutions may possess effective academic preparation strategies, 
+            competitive review programs, or stronger institutional support systems 
+            that consistently produce high-performing LET candidates.
+        </p>
+
+        <h4 class="highlight-yellow mt-4">Implications & Recommendations</h4>
+        <ul>
+            <li>
+                <span class="highlight-yellow">Benchmarking Best Practices:</span> 
+                Education institutions in other regions may study and adapt 
+                the training methodologies of top-performing Mindanao schools.
+            </li>
+            <li>
+                <span class="highlight-yellow">Policy Review:</span> 
+                Regional education authorities may evaluate whether curriculum 
+                enhancements or review programs contribute to performance gaps.
+            </li>
+            <li>
+                <span class="highlight-yellow">Further Analysis:</span> 
+                Additional metrics such as overall passing rate, faculty credentials, 
+                and institutional resources should be examined to validate performance drivers.
+            </li>
+        </ul>
+
+        <p class="mt-4">
+            Overall, the ratings demonstrate 
+            <span class="highlight-yellow">stable performance trends</span> 
+            over time with minimal variation, indicating consistency among top candidates 
+            rather than random spikes in performance.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="mt-5">
+    <h2 class="highlight-yellow">Addressing the Stereotype: “Better Education” vs. Performance Outcomes</h2>
+
+    <p>
+        A common perception suggests that Luzon, particularly institutions in major 
+        urban centers, offers “better education” due to infrastructure, funding, 
+        and institutional prestige. However, the LET Top 10 data challenges this assumption.
+    </p>
+
+    <p>
+        Despite this perception, 
+        <span class="highlight-yellow">Mindanao-based universities recorded the highest frequency 
+        of Top 10 placements</span> from 2018–2023. This indicates that examination performance 
+        is not solely determined by geographic location or institutional reputation.
+    </p>
+
+    <h4 class="highlight-yellow mt-4">Possible Explanations</h4>
+    <ul>
+        <li>
+            <span class="highlight-yellow">Focused Review Culture:</span> 
+            Some Mindanao institutions may emphasize board exam preparation 
+            more intensively.
+        </li>
+        <li>
+            <span class="highlight-yellow">Competitive Motivation:</span> 
+            Students from emerging academic regions may exhibit higher 
+            performance motivation in national examinations.
+        </li>
+        <li>
+            <span class="highlight-yellow">Selective Excellence:</span> 
+            While Luzon has a larger number of institutions overall, 
+            high performance in Top 10 rankings may reflect concentrated 
+            excellence within specific schools rather than overall quantity.
+        </li>
+    </ul>
+
+    <p class="mt-4">
+        The data suggests that educational quality should be evaluated 
+        using measurable outcomes rather than assumptions based on region. 
+        Performance in standardized examinations such as the LET provides 
+        an objective lens for comparison.
+    </p>
+
+    <p>
+        Therefore, the findings highlight the importance of 
+        <span class="highlight-yellow">data-driven evaluation over stereotype-based narratives</span> 
+        when assessing academic performance across regions.
+    </p>
+</section>
+
+
+
+
+
+              </div>
+            </div>
+<aside class="col-lg-4 ms-auto sidebar mt-5 mt-lg-0">
+  <div class="sidbar-wrap">
+    <div class="aside-box">
+      <div class="aside-title">
+        <h6>Project Details</h6>
+      </div>
+
+      <p>
+        This project analyzes the Top 10 LET Passers in the Philippines 
+        from 2018–2023 to uncover regional dominance, institutional trends, 
+        and performance consistency across examination levels.
+      </p>
+
+      <p>
+        The study applies descriptive statistical techniques to transform 
+        ranking data into measurable insights, examining patterns in 
+        university frequency, geographic distribution, and rating behavior.
+      </p>
+
+      <p>
+        The objective is to provide a data-driven evaluation of academic 
+        performance and challenge stereotype-based assumptions about 
+        regional educational superiority.
+      </p>
+
+      <div class="aside-item-portfolio">
+        <ul class="list-unstyled">
+          <li>
+            <a href="#">Category:</a>
+            <span> Descriptive Analytics</span>
+          </li>
+          <li>
+            <a href="#">Project Type:</a>
+            <span> Educational Performance Analysis</span>
+          </li>
+          <li>
+            <a href="#">Techniques Used:</a>
+            <span> Frequency Analysis, Trend Analysis, Statistical Measures</span>
+          </li>
+          <li>
+            <a href="#">Statistical Methods:</a>
+            <span> Mean, Median, Mode, Variance, Standard Deviation, Range</span>
+          </li>
+          <li>
+            <a href="#">Visualization:</a>
+            <span> Chart.js, Geographic Mapping (SVG)</span>
+          </li>
+          <li>
+            <a href="#">Author:</a>
+            <span> Luke Mark P. Leona</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>
+
+          </div>
+          <!--  Single Portfolio End  -->
+        </div>
+      </div>
+    </div>
+
+    <!--  Color Pallet  -->
+    <div id="color-switcher" class="color-switcher">
+      <div class="text-center color-pallet hide">
+        <h6 class="theme-skin-title">Light &amp; Dark</h6>
+        <ul class="color-scheme list-inline">
+            <li class="list-inline-item">
+                <a href="javascript:void(0)" class="light-scheme"><i class="bi bi-brightness-high"></i> Light</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="javascript:void(0)" class="dark-scheme active"><i class="bi bi-moon"></i> Dark</a>
+            </li>
+          </ul>
+          <h6 class="text-center mt-3 text-dark">Select your color</h6>
+          <ul class="pattern">
+              <li>
+                  <a class="color1" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color2" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color3" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color4" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color5" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color6" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color7" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color8" href="javascript:void(0)"></a>
+              </li>
+              <li>
+                  <a class="color9" href="javascript:void(0)"></a>
+              </li>
+          </ul>
+      </div>
+      <div class="pallet-button hide">
+          <a href="javascript:void(0)" class="cp-toggle"><i class="bi bi-gear"></i></a>
+      </div>
+    </div>
+    
+    <!-- Mouase Magic Cursor Start -->
+    <div class="m-magic-cursor mmc-outer"></div>
+	  <div class="m-magic-cursor mmc-inner"></div>
+    <!-- Mouase Magic Cursor End -->
+
+    <!--  JavaScripts  -->
+    <!--  Jquery 3.4.1  -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <!--  Bootstrap Js  -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!--  Malihu ScrollBar Js  -->
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--  CountTo Js  -->
+    <script src="assets/js/jquery.countTo.js"></script>
+    <!--  Swiper Js  -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!--  Isotope Js  -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  Magnific Popup Js  -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- Map Js -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRemITiP7JRWpZwLhVt-T2x5MeUFE2KWs"></script> -->
+    <!--  Arshia Js  -->
+    <script src="assets/js/arshia.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"398d0e35186742219fc4b15efc701f63","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>
+    
+
+/* SCHOOL FREQUENCY */
+new Chart(document.getElementById('schoolChart'), {
+    type: 'bar',
+    data: {
+        labels: [
+            'UM Davao',
+            'USEP Tagum',
+            'USEP Davao',
+            'MSU GenSan',
+            'UP Diliman'
+        ],
+        datasets: [{
+            label: 'Frequency in Top 10',
+            data: [50, 43, 35, 28, 23],
+            backgroundColor: '#dba423'
+        }]
+    },
+    options: {
+        scales: {
+            x: { ticks: { color: '#fff' }, grid: { color: '#444' } },
+            y: { ticks: { color: '#fff' }, grid: { color: '#444' } }
+        },
+        plugins: { legend: { labels: { color: '#fff' } } }
+    }
+});
+
+/* GENDER */
+new Chart(document.getElementById('genderChart'), {
+    type: 'pie',
+    data: {
+        labels: ['Female (64.1%)', 'Male (35.9%)'],
+        datasets: [{
+            data: [550, 308],
+            backgroundColor: ['#dba423', '#555']
+        }]
+    },
+    options: {
+        plugins: { legend: { labels: { color: '#fff' } } }
+    }
+});
+
+/* TREND */
+new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+        labels: [
+            'Mar 2018','Sep 2018','Mar 2019',
+            'Sep 2019','Sep 2021','Jan 2022',
+            'Mar 2022','Oct 2022','Mar 2023'
+        ],
+        datasets: [{
+            label: 'Average Rating',
+            data: [89.5,90.6,91.7,90.9,91.2,91.5,90.6,93.0,91.3],
+            borderColor: '#dba423',
+            tension: 0.3
+        }]
+    },
+    options: {
+        scales: {
+            x: { ticks: { color: '#fff' }, grid: { color: '#444' } },
+            y: { ticks: { color: '#fff' }, grid: { color: '#444' } }
+        },
+        plugins: { legend: { labels: { color: '#fff' } } }
+    }
+});
+
+/* ISLAND */
+new Chart(document.getElementById('islandChart'), {
+    type: 'pie',
+    data: {
+        labels: ['Mindanao (55.6%)','Luzon (27.6%)','Visayas (16.8%)'],
+        datasets: [{
+            data: [55.6,27.6,16.8],
+            backgroundColor: ['#dba423','#555','#777']
+        }]
+    },
+    options: {
+        plugins: { legend: { labels: { color: '#fff' } } }
+    }
+});
+
+/* TYPE */
+new Chart(document.getElementById('typeChart'), {
+    type: 'pie',
+    data: {
+        labels: ['Private (52.9%)','Public (47.1%)'],
+        datasets: [{
+            data: [156,139],
+            backgroundColor: ['#dba423','#555']
+        }]
+    },
+    options: {
+        plugins: { legend: { labels: { color: '#fff' } } }
+    }
+});
+
+</script>
+
+<script>
+$(document).ready(function(){
+  $(".portfolio-page-carousel").owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      autoplay: true,          // ✅ Enables auto swipe
+      autoplayTimeout: 3000,   // 3 seconds per slide
+      autoplayHoverPause: true, // Pause when mouse hovers
+      smartSpeed: 800          // Smooth transition speed
+  });
+});
+</script>
+
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+
+</body>
+
+</html>
