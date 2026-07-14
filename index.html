@@ -166,9 +166,14 @@
                 <div class="hero-image d-inline-block d-lg-none">
                   <img src="assets/img/webdesigner/profile-img.png" alt="/">
                 </div>
+                <!-- Hello Im Luke-->
                 <div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
-                  <p class="base-color">SOFTWARE ENGINEER - FREELANCE TECH VA</p>
-                  <h2>Hello , I’m <span class="base-color">Luke Leona </span>Welcome to my World. </h2>
+                  <h2 id="typed-title"></h2>
+                
+                  <p class="base-color">
+                    <span id="typed-role"></span>
+                    <span class="cursor">|</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1492,6 +1497,60 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 });
 </script>
 
+<script>
+const title = "Hello, I'm Luke Leona. Welcome to my World.";
+
+const roles = [
+    "SOFTWARE ENGINEER * FREELANCE TECH VA",
+    "WEB DEVELOPER * DATA ANALYST",
+    "PYTHON COMMUNITY LEADER"
+];
+
+let titleIndex = 0;
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeTitle() {
+    if (titleIndex < title.length) {
+        document.getElementById("typed-title").textContent += title.charAt(titleIndex);
+        titleIndex++;
+        setTimeout(typeTitle, 60);
+    } else {
+        setTimeout(typeRole, 500);
+    }
+}
+
+function typeRole() {
+    const currentRole = roles[roleIndex];
+    const roleElement = document.getElementById("typed-role");
+
+    if (!deleting) {
+        roleElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentRole.length) {
+            deleting = true;
+            setTimeout(typeRole, 2000);
+            return;
+        }
+    } else {
+        roleElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeRole, deleting ? 30 : 60);
+}
+
+window.onload = function() {
+    typeTitle();
+};
+</script>
 
 </body>
 

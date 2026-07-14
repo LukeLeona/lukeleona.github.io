@@ -200,6 +200,18 @@ a,a:hover,button {
 .mCSB_inside>.mCSB_container {
   margin-right: 2rem;
 }
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 /*------------------------- Preloader -------------------------*/
 #line-loader{
   position: fixed;
