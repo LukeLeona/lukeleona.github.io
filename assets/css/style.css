@@ -322,6 +322,66 @@ a,a:hover,button {
       width: 0%;
  }
 }
+
+/* ========================================
+   DESKTOP SIDEBAR MENU ALIGNMENT
+======================================== */
+@media (min-width: 992px) {
+
+  .left-side .menu .list-group-item {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    text-align: center;
+  }
+
+  .left-side .menu .list-group-item a {
+    width: 100%;
+    min-height: 62px;
+    padding: 5px 2px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    text-align: center;
+  }
+
+  .left-side .menu .list-group-item a i {
+    display: block;
+    margin: 0 0 7px !important;
+    line-height: 1;
+    font-size: 18px;
+    transform: none;
+  }
+
+  .left-side .menu .list-group-item a span {
+    display: block !important;
+    width: 100%;
+    margin: 0 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+
+    white-space: nowrap;
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .left-side .menu .list-group-item a.active span {
+    font-weight: 700 !important;
+  }
+
+  .left-side .menu .list-group-item a:hover i,
+  .left-side .menu .list-group-item a.active i {
+    transform: translateY(-2px);
+  }
+}
 /*------------------------- OVERLAY MENU -------------------------*/
 .menu-toggler {
   display: none;
@@ -349,16 +409,18 @@ a,a:hover,button {
 .menu li a:hover i,.menu li a.active i {
   transform: translateY(-20%);
 }
-.menu span {
-  font-size: 12px;
-  font-weight: 500;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  display: block;
-  transform: translateY(-100%);
-  margin-top: 2px;
+.menu a:hover span,
+.menu a.active span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-20%);
 }
+
+.menu a.active i {
+    transform: scale(1.15);
+    color: #ebb020;
+}
+
 .menu a:hover span, .menu a.active span {
   opacity: 1;
   visibility: visible;
