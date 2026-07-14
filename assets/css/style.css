@@ -456,7 +456,7 @@ header .navbar-brand b {
 }
 /*------------------------- LEFT SIDE -------------------------*/
 #main{
-  left: calc(5% + 95px);
+    left: calc(3% + 330px);
 }
 .left-side {
   width: 80px;
