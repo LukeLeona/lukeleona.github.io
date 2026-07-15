@@ -871,37 +871,75 @@ function mapInit() {
 }
 
 /*-------------------------  Mouse Magic Cursor  -------------------------*/
+function mouseMagicCursor() {
+  "use strict";
 
-function mouseMagicCursor(){
-	
-    "use strict";
-	
-    var mouseCursor = $(".m-magic-cursor");
-    if (mouseCursor.length && $window.width()>991) {
-        if ($("body")) {
-            const e = document.querySelector(".mmc-inner"),
-                t = document.querySelector(".mmc-outer");
-            let n,
-                i = 0,
-                o = !1;
-            (window.onmousemove = function (s) {
-                if($window.width()>1440 && $isfirefox == 0){
-                    o || (t.style.transform = "translate(" + (s.clientX * 1440/ $window.width()) + "px, " + (s.clientY * 1440/ $window.width()) + "px)"), (e.style.transform = "translate(" + (s.clientX * 1440/ $window.width()) + "px, " + (s.clientY * 1440/ $window.width()) + "px)"), (n = (s.clientY * 1440/ $window.width())), (i = (s.clientX * 1440/ $window.width()));
-                }else{
-                    o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), (e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), (n = s.clientY), (i = s.clientX);
-                }
-            }),
-            $("body").on("mouseenter", "a, .cursor-pointer, button", function () {
-                e.classList.add("mmc-hover"), t.classList.add("mmc-hover");
-            }),
-            $("body").on("mouseleave", "a, .cursor-pointer, button", function () {
-                ($(this).is("a") && $(this).closest(".cursor-pointer").length) || (e.classList.remove("mmc-hover"), t.classList.remove("mmc-hover"));
-            }),
-            (e.style.visibility = "visible"),
-            (t.style.visibility = "visible");
-        }
-    }
-};
+  const innerCursor = document.querySelector(".mmc-inner");
+  const outerCursor = document.querySelector(".mmc-outer");
+  const cursorText = document.querySelector(".cursor-text");
+
+  if (
+    !innerCursor ||
+    !outerCursor ||
+    !cursorText ||
+    window.innerWidth <= 991
+  ) {
+    return;
+  }
+
+  const cursorMessages = [
+    "HIRE ME 🥺",
+    "PLEASE 🥺",
+    "I'LL DO MY BEST 🌟",
+    "PROMISE 🤞"
+  ];
+
+  let currentMessage = 0;
+
+  cursorText.textContent = cursorMessages[currentMessage];
+
+  const messageInterval = setInterval(function () {
+    currentMessage = (currentMessage + 1) % cursorMessages.length;
+    cursorText.textContent = cursorMessages[currentMessage];
+  }, 2000);
+
+  window.addEventListener("mousemove", function (event) {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    innerCursor.style.transform =
+      `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+    outerCursor.style.transform =
+      `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+    cursorText.style.transform =
+      `translate3d(${mouseX + 20}px, ${mouseY + 16}px, 0)`;
+  });
+
+  document
+    .querySelectorAll("a, button, .cursor-pointer")
+    .forEach(function (element) {
+      element.addEventListener("mouseenter", function () {
+        innerCursor.classList.add("mmc-hover");
+        outerCursor.classList.add("mmc-hover");
+      });
+
+      element.addEventListener("mouseleave", function () {
+        innerCursor.classList.remove("mmc-hover");
+        outerCursor.classList.remove("mmc-hover");
+      });
+    });
+
+  innerCursor.style.visibility = "visible";
+  outerCursor.style.visibility = "visible";
+  cursorText.style.visibility = "visible";
+  cursorText.style.opacity = "1";
+
+  window.addEventListener("beforeunload", function () {
+    clearInterval(messageInterval);
+  });
+}
 
 /*-------------------------  Color Panllet  -------------------------*/
 function ColorPallet() {
