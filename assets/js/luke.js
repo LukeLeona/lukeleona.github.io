@@ -130,15 +130,20 @@ function browserDetect() {
 
 /*-------------------------  deviceScreen  -------------------------*/
 function deviceScreen() {
-    "use strict";
-    browserDetect();
-    if($window.width()>1440 && $isfirefox == 0){
-        $('html').css('zoom', $window.width()/1440);
-        $('.middle-line').css({'top':$('body').height()/2 , 'width': '2px' , 'left':'50%' , 'transform': 'translate(-50% , -50%)'})
-    }
-    else{
-        $('.middle-line').css({'top':'50%' , 'width': '2px' , 'left':'50%' , 'transform': 'translate(-50% , -50%)'});
-    }
+  "use strict";
+
+  browserDetect();
+
+  // Remove any zoom previously applied to the page.
+  $("html").css("zoom", "");
+
+  // Keep the loading line centered on every screen size.
+  $(".middle-line").css({
+    top: "50%",
+    width: "2px",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
+  });
 }
 
 /*-------------------------  Date  -------------------------*/
