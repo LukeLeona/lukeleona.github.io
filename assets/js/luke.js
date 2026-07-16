@@ -918,18 +918,24 @@ function mouseMagicCursor() {
   });
 
   document
-    .querySelectorAll("a, button, .cursor-pointer")
-    .forEach(function (element) {
-      element.addEventListener("mouseenter", function () {
-        innerCursor.classList.add("mmc-hover");
-        outerCursor.classList.add("mmc-hover");
-      });
+  .querySelectorAll("a, button, .cursor-pointer")
+  .forEach(function (element) {
+    element.addEventListener("mouseenter", function () {
+      innerCursor.classList.add("mmc-hover");
+      outerCursor.classList.add("mmc-hover");
 
-      element.addEventListener("mouseleave", function () {
-        innerCursor.classList.remove("mmc-hover");
-        outerCursor.classList.remove("mmc-hover");
-      });
+      // Hide text when hovering clickable items
+      cursorText.style.opacity = "0";
     });
+
+    element.addEventListener("mouseleave", function () {
+      innerCursor.classList.remove("mmc-hover");
+      outerCursor.classList.remove("mmc-hover");
+
+      // Show text again
+      cursorText.style.opacity = "1";
+    });
+  });
 
   innerCursor.style.visibility = "visible";
   outerCursor.style.visibility = "visible";
