@@ -86,9 +86,12 @@ body {
   min-height: 100vh;
 }
 
-body.max-width-d {
-  max-width: 1440px;
-  margin: 0 auto;
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .secondary-button{
