@@ -313,21 +313,34 @@ function openMenu() {
   var childrenCount = $(".left-side .menu .list-group-item").length;
   var windowWidth = $window.width();
 
-  // Stop queued animations first
   $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv, #main")
     .stop(true, true);
 
   if (windowWidth > 991) {
-    $(".menu-align").animate({
-      height: "160px",
-      width: "300px",
-      bottom: "0"
-    }, 350);
+    /*
+     * Reset all collapsed-menu positioning.
+     * This is important when returning to Home.
+     */
+    $(".menu-align")
+      .css({
+        position: "absolute",
+        top: "auto",
+        left: "0",
+        right: "auto",
+        bottom: "0",
+        transform: "none"
+      })
+      .animate({
+        height: "160px",
+        width: "300px"
+      }, 350);
 
-    $(".left-side .menu").animate({
-      height: "100%",
-      width: "100%"
-    }, 350);
+    $(".left-side .menu")
+      .css({
+        position: "relative",
+        height: "100%",
+        width: "100%"
+      });
 
     $("#main").animate({
       width: (windowWidth * 0.9) - 410 + "px",
@@ -338,15 +351,19 @@ function openMenu() {
       width: "100%"
     });
   } else {
-    $(".menu-align").css({
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)"
-    }).animate({
-      height: "46%",
-      width: "300px",
-      bottom: "0"
-    }, 350);
+    $(".menu-align")
+      .css({
+        position: "absolute",
+        top: "auto",
+        left: "50%",
+        right: "auto",
+        bottom: "0",
+        transform: "translateX(-50%)"
+      })
+      .animate({
+        height: "46%",
+        width: "300px"
+      }, 350);
   }
 
   $(".left-side").animate({
@@ -363,7 +380,10 @@ function openMenu() {
   }, 350);
 
   $(".left-side a.download-cv")
-    .show()
+    .css({
+      display: "inline-block",
+      borderWidth: ""
+    })
     .animate({
       opacity: "1",
       fontSize: "16px",
@@ -373,11 +393,18 @@ function openMenu() {
       paddingLeft: "30px"
     }, 350);
 
+  /*
+   * Restore the Home menu into a 3 × 2 grid.
+   */
   for (var i = 0; i < childrenCount; i++) {
     $(".left-side .menu")
       .children()
       .eq(i)
       .stop(true, true)
+      .css({
+        position: "absolute",
+        height: "auto"
+      })
       .animate({
         left: (i % 3) * 100 + "px",
         top: Math.floor(i / 3) * 75 + "px",
@@ -386,24 +413,32 @@ function openMenu() {
   }
 }
 
-
 /*-------------------------  Close Menu  -------------------------*/
 function closeMenu() {
   "use strict";
 
   var childrenCount = $(".left-side .menu .list-group-item").length;
-  var customHeight = 100 / childrenCount;
   var windowWidth = $window.width();
 
-  // Stop queued animations first
   $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv, #main")
     .stop(true, true);
 
   if (windowWidth > 991) {
-    $(".menu-align").animate({
-      height: "75%",
-      width: "100%"
-    }, 350);
+    /*
+     * Give the collapsed menu a defined space below
+     * the profile image and name.
+     */
+    $(".menu-align")
+      .css({
+        position: "absolute",
+        top: "125px",
+        bottom: "12px",
+        left: "0",
+        transform: "none"
+      })
+      .animate({
+        width: "100%"
+      }, 350);
 
     $(".left-side .menu").animate({
       height: "100%",
@@ -435,6 +470,10 @@ function closeMenu() {
       $(this).hide();
     });
 
+    /*
+     * Fixed spacing prevents Contact from overlapping
+     * and removes the large gap before Home.
+     */
     for (var i = 0; i < childrenCount; i++) {
       $(".left-side .menu")
         .children()
@@ -442,7 +481,7 @@ function closeMenu() {
         .stop(true, true)
         .animate({
           left: "0",
-          top: customHeight * i + "%",
+          top: i * 60 + "px",
           width: "80px"
         }, 350);
     }
@@ -459,6 +498,7 @@ function closeMenu() {
     openMenu();
   }
 }
+
 /*-------------------------  Sidebar Menu  -------------------------*/
 function sidebarMenu() {
 

@@ -2460,3 +2460,51 @@ body.dark-arshia , .dark-arshia .ajax-page-content{
     margin: 0 !important;
   }
 }
+/* Desktop sidebar item structure */
+@media (min-width: 992px) {
+  .left-side {
+    overflow: hidden;
+  }
+
+  .left-side .menu {
+    position: relative;
+  }
+
+  .left-side .menu .list-group-item {
+    position: absolute;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .left-side .menu .list-group-item a {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3px 2px !important;
+    text-align: center;
+  }
+
+  .left-side .menu .list-group-item a i {
+    display: block;
+    margin: 0 0 6px !important;
+  }
+
+  .left-side .menu .list-group-item a span {
+    display: block !important;
+    width: 100%;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .left-side .menu .list-group-item a.active span {
+    font-weight: 700 !important;
+  }
+}
