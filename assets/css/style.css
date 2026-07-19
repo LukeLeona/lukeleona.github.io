@@ -897,38 +897,126 @@ header .navbar-brand b {
   font-weight: 700;
   font-size: 3rem;
 }
-/*------------------------- RIGHT SIDE -------------------------*/
+
+/* ========================================
+   RIGHT SIDEBAR LAYOUT
+======================================== */
+
 .right-side {
-  /* left: inherit; */
-  right:5%;
+  right: 5%;
   text-align: center;
 }
-.right-side .next-prev-page {
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
-  bottom: 15px;
-}
+
+
+/* ========================================
+   DATE
+======================================== */
+
 #date {
   margin-top: 15px;
+
   font-size: 15px;
   font-weight: 600;
 }
+
 #date span {
   display: block;
   font-size: 14px;
 }
-#date b{
+
+#date b {
   font-size: 24px;
   font-weight: 700;
 }
-.social-box {
-  position: relative;
+
+
+/* ========================================
+   SOCIAL ICONS
+   Positioned directly below the date
+======================================== */
+
+.right-side .social-box {
+  position: absolute;
+
+  top: 145px;
   left: 50%;
-  top: 47%;
-  transform: translate(-50%,-50%);
-  width: 1.5rem;
+
+  width: 24px;
+
+  transform: translateX(-50%);
 }
+
+
+/* Social icon spacing */
+
+.right-side .social {
+  display: flex !important;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.right-side .social a {
+  display: flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+}
+
+
+.right-side .social i {
+  display: block;
+
+  margin: 0 !important;
+
+  text-align: center;
+}
+
+
+/* Old label completely removed */
+
+.follow-label {
+  display: none !important;
+}
+
+
+/* ========================================
+   PREVIOUS / NEXT BUTTONS
+   Move upward to leave room for robot
+======================================== */
+
+.right-side .next-prev-page {
+  position: absolute;
+
+  right: 50%;
+  bottom: 90px;
+
+  transform: translateX(50%);
+}
+
+
+/* ========================================
+   CHATBOT
+   Robot now sits BELOW arrow buttons
+======================================== */
+
+.portfolio-chatbot {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  transform: translateX(-50%);
+
+  z-index: 1100;
+}
+
 .follow-label {
   padding-right: 5rem;
   position: absolute;
@@ -960,6 +1048,774 @@ header .navbar-brand b {
   width: 24px !important;
   border-radius: 0 !important;
 }
+
+/* ========================================
+   PORTFOLIO ROBOT CHATBOT
+======================================== */
+
+
+/* Remove old vertical Get In Touch label
+   in case any old HTML remains */
+.follow-label {
+  display: none !important;
+}
+
+
+
+/* ========================================
+   ROBOT BUTTON
+======================================== */
+
+.chatbot-robot-button {
+  position: relative;
+
+  width: 52px;
+  height: 62px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    chatbotRobotFloat
+    3s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.chatbot-robot-button:hover {
+  transform: scale(1.08);
+}
+
+
+/* Robot wrapper */
+
+.robot-icon {
+  position: relative;
+
+  display: block;
+
+  width: 44px;
+  height: 52px;
+}
+
+
+/* ========================================
+   ROBOT ANTENNA
+======================================== */
+
+.robot-antenna {
+  position: absolute;
+
+  width: 2px;
+  height: 8px;
+
+  background: #ebb020;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.robot-antenna-dot {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ebb020;
+
+  left: 50%;
+  top: -4px;
+
+  transform:
+    translateX(-50%);
+
+  box-shadow:
+    0 0 7px rgba(235, 176, 32, 0.8),
+    0 0 14px rgba(235, 176, 32, 0.35);
+
+  animation:
+    chatbotAntennaPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* ========================================
+   ROBOT HEAD
+======================================== */
+
+.robot-head {
+  position: absolute;
+
+  width: 40px;
+  height: 29px;
+
+  left: 2px;
+  top: 8px;
+
+  border:
+    2px solid
+    #ebb020;
+
+  border-radius:
+    10px;
+
+  background:
+    #292a2e;
+
+  box-shadow:
+    0 0 10px
+    rgba(235,176,32,0.15);
+}
+
+
+/* Eyes */
+
+.robot-eye {
+  position: absolute;
+
+  top: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    #ebb020;
+
+  box-shadow:
+    0 0 5px
+    rgba(235,176,32,0.8);
+
+  animation:
+    chatbotRobotBlink
+    4s
+    infinite;
+}
+
+
+.robot-eye-left {
+  left: 8px;
+}
+
+
+.robot-eye-right {
+  right: 8px;
+}
+
+
+/* Mouth */
+
+.robot-mouth {
+  position: absolute;
+
+  width: 13px;
+  height: 2px;
+
+  border-radius: 5px;
+
+  background:
+    #cbccce;
+
+  left: 50%;
+  bottom: 6px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* ========================================
+   ROBOT BODY
+======================================== */
+
+.robot-body {
+  position: absolute;
+
+  width: 30px;
+  height: 17px;
+
+  left: 7px;
+  top: 38px;
+
+  border:
+    2px solid
+    #ebb020;
+
+  border-radius:
+    5px 5px 9px 9px;
+
+  background:
+    #292a2e;
+}
+
+
+.robot-body-light {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #ebb020;
+
+  left: 50%;
+  top: 4px;
+
+  transform:
+    translateX(-50%);
+
+  box-shadow:
+    0 0 7px
+    rgba(235,176,32,0.7);
+}
+
+
+/* Online indicator */
+
+.chatbot-online-dot {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  right: 1px;
+  bottom: 5px;
+
+  background:
+    #43d17a;
+
+  border-radius: 50%;
+
+  border:
+    2px solid
+    #343539;
+
+  box-shadow:
+    0 0 7px
+    rgba(67,209,122,0.5);
+}
+
+
+/* ========================================
+   CHAT PANEL
+======================================== */
+
+.chatbot-panel {
+  position: absolute;
+
+  width: 340px;
+  height: 430px;
+
+  right: 57px;
+
+  /* Open upward from robot */
+  bottom: -5px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(31, 32, 35, 0.97);
+
+  border: 1px solid rgba(235,176,32,0.28);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 30px rgba(235,176,32,0.05);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(15px)
+    scale(0.96);
+
+  transform-origin: bottom right;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+
+  z-index: 2000;
+}
+
+
+.chatbot-panel.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* ========================================
+   CHAT HEADER
+======================================== */
+
+.chatbot-header {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    14px 16px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.07);
+
+  background:
+    rgba(52,53,57,0.85);
+}
+
+
+.chatbot-header-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  text-align: left;
+}
+
+
+.chatbot-mini-robot {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(235,176,32,0.4);
+
+  background:
+    rgba(235,176,32,0.07);
+}
+
+
+.chatbot-header-profile strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+
+.chatbot-header-profile span {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 2px;
+
+  color: #aeb0b4;
+
+  font-size: 11px;
+}
+
+
+.chat-online-indicator {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    #43d17a;
+}
+
+
+.chatbot-close {
+  border: none;
+  background: transparent;
+
+  color: #cbccce;
+
+  font-size: 25px;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.chatbot-close:hover {
+  color: #ebb020;
+
+  transform:
+    rotate(90deg);
+}
+
+
+/* ========================================
+   CHAT MESSAGES
+======================================== */
+
+.chatbot-messages {
+  flex: 1;
+
+  padding:
+    16px;
+
+  overflow-y: auto;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    #ebb020
+    transparent;
+}
+
+
+.chat-message {
+  display: flex;
+
+  margin-bottom:
+    13px;
+
+  gap: 8px;
+}
+
+
+.chat-message-avatar {
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
+
+  border-radius: 8px;
+
+  background:
+    rgba(235,176,32,0.08);
+
+  border:
+    1px solid
+    rgba(235,176,32,0.25);
+}
+
+
+.chat-message-bubble {
+  max-width: 240px;
+
+  padding:
+    10px 12px;
+
+  border-radius:
+    5px 14px 14px 14px;
+
+  background:
+    #343539;
+
+  color:
+    #e2e2e3;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.55;
+
+  text-align:
+    left;
+}
+
+
+/* User message */
+
+.user-message {
+  justify-content:
+    flex-end;
+}
+
+
+.user-message
+.chat-message-bubble {
+
+  background:
+    rgba(235,176,32,0.13);
+
+  border:
+    1px solid
+    rgba(235,176,32,0.25);
+
+  color:
+    #fff;
+
+  border-radius:
+    14px 5px 14px 14px;
+}
+
+
+/* ========================================
+   QUICK QUESTIONS
+======================================== */
+
+.chatbot-quick-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin:
+    5px 0 15px 36px;
+}
+
+
+.chatbot-quick-btn {
+  border:
+    1px solid
+    rgba(235,176,32,0.45);
+
+  background:
+    transparent;
+
+  color:
+    #ebb020;
+
+  border-radius:
+    14px;
+
+  padding:
+    5px 10px;
+
+  font-size:
+    10px;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.2s ease;
+}
+
+
+.chatbot-quick-btn:hover {
+  background:
+    rgba(235,176,32,0.12);
+}
+
+
+/* ========================================
+   CHAT INPUT
+======================================== */
+
+.chatbot-input-area {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    11px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.07);
+
+  background:
+    rgba(42,43,47,0.95);
+}
+
+
+.chatbot-input-area input {
+  flex: 1;
+
+  height: 38px;
+
+  padding:
+    0 13px !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.09) !important;
+
+  border-radius:
+    18px !important;
+
+  background:
+    rgba(20,21,23,0.65) !important;
+
+  color:
+    #fff !important;
+
+  font-size:
+    12px;
+
+  outline:
+    none;
+}
+
+
+.chatbot-input-area input:focus {
+  border-color:
+    rgba(235,176,32,0.55)
+    !important;
+}
+
+
+.chatbot-send {
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  border:
+    1px solid
+    #ebb020;
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:
+    #ebb020;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.25s ease;
+}
+
+
+.chatbot-send:hover {
+  background:
+    #ebb020;
+
+  color:
+    #222;
+}
+
+
+/* ========================================
+   ROBOT ANIMATIONS
+======================================== */
+
+@keyframes chatbotRobotFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-5px);
+  }
+
+}
+
+
+@keyframes chatbotRobotBlink {
+
+  0%,
+  45%,
+  55%,
+  100% {
+
+    transform:
+      scaleY(1);
+
+  }
+
+  50% {
+
+    transform:
+      scaleY(0.15);
+
+  }
+
+}
+
+
+@keyframes chatbotAntennaPulse {
+
+  0%,
+  100% {
+
+    opacity: 0.6;
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+    box-shadow:
+      0 0 12px
+      rgba(235,176,32,1),
+
+      0 0 20px
+      rgba(235,176,32,0.4);
+
+  }
+
+}
+
+
 /*------------------------- LEFT SIDE -------------------------*/
 #main{
     left: calc(3% + 330px);
@@ -3039,6 +3895,316 @@ body.dark-arshia , .dark-arshia .ajax-page-content{
 
   .hero-portrait-reveal {
     display: none;
+  }
+
+}
+
+/* ==========================================================
+   FINAL RIGHT SIDEBAR LAYOUT
+   KEEP THIS AT THE VERY BOTTOM OF style.css
+========================================================== */
+
+
+/* Sidebar itself */
+.right-side {
+  right: 5%;
+  text-align: center;
+}
+
+
+/* ==========================================================
+   DATE
+========================================================== */
+
+.right-side #date {
+  margin-top: 14px !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.right-side #date span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.right-side #date b {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   YELLOW DIVIDER LINES
+========================================================== */
+
+.right-side .sidebar-line {
+  position: absolute;
+
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background: #ebb020;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 5px rgba(235, 176, 32, 0.45);
+
+  pointer-events: none;
+}
+
+
+/* Line between DATE and SOCIALS */
+
+.right-side .sidebar-line-top {
+  top: 100px;
+  height: 30px;
+}
+
+
+/* Line between SOCIALS and ARROWS */
+
+.right-side .sidebar-line-bottom {
+  top: 255px;
+  bottom: 190px;
+}
+
+
+/* ==========================================================
+   SOCIAL ICONS
+========================================================== */
+
+.right-side .social-box {
+  position: absolute !important;
+
+  top: 132px !important;
+  left: 50% !important;
+
+  width: 30px !important;
+
+  transform: translateX(-50%) !important;
+}
+
+
+/* Vertical social layout */
+
+.right-side .social-box .social {
+  display: flex !important;
+
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 12px !important;
+}
+
+
+/* Each social */
+
+.right-side .social-box .social a {
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Social icons */
+
+.right-side .social-box .social i {
+  display: block !important;
+
+  margin: 0 !important;
+
+  line-height: 1 !important;
+
+  text-align: center !important;
+}
+
+
+/* Old Get In Touch text */
+
+.right-side .follow-label {
+  display: none !important;
+}
+
+
+/* ==========================================================
+   UP / DOWN NAVIGATION
+========================================================== */
+
+.right-side .next-prev-page {
+  position: absolute !important;
+
+  right: 50% !important;
+  bottom: 88px !important;
+
+  transform: translateX(50%) !important;
+
+  z-index: 1031;
+}
+
+
+/* Keep navigation buttons centered */
+
+.right-side .next-prev-page button {
+  width: 35px;
+  height: 35px;
+}
+
+
+/* ==========================================================
+   ROBOT
+   BELOW BOTH NAVIGATION BUTTONS
+========================================================== */
+
+.right-side .portfolio-chatbot {
+  position: absolute !important;
+
+  left: 50% !important;
+  bottom: 7px !important;
+
+  transform: translateX(-50%) !important;
+
+  z-index: 1100;
+}
+
+
+/* ==========================================================
+   CHAT WINDOW
+========================================================== */
+
+.right-side .chatbot-panel {
+  right: 57px !important;
+
+  /*
+    Negative value moves the opened
+    chatbot slightly downward.
+  */
+  bottom: -5px !important;
+}
+
+/* ========================================
+   ROBOT CUTE POP-UP MESSAGE
+======================================== */
+
+.chatbot-teaser {
+  position: absolute;
+
+  /* Places bubble on the LEFT of robot */
+  right: 55px;
+  bottom: 16px;
+
+  min-width: 75px;
+  max-width: 165px;
+
+  padding: 8px 12px;
+
+  background: rgba(45, 46, 50, 0.97);
+
+  border: 1px solid rgba(235, 176, 32, 0.65);
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(235, 176, 32, 0.08);
+
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateX(8px)
+    scale(0.92);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+
+  z-index: 1200;
+}
+
+
+/* Small speech-bubble arrow */
+.chatbot-teaser::after {
+  content: "";
+
+  position: absolute;
+
+  right: -6px;
+  bottom: 14px;
+
+  width: 11px;
+  height: 11px;
+
+  background: #2d2e32;
+
+  border-top: 1px solid rgba(235, 176, 32, 0.65);
+  border-right: 1px solid rgba(235, 176, 32, 0.65);
+
+  transform: rotate(45deg);
+}
+
+
+/* Visible state */
+.chatbot-teaser.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+
+/* Cute tiny bounce when appearing */
+.chatbot-teaser.show {
+  animation: chatbotTeaserPop 0.35s ease;
+}
+
+
+@keyframes chatbotTeaserPop {
+
+  0% {
+    transform:
+      translateX(8px)
+      scale(0.85);
+  }
+
+  70% {
+    transform:
+      translateX(-2px)
+      scale(1.04);
+  }
+
+  100% {
+    transform:
+      translateX(0)
+      scale(1);
   }
 
 }

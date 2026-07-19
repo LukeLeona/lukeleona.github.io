@@ -28,6 +28,9 @@ $(document).ready(function() {
     /* Interactive portrait */
     heroImageReveal();
 
+    /* Portfolio chatbot */
+    portfolioChatbot();
+
     /* Custom cursor */
     mouseMagicCursor();
 
@@ -1157,6 +1160,680 @@ function heroImageReveal() {
 
     }
   );
+}
+
+/*---------------------------------------------------------
+                    PORTFOLIO CHATBOT
+---------------------------------------------------------*/
+
+function portfolioChatbot() {
+
+  "use strict";
+
+
+  const toggle =
+    document.getElementById(
+      "chatbotToggle"
+    );
+
+  const panel =
+    document.getElementById(
+      "chatbotPanel"
+    );
+
+  const closeButton =
+    document.getElementById(
+      "chatbotClose"
+    );
+
+  const form =
+    document.getElementById(
+      "chatbotForm"
+    );
+
+  const input =
+    document.getElementById(
+      "chatbotInput"
+    );
+
+  const messages =
+    document.getElementById(
+      "chatbotMessages"
+    );
+
+
+  /*
+   * Stop if chatbot HTML
+   * does not exist.
+   */
+  if (
+    !toggle ||
+    !panel ||
+    !form ||
+    !input ||
+    !messages
+  ) {
+
+    return;
+
+  }
+
+  /*---------------------------------------------------------
+              ROBOT CUTE POP-UP MESSAGES
+---------------------------------------------------------*/
+
+function robotTeaserMessages() {
+
+  "use strict";
+
+  const teaser =
+    document.getElementById("chatbotTeaser");
+
+  const teaserText =
+    document.getElementById("chatbotTeaserText");
+
+  const chatbotPanel =
+    document.getElementById("chatbotPanel");
+
+  const chatbotToggle =
+    document.getElementById("chatbotToggle");
+
+
+  if (!teaser || !teaserText) {
+    return;
+  }
+
+
+  const messages = [
+
+    "Hi! 👋",
+
+    "Psst... hello! 🤖",
+
+    "Need a hand? ✨",
+
+    "Ask me about Luke 👀",
+
+    "I know his projects! 😎",
+
+    "Looking to hire? 👀",
+
+    "Let's build something cool! 🚀",
+
+    "Don't be shy! 🥺",
+
+    "I'm friendly, promise! 🤖",
+
+    "Got questions? I'm here! 💬"
+
+  ];
+
+
+  let messageIndex = 0;
+  let hideTimer;
+
+
+  function showTeaser() {
+
+    if (
+      chatbotPanel &&
+      chatbotPanel.classList.contains("show")
+    ) {
+
+      teaser.classList.remove("show");
+
+      return;
+
+    }
+
+
+    teaserText.textContent =
+      messages[messageIndex];
+
+
+    messageIndex =
+      (messageIndex + 1) %
+      messages.length;
+
+
+    teaser.classList.add("show");
+
+
+    clearTimeout(hideTimer);
+
+
+    hideTimer =
+      setTimeout(function() {
+
+        teaser.classList.remove("show");
+
+      }, 2700);
+
+  }
+
+
+  /* First message */
+  setTimeout(
+    showTeaser,
+    1800
+  );
+
+
+  /* Repeat */
+  setInterval(
+    showTeaser,
+    7000
+  );
+
+
+  /* Hide when robot is clicked */
+  if (chatbotToggle) {
+
+    chatbotToggle.addEventListener(
+      "click",
+      function() {
+
+        teaser.classList.remove("show");
+
+      }
+    );
+
+  }
+
+}
+
+
+/* IMPORTANT: actually start the pop-up messages */
+robotTeaserMessages();
+
+
+  /* =====================================
+     OPEN / CLOSE CHAT
+  ===================================== */
+
+  function setChatOpen(isOpen) {
+
+    panel.classList.toggle(
+      "show",
+      isOpen
+    );
+
+    panel.setAttribute(
+      "aria-hidden",
+      isOpen
+        ? "false"
+        : "true"
+    );
+
+    toggle.setAttribute(
+      "aria-expanded",
+      isOpen
+        ? "true"
+        : "false"
+    );
+
+
+    if (isOpen) {
+
+      setTimeout(function() {
+
+        input.focus();
+
+      }, 250);
+
+    }
+
+  }
+
+
+  toggle.addEventListener(
+    "click",
+    function(event) {
+
+      event.stopPropagation();
+
+      const isOpen =
+        panel.classList.contains(
+          "show"
+        );
+
+      setChatOpen(!isOpen);
+
+    }
+  );
+
+
+  closeButton?.addEventListener(
+    "click",
+    function() {
+
+      setChatOpen(false);
+
+    }
+  );
+
+
+  /*
+   * Do not close when clicking
+   * inside the chatbot.
+   */
+  panel.addEventListener(
+    "click",
+    function(event) {
+
+      event.stopPropagation();
+
+    }
+  );
+
+
+  /*
+   * Click outside to close.
+   */
+  document.addEventListener(
+    "click",
+    function() {
+
+      if (
+        panel.classList.contains(
+          "show"
+        )
+      ) {
+
+        setChatOpen(false);
+
+      }
+
+    }
+  );
+
+
+  /* =====================================
+     ADD MESSAGE
+  ===================================== */
+
+  function addMessage(
+    text,
+    type
+  ) {
+
+    const message =
+      document.createElement(
+        "div"
+      );
+
+    message.className =
+      "chat-message " +
+      (
+        type === "user"
+          ? "user-message"
+          : "bot-message"
+      );
+
+
+    if (type !== "user") {
+
+      const avatar =
+        document.createElement(
+          "div"
+        );
+
+      avatar.className =
+        "chat-message-avatar";
+
+      avatar.textContent =
+        "🤖";
+
+      message.appendChild(
+        avatar
+      );
+
+    }
+
+
+    const bubble =
+      document.createElement(
+        "div"
+      );
+
+    bubble.className =
+      "chat-message-bubble";
+
+    /*
+     * textContent prevents
+     * HTML injection.
+     */
+    bubble.textContent =
+      text;
+
+
+    message.appendChild(
+      bubble
+    );
+
+    messages.appendChild(
+      message
+    );
+
+
+    /*
+     * Always scroll to
+     * newest message.
+     */
+    messages.scrollTop =
+      messages.scrollHeight;
+
+  }
+
+
+  /* =====================================
+     BOT KNOWLEDGE
+  ===================================== */
+
+  function getBotReply(question) {
+
+    const text =
+      question
+        .toLowerCase()
+        .trim();
+
+
+    /* Greetings */
+
+    if (
+      text.includes("hello") ||
+      text.includes("hi ") ||
+      text === "hi" ||
+      text.includes("hey")
+    ) {
+
+      return (
+        "Hi! 👋 I'm Luke's virtual assistant. " +
+        "You can ask me about his skills, " +
+        "work, services, projects, or how to contact him."
+      );
+
+    }
+
+
+    /* Skills */
+
+    if (
+      text.includes("skill") ||
+      text.includes("technology") ||
+      text.includes("tech stack") ||
+      text.includes("tools")
+    ) {
+
+      return (
+        "Luke works across software engineering, " +
+        "web development, WordPress, data analytics, " +
+        "automation and integrations, SEO, digital marketing, " +
+        "and technical virtual assistance."
+      );
+
+    }
+
+
+    /* Software */
+
+    if (
+      text.includes("software") ||
+      text.includes("developer") ||
+      text.includes("coding") ||
+      text.includes("programming")
+    ) {
+
+      return (
+        "Luke has software and web development experience " +
+        "using technologies such as HTML, CSS, JavaScript, " +
+        "React, PHP, Python, SQL, PL/SQL, and database technologies."
+      );
+
+    }
+
+
+    /* Data */
+
+    if (
+      text.includes("data") ||
+      text.includes("analytics") ||
+      text.includes("dashboard")
+    ) {
+
+      return (
+        "Luke works with data analysis, SQL, Python, Excel, " +
+        "Tableau, Power BI, reporting, dashboards, " +
+        "and turning raw data into useful insights."
+      );
+
+    }
+
+
+    /* Automation */
+
+    if (
+      text.includes("automation") ||
+      text.includes("integration")
+    ) {
+
+      return (
+        "Luke builds and supports digital workflows, " +
+        "automations, integrations, and systems that connect " +
+        "websites, data, marketing, and business processes."
+      );
+
+    }
+
+
+    /* Services */
+
+    if (
+      text.includes("service") ||
+      text.includes("offer") ||
+      text.includes("help with")
+    ) {
+
+      return (
+        "Luke can help with web development, WordPress, " +
+        "technical virtual assistance, automation, " +
+        "data analytics, SEO, website optimization, " +
+        "and digital marketing support."
+      );
+
+    }
+
+
+    /* Portfolio / Work */
+
+    if (
+      text.includes("work") ||
+      text.includes("portfolio") ||
+      text.includes("project") ||
+      text.includes("sample")
+    ) {
+
+      return (
+        "You can explore Luke's projects in the Works section. " +
+        "His portfolio includes web development, design, " +
+        "data, automation, and digital projects."
+      );
+
+    }
+
+
+    /* Experience */
+
+    if (
+      text.includes("experience") ||
+      text.includes("background")
+    ) {
+
+      return (
+        "Luke combines professional software engineering " +
+        "experience with freelance technical work, " +
+        "web development, data analytics, and community leadership."
+      );
+
+    }
+
+
+    /* Hire / Availability */
+
+    if (
+      text.includes("hire") ||
+      text.includes("available") ||
+      text.includes("freelance") ||
+      text.includes("job")
+    ) {
+
+      return (
+        "Yes — Luke is open to discussing freelance, " +
+        "technical, web, data, and software opportunities. " +
+        "You can contact him through the Contact section, " +
+        "Telegram, LinkedIn, or Viber."
+      );
+
+    }
+
+
+    /* Contact */
+
+    if (
+      text.includes("contact") ||
+      text.includes("email") ||
+      text.includes("message")
+    ) {
+
+      return (
+        "You can reach Luke using the Contact section " +
+        "or through the Telegram, LinkedIn, and Viber icons " +
+        "in this sidebar."
+      );
+
+    }
+
+
+    /* Resume */
+
+    if (
+      text.includes("resume") ||
+      text.includes("cv")
+    ) {
+
+      return (
+        "Luke's CV is available through the Download CV " +
+        "button in the left sidebar."
+      );
+
+    }
+
+
+    /* Default */
+
+    return (
+      "I'm still learning about Luke! 🤖 " +
+      "Try asking me about his skills, work, " +
+      "services, experience, data expertise, " +
+      "automation, or how to hire him."
+    );
+
+  }
+
+
+  /* =====================================
+     SEND QUESTION
+  ===================================== */
+
+  function submitQuestion(question) {
+
+    const cleanQuestion =
+      question.trim();
+
+
+    if (!cleanQuestion) {
+
+      return;
+
+    }
+
+
+    addMessage(
+      cleanQuestion,
+      "user"
+    );
+
+
+    input.value = "";
+
+
+    /*
+     * Small delay makes the bot
+     * feel more natural.
+     */
+    setTimeout(function() {
+
+      const reply =
+        getBotReply(
+          cleanQuestion
+        );
+
+      addMessage(
+        reply,
+        "bot"
+      );
+
+    }, 500);
+
+  }
+
+
+  /* Form submit */
+
+  form.addEventListener(
+    "submit",
+    function(event) {
+
+      event.preventDefault();
+
+      submitQuestion(
+        input.value
+      );
+
+    }
+  );
+
+
+  /* =====================================
+     QUICK ACTION BUTTONS
+  ===================================== */
+
+  document
+    .querySelectorAll(
+      ".chatbot-quick-btn"
+    )
+    .forEach(
+      function(button) {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            const question =
+              this.getAttribute(
+                "data-question"
+              );
+
+            submitQuestion(
+              question
+            );
+
+          }
+        );
+
+      }
+    );
+
 }
 
 /*-------------------------  Color Panllet  -------------------------*/
