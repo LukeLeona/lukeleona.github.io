@@ -214,14 +214,41 @@
           <!-- Hero text -->
           <div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
 
-            <h2 id="typed-title"></h2>
+  <!-- Typed headline -->
+  <h2 class="hero-main-title">
 
-            <p class="base-color">
-              <span id="typed-role"></span>
-              <span class="cursor">|</span>
-            </p>
+  <span class="hero-title-line">
+    <span id="typed-title-before"></span>
+    <span id="typed-name" class="hero-name"></span>
+  </span>
 
-          </div>
+  <span class="hero-title-line hero-title-second">
+    <span id="typed-title-after"></span>
+  </span>
+
+</h2>
+
+
+  <!-- Rotating typed roles -->
+  <p class="hero-role-line">
+    <span id="typed-role"></span>
+    <span class="cursor">|</span>
+  </p>
+
+
+  <!-- CTA Button -->
+  <div class="hero-actions">
+    <a
+      href="#portfolio"
+      class="primary-button hero-work-btn"
+      id="seeMyWorkBtn"
+    >
+      See My Work
+      <span class="hero-work-arrow">→</span>
+    </a>
+  </div>
+
+</div>
 
         </div>
       </div>
@@ -1574,58 +1601,188 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 </script>
 
 <script>
-const title = "Hello, I'm Luke Leona. Welcome to my World.";
+
+const titleParts = {
+    before: "Hello, I'm ",
+    name: "Luke Leona.",
+    after: "I build digital experiences that work."
+};
 
 const roles = [
-    "SOFTWARE ENGINEER * FREELANCE TECH VA",
-    "WEB DEVELOPER * DATA ANALYST",
-    "COMMUNITY VOLUNTEER"
+    "SOFTWARE ENGINEER • WEB DEVELOPER",
+    "FREELANCE TECH VA • AUTOMATION & INTEGRATIONS",
+    "DATA ANALYST • COMMUNITY BUILDER"
 ];
 
-let titleIndex = 0;
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
+
+/* ========================================
+   TITLE TYPING
+======================================== */
+
+let titlePart = 0;
+let titleCharIndex = 0;
+
+const titleElements = [
+    document.getElementById("typed-title-before"),
+    document.getElementById("typed-name"),
+    document.getElementById("typed-title-after")
+];
+
+const titleTexts = [
+    titleParts.before,
+    titleParts.name,
+    titleParts.after
+];
+
 
 function typeTitle() {
-    if (titleIndex < title.length) {
-        document.getElementById("typed-title").textContent += title.charAt(titleIndex);
-        titleIndex++;
-        setTimeout(typeTitle, 60);
+
+    const currentText = titleTexts[titlePart];
+    const currentElement = titleElements[titlePart];
+
+    if (titleCharIndex < currentText.length) {
+
+        currentElement.textContent +=
+            currentText.charAt(titleCharIndex);
+
+        titleCharIndex++;
+
+        setTimeout(typeTitle, 55);
+
     } else {
-        setTimeout(typeRole, 500);
+
+        titlePart++;
+        titleCharIndex = 0;
+
+        if (titlePart < titleTexts.length) {
+
+            setTimeout(typeTitle, 100);
+
+        } else {
+
+            /* Start role animation after headline finishes */
+            setTimeout(typeRole, 500);
+
+        }
+
     }
+
 }
+
+
+/* ========================================
+   ROTATING ROLE TYPING
+======================================== */
+
+let roleIndex = 0;
+let roleCharIndex = 0;
+let deleting = false;
+
 
 function typeRole() {
-    const currentRole = roles[roleIndex];
-    const roleElement = document.getElementById("typed-role");
+
+    const roleElement =
+        document.getElementById("typed-role");
+
+    const currentRole =
+        roles[roleIndex];
+
 
     if (!deleting) {
-        roleElement.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
 
-        if (charIndex === currentRole.length) {
+        roleElement.textContent =
+            currentRole.substring(
+                0,
+                roleCharIndex + 1
+            );
+
+        roleCharIndex++;
+
+
+        if (roleCharIndex === currentRole.length) {
+
             deleting = true;
-            setTimeout(typeRole, 2000);
-            return;
-        }
-    } else {
-        roleElement.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
 
-        if (charIndex === 0) {
-            deleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeRole, 2200);
+
+            return;
+
         }
+
+    } else {
+
+        roleElement.textContent =
+            currentRole.substring(
+                0,
+                roleCharIndex - 1
+            );
+
+        roleCharIndex--;
+
+
+        if (roleCharIndex === 0) {
+
+            deleting = false;
+
+            roleIndex =
+                (roleIndex + 1) %
+                roles.length;
+
+        }
+
     }
 
-    setTimeout(typeRole, deleting ? 30 : 60);
+
+    setTimeout(
+        typeRole,
+        deleting ? 30 : 55
+    );
+
 }
 
-window.onload = function() {
-    typeTitle();
-};
+
+/* ========================================
+   SEE MY WORK BUTTON
+======================================== */
+
+document
+    .getElementById("seeMyWorkBtn")
+    ?.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            /*
+              Trigger your existing Works menu button.
+              This preserves your portfolio's existing
+              section-transition/menu behavior.
+            */
+
+            const portfolioMenu =
+                document.querySelector(
+                    '.menu a[href="#portfolio"]'
+                );
+
+            if (portfolioMenu) {
+
+                portfolioMenu.click();
+
+            }
+
+        }
+    );
+
+
+/* Start animation */
+
+window.addEventListener(
+    "load",
+    function() {
+        typeTitle();
+    }
+);
+
 </script>
 
 </body>
