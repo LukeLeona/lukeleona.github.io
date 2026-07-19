@@ -650,15 +650,7 @@ header .navbar-brand b {
   font-size: 16px;
   padding: 10px 30px; 
 }
-.extend-icon{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -3%;
-  top: 55%;
-  height: 550px;
-  width: 470px;
-}
+
 /*------------------------- About -------------------------*/
 .about-img{
   position: relative;
@@ -2507,4 +2499,155 @@ body.dark-arshia , .dark-arshia .ajax-page-content{
   .left-side .menu .list-group-item a.active span {
     font-weight: 700 !important;
   }
+}
+
+
+/* ========================================
+   INTERACTIVE HERO PORTRAIT
+======================================== */
+
+.hero-portrait-reveal {
+  --reveal-x: 50%;
+  --reveal-y: 50%;
+  --reveal-radius: 105px;
+
+  position: absolute;
+
+  /* Same general position as old .extend-icon */
+  right: -3%;
+  top: 55%;
+  transform: translateY(-50%);
+
+  width: 470px;
+  height: 550px;
+
+  z-index: 10;
+
+  overflow: hidden;
+
+  pointer-events: auto;
+  cursor: none;
+}
+
+/*
+  Both images occupy the EXACT same box.
+  This is essential for alignment.
+*/
+.hero-portrait-base,
+.hero-portrait-layer {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  pointer-events: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+/* Normal image */
+.hero-portrait-base {
+  z-index: 1;
+}
+
+/* Alternate hidden image */
+.hero-portrait-layer {
+  z-index: 2;
+
+  opacity: 0;
+
+  -webkit-clip-path:
+    circle(
+      0px at
+      var(--reveal-x)
+      var(--reveal-y)
+    );
+
+  clip-path:
+    circle(
+      0px at
+      var(--reveal-x)
+      var(--reveal-y)
+    );
+
+  transition: opacity 0.12s ease;
+}
+
+
+/* Reveal alternate image only around cursor */
+.hero-portrait-reveal.is-revealing
+.hero-portrait-layer {
+
+  opacity: 1;
+
+  -webkit-clip-path:
+    circle(
+      var(--reveal-radius) at
+      var(--reveal-x)
+      var(--reveal-y)
+    );
+
+  clip-path:
+    circle(
+      var(--reveal-radius) at
+      var(--reveal-x)
+      var(--reveal-y)
+    );
+}
+
+
+/* Yellow scanner circle */
+.hero-scan-ring {
+  position: absolute;
+
+  left: var(--reveal-x);
+  top: var(--reveal-y);
+
+  width: calc(var(--reveal-radius) * 2);
+  height: calc(var(--reveal-radius) * 2);
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(235, 176, 32, 0.8);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 8px rgba(235, 176, 32, 0.65),
+    0 0 20px rgba(235, 176, 32, 0.30),
+    inset 0 0 10px rgba(235, 176, 32, 0.15);
+
+  opacity: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  transition: opacity 0.15s ease;
+}
+
+
+.hero-portrait-reveal.is-revealing
+.hero-scan-ring {
+  opacity: 1;
+}
+
+
+/*
+  Do not use hover effect on mobile/tablet.
+  Your existing mobile hero image stays unchanged.
+*/
+@media (max-width: 991px) {
+
+  .hero-portrait-reveal {
+    display: none;
+  }
+
 }

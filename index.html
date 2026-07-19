@@ -156,51 +156,126 @@
     <!--  Main Start  -->
     <main id="main" class="main-2">
 
-      <!--  Hero Start  -->
-      <section id="hero" class="section hero w-100">
-        <img class="extend-icon" src="assets/img/webdesigner/profile2.png" alt="/">
-        <div class="hero-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 text-center text-lg-start">
-                <div class="hero-image d-inline-block d-lg-none">
-                  <img src="assets/img/webdesigner/profile-img.png" alt="/">
-                </div>
-                <!-- Hello Im Luke-->
-                <div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
-                  <h2 id="typed-title"></h2>
-                
-                  <p class="base-color">
-                    <span id="typed-role"></span>
-                    <span class="cursor">|</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+<!--  Hero Start  -->
+<section id="hero" class="section hero w-100">
+
+  <!-- =========================================
+       INTERACTIVE DESKTOP HERO PORTRAIT
+  ========================================== -->
+  <div
+    class="hero-portrait-reveal cursor-pointer"
+    id="heroPortraitReveal"
+  >
+
+    <!-- Normal/front portrait -->
+    <img
+      class="hero-portrait-base"
+      src="assets/img/webdesigner/hero-layers/profile-main.png"
+      alt="Luke Leona"
+      draggable="false"
+    >
+
+    <!-- Hidden rotating reveal portrait -->
+    <img
+      class="hero-portrait-layer"
+      id="heroPortraitLayer"
+      src="assets/img/webdesigner/hero-layers/profile-skeleton.png"
+      alt=""
+      aria-hidden="true"
+      draggable="false"
+    >
+
+    <!-- Scanner ring -->
+    <div
+      class="hero-scan-ring"
+      aria-hidden="true"
+    ></div>
+
+  </div>
+  <!-- END INTERACTIVE DESKTOP HERO PORTRAIT -->
+
+
+  <!-- =========================================
+       HERO CONTENT
+  ========================================== -->
+  <div class="hero-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center text-lg-start">
+
+          <!-- Mobile-only profile image -->
+          <div class="hero-image d-inline-block d-lg-none">
+            <img
+              src="assets/img/webdesigner/profile-img.png"
+              alt="Luke Leona"
+            >
           </div>
-        </div>
-        <div class="hero-footer d-block d-lg-none">
-        <a 
-  class="download-cv primary-button d-none d-lg-inline-block" 
-  href="https://drive.google.com/file/d/1S9-G_qkcsKzORcCjKaqnArnIk833Lfn7/view?usp=sharing" 
-  target="_blank" 
-  rel="noopener noreferrer">
-  Download CV
-</a>
-          <div class="social d-lg-none mb-4 d-block">
-            <a href="javascript:void(0);" class="d-inline-block">
-              <i class="bi bi-whatsapp"></i>
-            </a>
-            <a href="javascript:void(0);" class="d-inline-block mx-4">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="javascript:void(0);" class="d-inline-block">
-              <i class="bi bi-dribbble"></i>
-            </a>
+
+          <!-- Hero text -->
+          <div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
+
+            <h2 id="typed-title"></h2>
+
+            <p class="base-color">
+              <span id="typed-role"></span>
+              <span class="cursor">|</span>
+            </p>
+
           </div>
+
         </div>
-      </section>
-      <!--  Hero End  -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================
+       MOBILE HERO FOOTER
+  ========================================== -->
+  <div class="hero-footer d-block d-lg-none">
+
+    <a
+      class="download-cv primary-button"
+      href="https://drive.google.com/file/d/1S9-G_qkcsKzORcCjKaqnArnIk833Lfn7/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download CV
+    </a>
+
+    <div class="social d-lg-none mb-4 mt-4 d-block">
+
+      <a
+        href="https://t.me/pyrexu"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="d-inline-block"
+      >
+        <i class="bi bi-telegram"></i>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/luke-mark-leona/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="d-inline-block mx-4"
+      >
+        <i class="bi bi-linkedin"></i>
+      </a>
+
+      <a
+        href="viber://chat?number=639934996221"
+        class="d-inline-block"
+      >
+        <i class="bi bi-chat-dots"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!--  Hero End  -->
 
       <!--  About Start  -->
       <section id="about" class="section about">

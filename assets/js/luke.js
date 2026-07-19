@@ -17,13 +17,20 @@ var $isfirefox= 0;
 $(document).ready(function() {
 
     "use strict";
+
     deviceScreen();
     date();
-    mobileDesign()
+    mobileDesign();
     portfolioPopup();
     sidebarMenu();
     mapInit();
+
+    /* Interactive portrait */
+    heroImageReveal();
+
+    /* Custom cursor */
     mouseMagicCursor();
+
     ColorPallet();
     themeOption();
 });
@@ -1029,6 +1036,127 @@ function mouseMagicCursor() {
   window.addEventListener("beforeunload", function () {
     clearInterval(messageInterval);
   });
+}
+/*-------------------------
+   Interactive Hero Portrait
+-------------------------*/
+function heroImageReveal() {
+  "use strict";
+
+  const portrait = document.getElementById("heroPortraitReveal");
+  const revealImage = document.getElementById("heroPortraitLayer");
+
+  if (
+    !portrait ||
+    !revealImage ||
+    window.innerWidth <= 991
+  ) {
+    return;
+  }
+
+  /*
+    These images rotate every time
+    the visitor enters the portrait.
+  */
+  const revealLayers = [
+    "assets/img/webdesigner/hero-layers/profile-skeleton.png",
+    "assets/img/webdesigner/hero-layers/profile-code.png",
+    "assets/img/webdesigner/hero-layers/profile-automation.png",
+    "assets/img/webdesigner/hero-layers/profile-data.png",
+    "assets/img/webdesigner/hero-layers/profile-marketing.png",
+    "assets/img/webdesigner/hero-layers/profile-software.png"
+  ];
+
+  /*
+    Preload all images so the reveal does not
+    flash or lag the first time each one appears.
+  */
+  revealLayers.forEach(function (src) {
+    const image = new Image();
+    image.src = src;
+  });
+
+  let currentLayer = -1;
+
+  /*
+    Move the reveal circle to the mouse position.
+  */
+  function updateRevealPosition(event) {
+    const rect = portrait.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    portrait.style.setProperty(
+      "--reveal-x",
+      x + "px"
+    );
+
+    portrait.style.setProperty(
+      "--reveal-y",
+      y + "px"
+    );
+  }
+
+  /*
+    Every NEW hover selects the next image.
+
+    Hover 1 = Skeleton
+    Hover 2 = Code
+    Hover 3 = Automation
+    Hover 4 = Data
+    Hover 5 = Marketing
+    Hover 6 = Software Engineering
+    Then repeat.
+  */
+  portrait.addEventListener(
+    "mouseenter",
+    function (event) {
+
+      currentLayer =
+        (currentLayer + 1) %
+        revealLayers.length;
+
+      revealImage.src =
+        revealLayers[currentLayer];
+
+      updateRevealPosition(event);
+
+      portrait.classList.add(
+        "is-revealing"
+      );
+    }
+  );
+
+
+  /*
+    Follow the cursor while inside
+    the portrait.
+  */
+  portrait.addEventListener(
+    "mousemove",
+    function (event) {
+
+      updateRevealPosition(event);
+
+    }
+  );
+
+
+  /*
+    When the mouse leaves:
+    return completely to normal photo.
+  */
+  portrait.addEventListener(
+    "mouseleave",
+    function () {
+
+      portrait.classList.remove(
+        "is-revealing"
+      );
+
+    }
+  );
 }
 
 /*-------------------------  Color Panllet  -------------------------*/
