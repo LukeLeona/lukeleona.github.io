@@ -1624,12 +1624,14 @@ textarea:-moz-placeholder {
   transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
 }
 .mmc-inner.mmc-hover {
-  margin-left: -40px;
-  margin-top: -40px;
-  width: 80px;
-  height: 80px;
-  background-color: #ff451b;
-  opacity: .3;
+  margin-left: -15px;
+  margin-top: -15px;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: #ebb020;
+  opacity: 0.25;
 }
 .mmc-outer {
   margin-left: -15px;
@@ -2570,13 +2572,6 @@ body.dark-arshia , .dark-arshia .ajax-page-content{
       var(--reveal-y)
     );
 
-  clip-path:
-    circle(
-      0px at
-      var(--reveal-x)
-      var(--reveal-y)
-    );
-
   transition: opacity 0.12s ease;
 }
 
@@ -2605,32 +2600,7 @@ body.dark-arshia , .dark-arshia .ajax-page-content{
 
 /* Yellow scanner circle */
 .hero-scan-ring {
-  position: absolute;
-
-  left: var(--reveal-x);
-  top: var(--reveal-y);
-
-  width: calc(var(--reveal-radius) * 2);
-  height: calc(var(--reveal-radius) * 2);
-
-  transform: translate(-50%, -50%);
-
-  border: 1px solid rgba(235, 176, 32, 0.8);
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 8px rgba(235, 176, 32, 0.65),
-    0 0 20px rgba(235, 176, 32, 0.30),
-    inset 0 0 10px rgba(235, 176, 32, 0.15);
-
-  opacity: 0;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  transition: opacity 0.15s ease;
+  display: none !important;
 }
 
 
