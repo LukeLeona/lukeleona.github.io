@@ -1,0 +1,2118 @@
+
+/* =========================================================
+   SPENDING BEHAVIOR ANALYSIS
+   PROJECT CASE STUDY
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.spending-case-study {
+  background: #232324;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   PROJECT HERO
+========================================================= */
+
+.spending-case-study .project-hero {
+  position: relative;
+
+  max-width: 900px;
+
+  padding:
+    42px 0
+    55px;
+}
+
+
+.spending-case-study .project-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #ebb020;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.spending-case-study .project-eyebrow span {
+  opacity: 0.45;
+}
+
+
+.spending-case-study .project-hero h1 {
+  max-width: 850px;
+
+  margin:
+    0 0
+    20px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      40px,
+      6vw,
+      68px
+    );
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+
+.spending-case-study .project-hero h1 span {
+  color: #ebb020;
+}
+
+
+.spending-case-study .project-hero-description {
+  max-width: 720px;
+
+  margin-bottom: 25px;
+
+  color: #b9babd;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TECH TAGS
+========================================================= */
+
+.spending-case-study .project-tech-list,
+.spending-case-study .project-tags {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.spending-case-study
+.project-tech-list span,
+
+.spending-case-study
+.project-tags span {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    6px 11px;
+
+  border:
+    1px solid
+    rgba(
+      235,
+      176,
+      32,
+      0.25
+    );
+
+  border-radius: 50px;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.055
+    );
+
+  color: #d9d9da;
+
+  font-size: 11px;
+}
+
+/* Smaller tags inside Project Info sidebar only */
+
+.spending-case-study
+.project-sidebar
+.project-tags span {
+
+  padding: 5px 10px;
+
+  font-size: 10px;
+
+}
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.spending-case-study
+.project-hero-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 29px;
+}
+
+
+.spending-case-study
+.project-primary-btn,
+
+.spending-case-study
+.project-secondary-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    11px 20px;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.spending-case-study
+.project-primary-btn {
+
+  border:
+    1px solid
+    #ebb020;
+
+  background:
+    #ebb020;
+
+  color:
+    #1c1c1e !important;
+}
+
+
+.spending-case-study
+.project-primary-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      235,
+      176,
+      32,
+      0.18
+    );
+}
+
+
+.spending-case-study
+.project-secondary-btn {
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+
+  background:
+    transparent;
+
+  color:
+    #ffffff !important;
+}
+
+
+.spending-case-study
+.project-secondary-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #ebb020;
+
+  color:
+    #ebb020 !important;
+}
+
+
+/* =========================================================
+   CAROUSEL
+========================================================= */
+
+.spending-case-study
+.portfolio-page-carousel {
+
+  margin-bottom: 35px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background:
+    #292a2e;
+
+  box-shadow:
+    0 20px 55px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+}
+
+
+.spending-case-study
+.portfolio-page-carousel
+.entry-image img {
+
+  display: block;
+
+  width: 100%;
+
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   KPI / PROJECT HIGHLIGHTS
+========================================================= */
+
+.spending-case-study
+.project-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin:
+    35px 0
+    85px;
+}
+
+
+.spending-case-study
+.project-stat-card {
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 160px;
+
+  padding: 22px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.045
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.015
+      )
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.spending-case-study
+.project-stat-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+
+  height: 90px;
+
+  top: -40px;
+
+  right: -40px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.07
+    );
+
+  filter:
+    blur(16px);
+}
+
+
+.spending-case-study
+.project-stat-card:hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.32
+    );
+}
+
+
+.spending-case-study
+.stat-icon {
+
+  margin-bottom: 18px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    21px;
+}
+
+
+.spending-case-study
+.stat-label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    #8f9093;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.5px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.spending-case-study
+.project-stat-card strong {
+
+  display: block;
+
+  margin-bottom:
+    4px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    17px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.35;
+}
+
+
+.spending-case-study
+.project-stat-card small {
+
+  color:
+    #999a9d;
+
+  font-size:
+    11px;
+}
+
+
+/* =========================================================
+   PROJECT SECTIONS
+========================================================= */
+
+.spending-case-study
+.project-section {
+
+  position: relative;
+
+  margin:
+    0 0
+    100px;
+}
+
+
+.spending-case-study
+.project-section-heading {
+
+  max-width:
+    700px;
+
+  margin-bottom:
+    32px;
+}
+
+
+.spending-case-study
+.project-section-heading > span {
+
+  display: block;
+
+  margin-bottom:
+    8px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.spending-case-study
+.project-section-heading h2 {
+
+  margin:
+    0 0
+    12px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      27px,
+      4vw,
+      38px
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.25;
+}
+
+
+.spending-case-study
+.project-section-heading p,
+
+.spending-case-study
+.project-section > p {
+
+  color:
+    #b8b9bb;
+
+  line-height:
+    1.8;
+}
+
+
+.spending-case-study
+.project-lead {
+
+  color:
+    #ededee !important;
+
+  font-size:
+    17px;
+
+  line-height:
+    1.85;
+}
+
+
+/* =========================================================
+   DATASET
+========================================================= */
+
+.spending-case-study
+.dataset-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+.spending-case-study
+.dataset-card {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+
+  padding: 18px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  border-radius:
+    14px;
+
+  background:
+    #292a2e;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.spending-case-study
+.dataset-card:hover {
+
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.24
+    );
+}
+
+
+.spending-case-study
+.dataset-card > i {
+
+  flex:
+    0 0 42px;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    11px;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.07
+    );
+
+  color:
+    #ebb020;
+
+  font-size:
+    18px;
+}
+
+
+.spending-case-study
+.dataset-card strong,
+
+.spending-case-study
+.dataset-card span {
+
+  display: block;
+}
+
+
+.spending-case-study
+.dataset-card strong {
+
+  margin-bottom:
+    3px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+}
+
+
+.spending-case-study
+.dataset-card span {
+
+  color:
+    #a4a5a8;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   METHODOLOGY
+========================================================= */
+
+.spending-case-study
+.method-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    14px;
+}
+
+
+.spending-case-study
+.method-card {
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height:
+    250px;
+
+  padding:
+    23px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-radius:
+    16px;
+
+  background:
+    #292a2e;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.spending-case-study
+.method-card:hover {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.28
+    );
+}
+
+
+.spending-case-study
+.method-number {
+
+  position:
+    absolute;
+
+  top:
+    18px;
+
+  right:
+    18px;
+
+  color:
+    rgba(
+      235,
+      176,
+      32,
+      0.27
+    );
+
+  font-size:
+    24px;
+
+  font-weight:
+    700;
+}
+
+
+.spending-case-study
+.method-icon {
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  margin-bottom:
+    22px;
+
+  border-radius:
+    12px;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.07
+    );
+
+  color:
+    #ebb020;
+
+  font-size:
+    18px;
+}
+
+
+.spending-case-study
+.method-card h4 {
+
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    18px;
+
+  font-weight:
+    600;
+}
+
+
+.spending-case-study
+.method-card > strong {
+
+  display:
+    block;
+
+  margin:
+    3px 0
+    12px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    1.2px;
+}
+
+
+.spending-case-study
+.method-card p {
+
+  margin:
+    0;
+
+  color:
+    #a7a8aa;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================================
+   CHART GRID
+========================================================= */
+
+.spending-case-study
+.chart-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    18px;
+}
+
+
+.spending-case-study
+.chart-card {
+
+  min-width:
+    0;
+
+  padding:
+    22px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  border-radius:
+    18px;
+
+  background:
+    #292a2e;
+
+  transition:
+    border-color 0.3s ease;
+}
+
+
+.spending-case-study
+.chart-card:hover {
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.23
+    );
+}
+
+
+.spending-case-study
+.chart-card-wide {
+
+  grid-column:
+    1 / -1;
+}
+
+
+.spending-case-study
+.chart-card-header > span {
+
+  display:
+    block;
+
+  margin-bottom:
+    5px;
+
+  color:
+    #85868a;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.spending-case-study
+.chart-card-header h3 {
+
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    16px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.4;
+}
+
+
+.spending-case-study
+.chart-container {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    300px;
+
+  margin-top:
+    20px;
+}
+
+
+.spending-case-study
+.chart-container-small {
+
+  height:
+    280px;
+}
+
+
+.spending-case-study
+.chart-container-wide {
+
+  height:
+    330px;
+}
+
+
+.spending-case-study
+.chart-container canvas {
+
+  max-width:
+    100% !important;
+
+  max-height:
+    100% !important;
+}
+
+
+.spending-case-study
+.chart-insight {
+
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    10px;
+
+  margin-top:
+    18px;
+
+  padding:
+    13px;
+
+  border-left:
+    2px solid
+    #ebb020;
+
+  border-radius:
+    4px 10px
+    10px 4px;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.045
+    );
+}
+
+
+.spending-case-study
+.chart-insight > i {
+
+  margin-top:
+    2px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    14px;
+}
+
+
+.spending-case-study
+.chart-insight p {
+
+  margin:
+    0;
+
+  color:
+    #aeb0b2;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.65;
+}
+
+
+.spending-case-study
+.chart-insight strong {
+
+  color:
+    #e7e7e7;
+}
+
+
+/* =========================================================
+   BUSINESS IMPACT
+========================================================= */
+
+.spending-case-study
+.impact-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    14px;
+}
+
+
+.spending-case-study
+.impact-card {
+
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  min-height:
+    230px;
+
+  padding:
+    24px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  border-radius:
+    16px;
+
+  background:
+    #292a2e;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.spending-case-study
+.impact-card:hover {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.28
+    );
+}
+
+
+.spending-case-study
+.impact-card > span {
+
+  position:
+    absolute;
+
+  top:
+    18px;
+
+  right:
+    18px;
+
+  color:
+    rgba(
+      235,
+      176,
+      32,
+      0.27
+    );
+
+  font-size:
+    23px;
+
+  font-weight:
+    700;
+}
+
+
+.spending-case-study
+.impact-card > i {
+
+  display:
+    block;
+
+  margin-bottom:
+    28px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    24px;
+}
+
+
+.spending-case-study
+.impact-card h4 {
+
+  margin-bottom:
+    10px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    17px;
+
+  font-weight:
+    600;
+}
+
+
+.spending-case-study
+.impact-card p {
+
+  margin:
+    0;
+
+  color:
+    #a4a5a7;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.spending-case-study
+.project-bottom-line {
+
+  position:
+    relative;
+
+  margin-top:
+    20px;
+
+  padding:
+    35px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      235,
+      176,
+      32,
+      0.18
+    );
+
+  border-radius:
+    18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        235,
+        176,
+        32,
+        0.07
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.018
+      )
+    );
+}
+
+
+.spending-case-study
+.project-bottom-line::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    220px;
+
+  height:
+    220px;
+
+  top:
+    -110px;
+
+  right:
+    -80px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.07
+    );
+
+  filter:
+    blur(45px);
+
+  pointer-events:
+    none;
+}
+
+
+.spending-case-study
+.project-bottom-line > span {
+
+  display:
+    block;
+
+  margin-bottom:
+    12px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    2px;
+}
+
+
+.spending-case-study
+.project-bottom-line h3 {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  max-width:
+    650px;
+
+  margin-bottom:
+    13px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    24px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.45;
+}
+
+
+.spending-case-study
+.project-bottom-line p {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  max-width:
+    680px;
+
+  margin:
+    0;
+
+  color:
+    #abadb0;
+
+  line-height:
+    1.8;
+}
+
+/* =========================================================
+   BOTTOM LINE - EXTRA DETAILS
+========================================================= */
+
+.spending-case-study
+.bottom-line-icon {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border:
+
+    1px solid
+    rgba(
+      235,
+      176,
+      32,
+      0.30
+    );
+
+  border-radius: 13px;
+
+  background:
+
+    rgba(
+      235,
+      176,
+      32,
+      0.08
+    );
+
+  color:
+
+    #ebb020;
+
+  font-size: 20px;
+
+}
+
+
+.spending-case-study
+.bottom-line-actions {
+
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 24px;
+
+}
+
+
+.spending-case-study
+.bottom-line-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 11px 19px;
+
+  border:
+
+    1px solid
+    #ebb020;
+
+  border-radius: 50px;
+
+  color:
+
+    #ebb020 !important;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition:
+
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.spending-case-study
+.bottom-line-button:hover {
+
+  transform:
+
+    translateY(-2px);
+
+  background:
+
+    #ebb020;
+
+  color:
+
+    #222222 !important;
+
+}
+
+/* =========================================================
+   PROJECT SIDEBAR
+========================================================= */
+
+.spending-case-study
+.project-sidebar {
+
+  position: sticky;
+
+  top: 20px;
+
+  width: 100%;
+
+  /* Keep sidebar inside visible browser height */
+  max-height: calc(100vh - 40px);
+
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 17px;
+
+  background: #292a2e;
+
+  /* Prevent the card itself from extending outside the screen */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+
+.spending-case-study
+.project-sidebar-title {
+
+  margin-bottom:
+    22px;
+}
+
+
+.spending-case-study
+.project-sidebar-title span {
+
+  display:
+    block;
+
+  margin-bottom:
+    3px;
+
+  color:
+    #ebb020;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.5px;
+}
+
+
+.spending-case-study
+.project-sidebar-title h4 {
+
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    21px;
+
+  font-weight:
+    600;
+}
+
+
+.spending-case-study
+.project-info-item {
+
+  padding: 12px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+}
+
+
+.spending-case-study
+.project-info-item > span {
+
+  display:
+    block;
+
+  margin-bottom:
+    6px;
+
+  color:
+    #77787c;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+.spending-case-study
+.project-info-item > strong {
+
+  display:
+    block;
+
+  color:
+    #d9d9da;
+
+  font-size:
+    12px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.6;
+}
+
+
+.spending-case-study
+.sidebar-github-btn {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  width:
+    100%;
+
+  margin-top:
+    14px;
+
+  padding:
+    10px;
+
+  border:
+    1px solid
+    #ebb020;
+
+  border-radius:
+    50px;
+
+  color:
+    #ebb020 !important;
+
+  font-size:
+    11px;
+
+  font-weight:
+    600;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.spending-case-study
+.sidebar-github-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  background:
+    #ebb020;
+
+  color:
+    #222222 !important;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.spending-case-study
+.ajax-page-nav {
+
+  padding-top: 10px;
+
+  /* Space between top buttons and project content/sidebar */
+  margin-bottom: 18px;
+
+}
+
+.spending-case-study
+.ajax-page-nav
+.nav-item a {
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+.spending-case-study
+.ajax-page-nav
+.nav-item a:hover {
+
+  border-color:
+    rgba(
+      235,
+      176,
+      32,
+      0.4
+    );
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.06
+    );
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media
+(max-width: 991px) {
+
+  .spending-case-study
+  .project-hero {
+
+    padding-top:
+      25px;
+  }
+
+
+  .spending-case-study
+  .project-sidebar {
+
+    position:
+      static;
+
+    margin-top:
+      20px;
+  }
+
+}
+
+/* =========================================================
+   PROJECT SIDEBAR SCROLLBAR
+========================================================= */
+
+.spending-case-study
+.project-sidebar {
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(235, 176, 32, 0.35)
+    transparent;
+
+}
+
+
+.spending-case-study
+.project-sidebar::-webkit-scrollbar {
+
+  width: 4px;
+
+}
+
+
+.spending-case-study
+.project-sidebar::-webkit-scrollbar-track {
+
+  background: transparent;
+
+}
+
+
+.spending-case-study
+.project-sidebar::-webkit-scrollbar-thumb {
+
+  background:
+    rgba(
+      235,
+      176,
+      32,
+      0.30
+    );
+
+  border-radius: 20px;
+
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media
+(max-width: 767px) {
+
+  .spending-case-study
+  .project-hero {
+
+    padding:
+      25px 0
+      40px;
+  }
+
+
+  .spending-case-study
+  .project-hero h1 {
+
+    letter-spacing:
+      -1px;
+  }
+
+
+  .spending-case-study
+  .project-hero-description {
+
+    font-size:
+      14px;
+  }
+
+
+  .spending-case-study
+  .project-hero-actions {
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+
+  .spending-case-study
+  .project-primary-btn,
+
+  .spending-case-study
+  .project-secondary-btn {
+
+    width:
+      100%;
+  }
+
+
+  .spending-case-study
+  .project-stats,
+
+  .spending-case-study
+  .dataset-grid,
+
+  .spending-case-study
+  .method-grid,
+
+  .spending-case-study
+  .chart-grid,
+
+  .spending-case-study
+  .impact-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .spending-case-study
+  .chart-card-wide {
+
+    grid-column:
+      auto;
+  }
+
+
+  .spending-case-study
+  .project-section {
+
+    margin-bottom:
+      70px;
+  }
+
+
+  .spending-case-study
+  .chart-container,
+
+  .spending-case-study
+  .chart-container-small,
+
+  .spending-case-study
+  .chart-container-wide {
+
+    height:
+      260px;
+  }
+
+
+  .spending-case-study
+  .project-bottom-line {
+
+    padding:
+      25px 20px;
+  }
+
+
+  .spending-case-study
+  .project-bottom-line h3 {
+
+    font-size:
+      20px;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media
+(min-width: 1200px) {
+
+  .spending-case-study
+  .project-stats {
+
+    grid-template-columns:
+      repeat(
+        4,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP SIDEBAR HEIGHT
+========================================================= */
+
+@media (min-width: 992px) {
+
+  .spending-case-study
+  .project-sidebar {
+
+    max-height: calc(100vh - 40px);
+
+  }
+
+}
