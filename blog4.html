@@ -41,37 +41,312 @@
     <!--   Menu Overlay Mobile -->
     <div class="menu-overlay d-none"></div>
 
-    <!--   Right Side Start  -->
+  <!-- ========================================
+     RIGHT SIDE START
+========================================= -->
+
     <div class="right-side d-none d-lg-block">
-      <div id="date"></div>
-      <div class="social-box">
-        <div class="follow-label">
-          <span>Get in Touch</span>
-        </div>
-        <div class="social d-none d-lg-block">
-<a href="https://t.me/pyrexu" target="_blank" rel="noopener noreferrer" class="d-inline-block">
-  <i class="bi bi-telegram"></i>
-</a>
 
-<a href="https://www.linkedin.com/in/luke-mark-leona/" target="_blank" rel="noopener noreferrer" class="d-inline-block">
-  <i class="bi bi-linkedin"></i>
-</a>
 
-<a href="https://invite.viber.com/?number=639934996221" target="_blank" rel="noopener noreferrer" class="d-inline-block">
-  <i class="bi bi-chat-dots"></i>
-</a>
+        <!-- ========================================
+       DATE
+  ========================================= -->
+
+        <div id="date"></div>
+
+
+        <!-- Yellow divider after date -->
+
+        <div class="sidebar-line sidebar-line-top"></div>
+
+
+        <!-- ========================================
+       SOCIAL ICONS
+  ========================================= -->
+
+        <div class="social-box">
+
+            <div class="social d-none d-lg-block">
+
+
+                <!-- Telegram -->
+
+                <a href="https://t.me/pyrexu" target="_blank" rel="noopener noreferrer" class="d-inline-block"
+                    aria-label="Telegram">
+
+                    <i class="bi bi-telegram"></i>
+
+                </a>
+
+
+                <!-- LinkedIn -->
+
+                <a href="https://www.linkedin.com/in/luke-mark-leona/" target="_blank" rel="noopener noreferrer"
+                    class="d-inline-block" aria-label="LinkedIn">
+
+                    <i class="bi bi-linkedin"></i>
+
+                </a>
+
+
+                <!-- Viber -->
+
+                <a href="https://invite.viber.com/?number=639934996221" target="_blank" rel="noopener noreferrer"
+                    class="d-inline-block" aria-label="Viber">
+
+                    <i class="bi bi-chat-dots"></i>
+
+                </a>
+
+
+            </div>
+
         </div>
-      </div>
-      <div class="blog-next-prev-page">
-        <a class="blog-prev-page bg-base-color hstack" href="index.html#hero">
-          <i class="bi bi-chevron-compact-up"></i>
-        </a>
-        <a class="blog-next-page bg-base-color mt-1 mt-lg-3 hstack" href="index.html#hero">
-          <i class="bi bi-chevron-compact-down"></i>
-        </a>
-      </div>
+
+
+        <!-- Yellow divider after socials -->
+
+        <div class="sidebar-line sidebar-line-bottom"></div>
+
+
+
+        <!-- ========================================
+       ROBOT CHATBOT
+  ========================================= -->
+
+        <div class="portfolio-chatbot">
+
+
+            <!-- ROBOT BUTTON -->
+
+            <button type="button" class="chatbot-robot-button" id="chatbotToggle"
+                aria-label="Chat with Luke's virtual assistant" aria-expanded="false">
+
+                <span class="robot-icon">
+
+
+                    <!-- Antenna -->
+
+                    <span class="robot-antenna">
+
+                        <span class="robot-antenna-dot"></span>
+
+                    </span>
+
+
+                    <!-- Head -->
+
+                    <span class="robot-head">
+
+                        <span class="robot-eye robot-eye-left"></span>
+
+                        <span class="robot-eye robot-eye-right"></span>
+
+                        <span class="robot-mouth"></span>
+
+                    </span>
+
+
+                    <!-- Body -->
+
+                    <span class="robot-body">
+
+                        <span class="robot-body-light"></span>
+
+                    </span>
+
+
+                </span>
+
+
+                <span class="chatbot-online-dot"></span>
+
+
+            </button>
+
+
+
+            <!-- ========================================
+         CUTE POP-UP MESSAGE
+    ========================================= -->
+
+            <div class="chatbot-teaser" id="chatbotTeaser" aria-live="polite">
+
+                <span id="chatbotTeaserText">
+                    Hi! 👋
+                </span>
+
+            </div>
+
+
+
+            <!-- ========================================
+         CHATBOT PANEL
+    ========================================= -->
+
+            <div class="chatbot-panel" id="chatbotPanel" aria-hidden="true">
+
+
+                <!-- HEADER -->
+
+                <div class="chatbot-header">
+
+
+                    <div class="chatbot-header-profile">
+
+
+                        <div class="chatbot-mini-robot">
+                            🤖
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Luke's Assistant
+                            </strong>
+
+                            <span>
+
+                                <span class="chat-online-indicator"></span>
+
+                                Online
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button type="button" class="chatbot-close" id="chatbotClose" aria-label="Close chatbot">
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- MESSAGES -->
+
+                <div class="chatbot-messages" id="chatbotMessages">
+
+
+                    <div class="chat-message bot-message">
+
+
+                        <div class="chat-message-avatar">
+                            🤖
+                        </div>
+
+
+                        <div class="chat-message-bubble">
+
+                            Hi! I'm Luke's virtual assistant. 👋
+
+                            <br><br>
+
+                            Ask me about his skills, projects,
+                            services, experience, or how to hire him.
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- QUICK QUESTIONS -->
+
+                    <div class="chatbot-quick-actions">
+
+
+                        <button type="button" class="chatbot-quick-btn" data-question="What are Luke's skills?">
+
+                            Skills
+
+                        </button>
+
+
+                        <button type="button" class="chatbot-quick-btn" data-question="Show me Luke's work">
+
+                            His Work
+
+                        </button>
+
+
+                        <button type="button" class="chatbot-quick-btn" data-question="How can I hire Luke?">
+
+                            Hire Luke
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- INPUT -->
+
+                <form class="chatbot-input-area" id="chatbotForm">
+
+
+                    <input type="text" id="chatbotInput" placeholder="Ask me something..." autocomplete="off"
+                        aria-label="Chat message">
+
+
+                    <button type="submit" class="chatbot-send" aria-label="Send message">
+
+                        <i class="bi bi-send-fill"></i>
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+        <!-- END ROBOT CHATBOT -->
+
+
+
+        <!-- ========================================
+       UP / DOWN NAVIGATION
+  ========================================= -->
+
+        <div class="next-prev-page">
+
+
+            <a href="index.html#hero" class="prev-page bg-base-color hstack" aria-label="Back to home">
+
+                <i class="bi bi-chevron-compact-up mx-auto"></i>
+
+            </a>
+
+
+            <a href="index.html#blog" class="next-page bg-base-color mt-3 hstack" aria-label="Back to blog">
+
+                <i class="bi bi-chevron-compact-down mx-auto"></i>
+
+            </a>
+
+
+        </div>
+
+
     </div>
-    <!--  Right Side End  -->
+
+    <!-- ========================================
+     RIGHT SIDE END
+========================================= -->
 
     <!--  Left Side Start  -->
     <div class="left-side  nav-close">

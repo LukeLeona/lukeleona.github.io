@@ -1292,6 +1292,427 @@
 
 }
 
+.data-article-page
+.seo-benefit-grid,
+
+.data-article-page
+.seo-process-grid,
+
+.data-article-page
+.seo-foundation-grid {
+
+  grid-template-columns: 1fr;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow {
+
+  grid-template-columns: 1fr;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > i {
+
+  text-align: center;
+
+  transform: rotate(90deg);
+
+}
+
+
+.data-article-page
+.confidential-work-card {
+
+  flex-direction: column;
+
+  padding: 22px;
+
+}
+
+}
+
+/* =========================================================
+   SEO ARTICLE
+========================================================= */
+
+
+/* -----------------------------------------
+   4-column SEO benefit cards
+----------------------------------------- */
+
+.data-article-page
+.seo-benefit-grid {
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+}
+
+
+/* -----------------------------------------
+   SEO PROCESS
+----------------------------------------- */
+
+.data-article-page
+.seo-process-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 32px;
+
+}
+
+
+.data-article-page
+.seo-process-card {
+
+  position: relative;
+
+  min-width: 0;
+
+  padding: 20px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: var(--card);
+
+}
+
+
+.data-article-page
+.seo-process-card > span {
+
+  position: absolute;
+
+  top: 14px;
+
+  right: 15px;
+
+  color: rgba(235, 176, 32, 0.28);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+}
+
+
+.data-article-page
+.seo-process-card > i {
+
+  color: var(--gold);
+
+  font-size: 21px;
+
+}
+
+
+.data-article-page
+.seo-process-card h4 {
+
+  margin: 24px 0 8px;
+
+  color: #fff;
+
+  font-size: 14px;
+
+}
+
+
+.data-article-page
+.seo-process-card p {
+
+  margin: 0;
+
+  color: #96979a;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+}
+
+
+/* -----------------------------------------
+   DISTRIBUTION FLOW
+----------------------------------------- */
+
+.data-article-page
+.seo-distribution-flow {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  gap: 9px;
+
+  align-items: center;
+
+  margin-top: 32px;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > div {
+
+  min-height: 145px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 18px 10px;
+
+  text-align: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--card);
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > div > i {
+
+  margin-bottom: 13px;
+
+  color: var(--gold);
+
+  font-size: 22px;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > div strong {
+
+  margin-bottom: 4px;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > div span {
+
+  color: #85868a;
+
+  font-size: 9px;
+
+}
+
+
+.data-article-page
+.seo-distribution-flow > i {
+
+  color: var(--gold);
+
+}
+
+
+/* -----------------------------------------
+   SEO FOUNDATIONS
+----------------------------------------- */
+
+.data-article-page
+.seo-foundation-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+}
+
+
+.data-article-page
+.seo-foundation-grid > div {
+
+  padding: 21px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--card);
+
+}
+
+
+.data-article-page
+.seo-foundation-grid i {
+
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--gold);
+
+  font-size: 21px;
+
+}
+
+
+.data-article-page
+.seo-foundation-grid span {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+}
+
+
+.data-article-page
+.seo-foundation-grid strong {
+
+  display: block;
+
+  color: #d0d1d3;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1.6;
+
+}
+
+
+/* -----------------------------------------
+   CONFIDENTIAL WORK
+----------------------------------------- */
+
+.data-article-page
+.confidential-work-card {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin: 85px 0;
+
+  padding: 28px;
+
+  border: 1px solid rgba(235, 176, 32, 0.16);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(235, 176, 32, 0.055),
+      rgba(255, 255, 255, 0.012)
+    );
+
+}
+
+
+.data-article-page
+.confidential-icon {
+
+  width: 46px;
+
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(235, 176, 32, 0.25);
+
+  border-radius: 12px;
+
+  background: rgba(235, 176, 32, 0.07);
+
+  color: var(--gold);
+
+  font-size: 18px;
+
+}
+
+
+.data-article-page
+.confidential-work-card span {
+
+  color: var(--gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+}
+
+
+.data-article-page
+.confidential-work-card h3 {
+
+  margin: 7px 0 10px;
+
+  color: #fff;
+
+  font-size: 21px;
+
+}
+
+
+.data-article-page
+.confidential-work-card p {
+
+  color: #a2a3a6;
+
+  font-size: 11px;
+
+  line-height: 1.75;
+
 }
 
 /* =========================================================
