@@ -1,1320 +1,1197 @@
 <!DOCTYPE html>
 <html lang="en" class="max-width-d">
-  
+
 <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Spending Behavior Analysis | Luke Leona</title>
-    <meta
-  name="description"
-  content="A data analytics case study by Luke Leona exploring customer spending behavior using EDA, K-Means clustering, Apriori association analysis, and ARIMA forecasting."
-/>
-    <meta name="keywords" content="" />
-    <meta name="author" content="Retrina Group" />
-    <!--  FavIcon  -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
-    <!-- Bootstrap Css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <!-- Bootstrap Icon -->
-    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
-    <!-- Malihu Jquery Custom ScrollBar Css -->
-    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
-    <!-- Animate Css -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <!-- Swiper Css -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- Magnific Popup Css -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Spending Behavior Analysis | Luke Leona</title>
+  <meta name="description"
+    content="A data analytics case study by Luke Leona exploring customer spending behavior using EDA, K-Means clustering, Apriori association analysis, and ARIMA forecasting." />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Luke Mark P. Leona" />
+  <!--  FavIcon  -->
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+  <!-- Bootstrap Css -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+  <!-- Malihu Jquery Custom ScrollBar Css -->
+  <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
+  <!-- Animate Css -->
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <!-- Swiper Css -->
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <!-- Magnific Popup Css -->
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
-    <!--  Custom Style Css  -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!--  Color Css  -->
-    <link rel="stylesheet" href="assets/colors/golden.css" id="option-color">
+  <!--  Custom Style Css  -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!--  Color Css  -->
+  <link rel="stylesheet" href="assets/colors/golden.css" id="option-color">
 
-<!-- Spending Behavior Case Study -->
-<link rel="stylesheet" href="assets/css/portfolio-case-study.css">
+  <!-- Spending Behavior Case Study -->
+  <link rel="stylesheet" href="assets/css/portfolio-case-study.css">
 
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-  </head>
- <body class="ajax-page-visible dark-arshia max-width-d case-study-page">
-    <div id="ajax-page" class="ajax-page-content">
-      <div class="single-portfolio-wrapper">
-        <div class="container">
-          <!-- Ajax-page-nav Start -->
-          <div class="ajax-page-nav">
-            <div class="nav-item ajax-page-prev-next">
-          
-              <a class="ajax-page-load" href="let-performance-analysis.html">
-                <i class="bi bi-chevron-right"></i>
-              </a>
-            </div>
-            <div class="nav-item ajax-page-close-button">
-              <a class="ajax-page-close-button" href="index.html#portfolio">
-                <i class="bi bi-x"></i>
-              </a>
-            </div>
+</head>
+
+<body class="ajax-page-visible dark-arshia max-width-d case-study-page">
+  <div id="ajax-page" class="ajax-page-content">
+    <div class="single-portfolio-wrapper">
+      <div class="container">
+        <!-- Ajax-page-nav Start -->
+        <div class="ajax-page-nav">
+          <div class="nav-item ajax-page-prev-next">
+
+            <a class="ajax-page-load" href="let-performance-analysis.html">
+              <i class="bi bi-chevron-right"></i>
+            </a>
           </div>
-          <!-- Ajax-page-nav End -->
-  <!--  Single Portfolio Start  -->
+          <div class="nav-item ajax-page-close-button">
+            <a class="ajax-page-close-button" href="index.html#portfolio">
+              <i class="bi bi-x"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Ajax-page-nav End -->
+        <!--  Single Portfolio Start  -->
 
-<div class="row project-case-study-row">
+        <div class="row project-case-study-row">
 
-  <!-- =========================
+          <!-- =========================
        LEFT / MAIN CONTENT
   ========================== -->
 
-  <div class="col-lg-8 post-content">
+          <div class="col-lg-8 post-content">
 
-    <div class="single-post">
-
-
-      <!-- PROJECT HERO -->
-
-      <section class="project-hero">
-
-        <div class="project-eyebrow">
-          DATA ANALYTICS <span>•</span> CUSTOMER BEHAVIOR
-        </div>
-
-        <h1>
-          Spending Behavior
-          <span>Analysis</span>
-        </h1>
-
-        <p class="project-hero-description">
-          Exploring customer spending patterns, identifying behavioral segments,
-          discovering purchasing relationships, and forecasting future transaction trends.
-        </p>
-
-        <div class="project-tech-list">
-
-          <span>Python</span>
-
-          <span>Pandas</span>
-
-          <span>K-Means</span>
-
-          <span>Apriori</span>
-
-          <span>ARIMA</span>
-
-        </div>
+            <div class="single-post">
 
 
-        <div class="project-hero-actions">
+              <!-- PROJECT HERO -->
 
-          <a
-            href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-primary-btn"
-          >
+              <section class="project-hero">
 
-            <i class="bi bi-github"></i>
-
-            View Project
-
-            <i class="bi bi-arrow-up-right"></i>
-
-          </a>
-
-
-          <a
-            href="#project-analysis"
-            class="project-secondary-btn"
-          >
-
-            Explore Analysis
-
-            <i class="bi bi-arrow-down"></i>
-
-          </a>
-
-        </div>
-
-      </section>
-
-                
-                 <div class="owl-carousel portfolio-page-carousel">
-                  <!-- Item 01 -->
-                  <div class="entry-image">
-                   <img
-  src="assets/img/blog-img-05.png"
-  alt="Spending Behavior Analysis data visualization overview"
->
-                  </div>
-                  <!-- Item 02 -->
-                  <div class="entry-image">
-                    <img
-  src="assets/img/blog-img-04.png"
-  alt="Customer spending and segmentation analysis visualization"
->
-                  </div>
-                  <!-- Item 03 -->
-                  <div class="entry-image">
-                    <img
-  src="assets/img/blog-img-03.png"
-  alt="Spending trend and forecasting analysis visualization"
->
-                  </div>
+                <div class="project-eyebrow">
+                  DATA ANALYTICS <span>•</span> CUSTOMER BEHAVIOR
                 </div>
 
-                <!-- PROJECT HIGHLIGHTS -->
-<div class="project-stats">
+                <h1>
+                  Spending Behavior
+                  <span>Analysis</span>
+                </h1>
 
-  <div class="project-stat-card">
+                <p class="project-hero-description">
+                  Exploring customer spending patterns, identifying behavioral segments,
+                  discovering purchasing relationships, and forecasting future transaction trends.
+                </p>
 
-    <div class="stat-icon">
-      <i class="bi bi-cart3"></i>
-    </div>
+                <div class="project-tech-list">
 
-    <span class="stat-label">
-      Top Category
-    </span>
+                  <span>Python</span>
 
-    <strong>
-      Grocery
-    </strong>
+                  <span>Pandas</span>
 
-    <small>
-      Highest overall spending
-    </small>
+                  <span>K-Means</span>
 
-  </div>
+                  <span>Apriori</span>
 
+                  <span>ARIMA</span>
 
-  <div class="project-stat-card">
-
-    <div class="stat-icon">
-      <i class="bi bi-people"></i>
-    </div>
-
-    <span class="stat-label">
-      Spending Share
-    </span>
-
-    <strong>
-      55%
-    </strong>
-
-    <small>
-      Female customers
-    </small>
-
-  </div>
+                </div>
 
 
-  <div class="project-stat-card">
+                <div class="project-hero-actions">
 
-    <div class="stat-icon">
-      <i class="bi bi-bar-chart"></i>
-    </div>
+                  <a href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
+                    target="_blank" rel="noopener noreferrer" class="project-primary-btn">
 
-    <span class="stat-label">
-      Key Segments
-    </span>
+                    <i class="bi bi-github"></i>
 
-    <strong>
-      Gen Z + Millennials
-    </strong>
+                    View Project
 
-    <small>
-      Highest average spending
-    </small>
+                    <i class="bi bi-arrow-up-right"></i>
 
-  </div>
+                  </a>
 
 
-  <div class="project-stat-card">
+                  <a href="#project-analysis" class="project-secondary-btn">
 
-    <div class="stat-icon">
-      <i class="bi bi-diagram-3"></i>
-    </div>
+                    Explore Analysis
 
-    <span class="stat-label">
-      Methods
-    </span>
+                    <i class="bi bi-arrow-down"></i>
 
-    <strong>
-      4
-    </strong>
+                  </a>
 
-    <small>
-      Analytical techniques
-    </small>
+                </div>
 
-  </div>
-
-</div>
+              </section>
 
 
+              <div class="owl-carousel portfolio-page-carousel">
+                <!-- Item 01 -->
+                <div class="entry-image">
+                  <img src="assets/img/blog-img-05.png" alt="Spending Behavior Analysis data visualization overview">
+                </div>
+                <!-- Item 02 -->
+                <div class="entry-image">
+                  <img src="assets/img/blog-img-04.png" alt="Customer spending and segmentation analysis visualization">
+                </div>
+                <!-- Item 03 -->
+                <div class="entry-image">
+                  <img src="assets/img/blog-img-03.png" alt="Spending trend and forecasting analysis visualization">
+                </div>
+              </div>
 
-           <!-- ======================================================
+              <!-- PROJECT HIGHLIGHTS -->
+              <div class="project-stats">
+
+                <div class="project-stat-card">
+
+                  <div class="stat-icon">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <span class="stat-label">
+                    Top Category
+                  </span>
+
+                  <strong>
+                    Grocery
+                  </strong>
+
+                  <small>
+                    Highest overall spending
+                  </small>
+
+                </div>
+
+
+                <div class="project-stat-card">
+
+                  <div class="stat-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+
+                  <span class="stat-label">
+                    Spending Share
+                  </span>
+
+                  <strong>
+                    55%
+                  </strong>
+
+                  <small>
+                    Female customers
+                  </small>
+
+                </div>
+
+
+                <div class="project-stat-card">
+
+                  <div class="stat-icon">
+                    <i class="bi bi-bar-chart"></i>
+                  </div>
+
+                  <span class="stat-label">
+                    Key Segments
+                  </span>
+
+                  <strong>
+                    Gen Z + Millennials
+                  </strong>
+
+                  <small>
+                    Highest average spending
+                  </small>
+
+                </div>
+
+
+                <div class="project-stat-card">
+
+                  <div class="stat-icon">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+
+                  <span class="stat-label">
+                    Methods
+                  </span>
+
+                  <strong>
+                    4
+                  </strong>
+
+                  <small>
+                    Analytical techniques
+                  </small>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- ======================================================
      01 - PROJECT OVERVIEW
 ======================================================= -->
 
-<section class="project-section">
+              <section class="project-section">
 
-  <div class="project-section-heading">
+                <div class="project-section-heading">
 
-    <span>
-      01 — THE PROJECT
-    </span>
+                  <span>
+                    01 — THE PROJECT
+                  </span>
 
-    <h2>
-      Project Overview
-    </h2>
+                  <h2>
+                    Project Overview
+                  </h2>
 
-  </div>
+                </div>
 
-  <p class="project-lead">
-    This project analyzes credit card transaction data to uncover customer
-    spending patterns, identify meaningful market segments, and forecast
-    future spending behavior.
-  </p>
+                <p class="project-lead">
+                  This project analyzes credit card transaction data to uncover customer
+                  spending patterns, identify meaningful market segments, and forecast
+                  future spending behavior.
+                </p>
 
-  <p>
-    Rather than simply reporting transaction totals, the analysis combines
-    exploratory analytics, machine learning, association rule mining, and
-    time-series forecasting to transform raw financial data into actionable
-    business insights.
-  </p>
+                <p>
+                  Rather than simply reporting transaction totals, the analysis combines
+                  exploratory analytics, machine learning, association rule mining, and
+                  time-series forecasting to transform raw financial data into actionable
+                  business insights.
+                </p>
 
-</section>
+              </section>
 
 
-<!-- ======================================================
+              <!-- ======================================================
      02 - DATASET
 ======================================================= -->
 
-<section class="project-section">
+              <section class="project-section">
 
-  <div class="project-section-heading">
+                <div class="project-section-heading">
 
-    <span>
-      02 — THE DATA
-    </span>
+                  <span>
+                    02 — THE DATA
+                  </span>
 
-    <h2>
-      Dataset at a Glance
-    </h2>
+                  <h2>
+                    Dataset at a Glance
+                  </h2>
 
-    <p>
-      The dataset combines transactional, categorical, temporal,
-      and customer demographic information.
-    </p>
+                  <p>
+                    The dataset combines transactional, categorical, temporal,
+                    and customer demographic information.
+                  </p>
 
-  </div>
-
-
-  <div class="dataset-grid">
+                </div>
 
 
-    <div class="dataset-card">
-
-      <i class="bi bi-calendar3"></i>
-
-      <div>
-
-        <strong>
-          Time
-        </strong>
-
-        <span>
-          Transaction Year &amp; Month
-        </span>
-
-      </div>
-
-    </div>
+                <div class="dataset-grid">
 
 
-    <div class="dataset-card">
+                  <div class="dataset-card">
 
-      <i class="bi bi-tags"></i>
+                    <i class="bi bi-calendar3"></i>
 
-      <div>
+                    <div>
 
-        <strong>
-          Categories
-        </strong>
+                      <strong>
+                        Time
+                      </strong>
 
-        <span>
-          Grocery, Shopping, Travel &amp; more
-        </span>
+                      <span>
+                        Transaction Year &amp; Month
+                      </span>
 
-      </div>
+                    </div>
 
-    </div>
-
-
-    <div class="dataset-card">
-
-      <i class="bi bi-cash-stack"></i>
-
-      <div>
-
-        <strong>
-          Transactions
-        </strong>
-
-        <span>
-          Total transaction amounts
-        </span>
-
-      </div>
-
-    </div>
+                  </div>
 
 
-    <div class="dataset-card">
+                  <div class="dataset-card">
 
-      <i class="bi bi-person-lines-fill"></i>
+                    <i class="bi bi-tags"></i>
 
-      <div>
+                    <div>
 
-        <strong>
-          Demographics
-        </strong>
+                      <strong>
+                        Categories
+                      </strong>
 
-        <span>
-          Gender, occupation &amp; age data
-        </span>
+                      <span>
+                        Grocery, Shopping, Travel &amp; more
+                      </span>
 
-      </div>
+                    </div>
 
-    </div>
-
-  </div>
-
-</section>
+                  </div>
 
 
-<!-- ======================================================
+                  <div class="dataset-card">
+
+                    <i class="bi bi-cash-stack"></i>
+
+                    <div>
+
+                      <strong>
+                        Transactions
+                      </strong>
+
+                      <span>
+                        Total transaction amounts
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="dataset-card">
+
+                    <i class="bi bi-person-lines-fill"></i>
+
+                    <div>
+
+                      <strong>
+                        Demographics
+                      </strong>
+
+                      <span>
+                        Gender, occupation &amp; age data
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <!-- ======================================================
      03 - METHODOLOGY
 ======================================================= -->
 
-<section class="project-section">
+              <section class="project-section">
 
-  <div class="project-section-heading">
+                <div class="project-section-heading">
 
-    <span>
-      03 — METHODOLOGY
-    </span>
+                  <span>
+                    03 — METHODOLOGY
+                  </span>
 
-    <h2>
-      How I Analyzed the Data
-    </h2>
+                  <h2>
+                    How I Analyzed the Data
+                  </h2>
 
-    <p>
-      Four analytical approaches were combined to move from
-      exploration to customer segmentation, pattern discovery,
-      and forecasting.
-    </p>
+                  <p>
+                    Four analytical approaches were combined to move from
+                    exploration to customer segmentation, pattern discovery,
+                    and forecasting.
+                  </p>
 
-  </div>
-
-
-  <div class="method-grid">
+                </div>
 
 
-    <article class="method-card">
-
-      <span class="method-number">
-        01
-      </span>
-
-      <div class="method-icon">
-        <i class="bi bi-search"></i>
-      </div>
-
-      <h4>
-        Explore
-      </h4>
-
-      <strong>
-        EDA
-      </strong>
-
-      <p>
-        Examined transaction distributions, spending behavior,
-        demographics, categories, and temporal patterns.
-      </p>
-
-    </article>
+                <div class="method-grid">
 
 
-    <article class="method-card">
+                  <article class="method-card">
 
-      <span class="method-number">
-        02
-      </span>
+                    <span class="method-number">
+                      01
+                    </span>
 
-      <div class="method-icon">
-        <i class="bi bi-people"></i>
-      </div>
+                    <div class="method-icon">
+                      <i class="bi bi-search"></i>
+                    </div>
 
-      <h4>
-        Segment
-      </h4>
+                    <h4>
+                      Explore
+                    </h4>
 
-      <strong>
-        K-MEANS
-      </strong>
+                    <strong>
+                      EDA
+                    </strong>
 
-      <p>
-        Grouped customers into meaningful segments based on
-        similarities in their spending behavior.
-      </p>
+                    <p>
+                      Examined transaction distributions, spending behavior,
+                      demographics, categories, and temporal patterns.
+                    </p>
 
-    </article>
-
-
-    <article class="method-card">
-
-      <span class="method-number">
-        03
-      </span>
-
-      <div class="method-icon">
-        <i class="bi bi-diagram-3"></i>
-      </div>
-
-      <h4>
-        Discover
-      </h4>
-
-      <strong>
-        APRIORI
-      </strong>
-
-      <p>
-        Identified relationships and associations between
-        customer spending categories.
-      </p>
-
-    </article>
+                  </article>
 
 
-    <article class="method-card">
+                  <article class="method-card">
 
-      <span class="method-number">
-        04
-      </span>
+                    <span class="method-number">
+                      02
+                    </span>
 
-      <div class="method-icon">
-        <i class="bi bi-graph-up-arrow"></i>
-      </div>
+                    <div class="method-icon">
+                      <i class="bi bi-people"></i>
+                    </div>
 
-      <h4>
-        Forecast
-      </h4>
+                    <h4>
+                      Segment
+                    </h4>
 
-      <strong>
-        ARIMA
-      </strong>
+                    <strong>
+                      K-MEANS
+                    </strong>
 
-      <p>
-        Modeled historical patterns to understand future
-        spending behavior and seasonal movement.
-      </p>
+                    <p>
+                      Grouped customers into meaningful segments based on
+                      similarities in their spending behavior.
+                    </p>
 
-    </article>
-
-  </div>
-
-</section>
+                  </article>
 
 
-<!-- ======================================================
+                  <article class="method-card">
+
+                    <span class="method-number">
+                      03
+                    </span>
+
+                    <div class="method-icon">
+                      <i class="bi bi-diagram-3"></i>
+                    </div>
+
+                    <h4>
+                      Discover
+                    </h4>
+
+                    <strong>
+                      APRIORI
+                    </strong>
+
+                    <p>
+                      Identified relationships and associations between
+                      customer spending categories.
+                    </p>
+
+                  </article>
+
+
+                  <article class="method-card">
+
+                    <span class="method-number">
+                      04
+                    </span>
+
+                    <div class="method-icon">
+                      <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h4>
+                      Forecast
+                    </h4>
+
+                    <strong>
+                      ARIMA
+                    </strong>
+
+                    <p>
+                      Modeled historical patterns to understand future
+                      spending behavior and seasonal movement.
+                    </p>
+
+                  </article>
+
+                </div>
+
+              </section>
+
+
+              <!-- ======================================================
      04 - DATA ANALYSIS
 ======================================================= -->
 
-<section
-  class="project-section"
-  id="project-analysis"
->
+              <section class="project-section" id="project-analysis">
 
-  <div class="project-section-heading">
+                <div class="project-section-heading">
 
-    <span>
-      04 — ANALYSIS
-    </span>
+                  <span>
+                    04 — ANALYSIS
+                  </span>
 
-    <h2>
-      What the Data Revealed
-    </h2>
+                  <h2>
+                    What the Data Revealed
+                  </h2>
 
-    <p>
-      Key behavioral patterns discovered across spending categories,
-      demographics, income levels, generations, and time.
-    </p>
+                  <p>
+                    Key behavioral patterns discovered across spending categories,
+                    demographics, income levels, generations, and time.
+                  </p>
 
-  </div>
+                </div>
 
 
-  <div class="chart-grid">
+                <div class="chart-grid">
 
 
-    <!-- CATEGORY -->
+                  <!-- CATEGORY -->
 
-    <article class="chart-card">
+                  <article class="chart-card">
 
-      <div class="chart-card-header">
+                    <div class="chart-card-header">
 
-        <span>
-          Category Analysis
-        </span>
+                      <span>
+                        Category Analysis
+                      </span>
 
-        <h3>
-          Spending by Category
-        </h3>
+                      <h3>
+                        Spending by Category
+                      </h3>
 
-      </div>
+                    </div>
 
-      <div class="chart-container">
-        <canvas id="categoryChart"></canvas>
-      </div>
+                    <div class="chart-container">
+                      <canvas id="categoryChart"></canvas>
+                    </div>
 
-      <div class="chart-insight">
+                    <div class="chart-insight">
 
-        <i class="bi bi-lightbulb"></i>
+                      <i class="bi bi-lightbulb"></i>
 
-        <p>
-          <strong>Insight:</strong>
-          Grocery represents the highest spending category,
-          highlighting the dominance of essential purchases.
-        </p>
+                      <p>
+                        <strong>Insight:</strong>
+                        Grocery represents the highest spending category,
+                        highlighting the dominance of essential purchases.
+                      </p>
 
-      </div>
+                    </div>
 
-    </article>
+                  </article>
 
 
-    <!-- GENDER -->
+                  <!-- GENDER -->
 
-    <article class="chart-card">
+                  <article class="chart-card">
 
-      <div class="chart-card-header">
+                    <div class="chart-card-header">
 
-        <span>
-          Demographic Analysis
-        </span>
+                      <span>
+                        Demographic Analysis
+                      </span>
 
-        <h3>
-          Spending by Gender
-        </h3>
+                      <h3>
+                        Spending by Gender
+                      </h3>
 
-      </div>
+                    </div>
 
-      <div class="chart-container chart-container-small">
-        <canvas id="genderChart"></canvas>
-      </div>
+                    <div class="chart-container chart-container-small">
+                      <canvas id="genderChart"></canvas>
+                    </div>
 
-      <div class="chart-insight">
+                    <div class="chart-insight">
 
-        <i class="bi bi-lightbulb"></i>
+                      <i class="bi bi-lightbulb"></i>
 
-        <p>
-          <strong>Insight:</strong>
-          Female customers account for approximately 55%
-          of observed total spending.
-        </p>
+                      <p>
+                        <strong>Insight:</strong>
+                        Female customers account for approximately 55%
+                        of observed total spending.
+                      </p>
 
-      </div>
+                    </div>
 
-    </article>
+                  </article>
 
 
-    <!-- SALARY -->
+                  <!-- SALARY -->
 
-    <article class="chart-card">
+                  <article class="chart-card">
 
-      <div class="chart-card-header">
+                    <div class="chart-card-header">
 
-        <span>
-          Income Analysis
-        </span>
+                      <span>
+                        Income Analysis
+                      </span>
 
-        <h3>
-          Average Spending by Salary
-        </h3>
+                      <h3>
+                        Average Spending by Salary
+                      </h3>
 
-      </div>
+                    </div>
 
-      <div class="chart-container">
-        <canvas id="salaryChart"></canvas>
-      </div>
+                    <div class="chart-container">
+                      <canvas id="salaryChart"></canvas>
+                    </div>
 
-      <div class="chart-insight">
+                    <div class="chart-insight">
 
-        <i class="bi bi-lightbulb"></i>
+                      <i class="bi bi-lightbulb"></i>
 
-        <p>
-          <strong>Insight:</strong>
-          Lower-income segments demonstrate relatively high
-          average credit-card spending.
-        </p>
+                      <p>
+                        <strong>Insight:</strong>
+                        Lower-income segments demonstrate relatively high
+                        average credit-card spending.
+                      </p>
 
-      </div>
+                    </div>
 
-    </article>
+                  </article>
 
 
-    <!-- GENERATION -->
+                  <!-- GENERATION -->
 
-    <article class="chart-card">
+                  <article class="chart-card">
 
-      <div class="chart-card-header">
+                    <div class="chart-card-header">
 
-        <span>
-          Generational Analysis
-        </span>
+                      <span>
+                        Generational Analysis
+                      </span>
 
-        <h3>
-          Spending by Generation
-        </h3>
+                      <h3>
+                        Spending by Generation
+                      </h3>
 
-      </div>
+                    </div>
 
-      <div class="chart-container">
-        <canvas id="generationChart"></canvas>
-      </div>
+                    <div class="chart-container">
+                      <canvas id="generationChart"></canvas>
+                    </div>
 
-      <div class="chart-insight">
+                    <div class="chart-insight">
 
-        <i class="bi bi-lightbulb"></i>
+                      <i class="bi bi-lightbulb"></i>
 
-        <p>
-          <strong>Insight:</strong>
-          Millennials and Gen Z show the highest average
-          spending among the observed generations.
-        </p>
+                      <p>
+                        <strong>Insight:</strong>
+                        Millennials and Gen Z show the highest average
+                        spending among the observed generations.
+                      </p>
 
-      </div>
+                    </div>
 
-    </article>
+                  </article>
 
 
-    <!-- TREND -->
+                  <!-- TREND -->
 
-    <article class="chart-card chart-card-wide">
+                  <article class="chart-card chart-card-wide">
 
-      <div class="chart-card-header">
+                    <div class="chart-card-header">
 
-        <span>
-          Time-Series Analysis
-        </span>
+                      <span>
+                        Time-Series Analysis
+                      </span>
 
-        <h3>
-          Spending Trend Overview
-        </h3>
+                      <h3>
+                        Spending Trend Overview
+                      </h3>
 
-      </div>
+                    </div>
 
-      <div class="chart-container chart-container-wide">
-        <canvas id="trendChart"></canvas>
-      </div>
+                    <div class="chart-container chart-container-wide">
+                      <canvas id="trendChart"></canvas>
+                    </div>
 
-      <div class="chart-insight">
+                    <div class="chart-insight">
 
-        <i class="bi bi-lightbulb"></i>
+                      <i class="bi bi-lightbulb"></i>
 
-        <p>
-          <strong>Insight:</strong>
-          Spending patterns fluctuate over time, revealing
-          seasonal changes that can support forecasting
-          and financial planning.
-        </p>
+                      <p>
+                        <strong>Insight:</strong>
+                        Spending patterns fluctuate over time, revealing
+                        seasonal changes that can support forecasting
+                        and financial planning.
+                      </p>
 
-      </div>
+                    </div>
 
-    </article>
+                  </article>
 
-  </div>
+                </div>
 
-</section>
+              </section>
 
 
-<!-- ======================================================
+              <!-- ======================================================
      05 - BUSINESS IMPACT
 ======================================================= -->
 
-<section class="project-section">
+              <section class="project-section">
 
-  <div class="project-section-heading">
+                <div class="project-section-heading">
 
-    <span>
-      05 — BUSINESS IMPACT
-    </span>
+                  <span>
+                    05 — BUSINESS IMPACT
+                  </span>
 
-    <h2>
-      From Data to Decisions
-    </h2>
+                  <h2>
+                    From Data to Decisions
+                  </h2>
 
-    <p>
-      Behavioral transaction data becomes most valuable when
-      the findings are translated into practical business actions.
-    </p>
+                  <p>
+                    Behavioral transaction data becomes most valuable when
+                    the findings are translated into practical business actions.
+                  </p>
 
-  </div>
-
-
-  <div class="impact-grid">
+                </div>
 
 
-    <article class="impact-card">
-
-      <span>
-        01
-      </span>
-
-      <i class="bi bi-bullseye"></i>
-
-      <h4>
-        Smarter Targeting
-      </h4>
-
-      <p>
-        Replace generic campaigns with behavior-based targeting
-        tailored to the spending priorities of each customer segment.
-      </p>
-
-    </article>
+                <div class="impact-grid">
 
 
-    <article class="impact-card">
+                  <article class="impact-card">
 
-      <span>
-        02
-      </span>
+                    <span>
+                      01
+                    </span>
 
-      <i class="bi bi-heart"></i>
+                    <i class="bi bi-bullseye"></i>
 
-      <h4>
-        Better Retention
-      </h4>
+                    <h4>
+                      Smarter Targeting
+                    </h4>
 
-      <p>
-        Use customer segments to design personalized loyalty
-        strategies based on real purchasing behavior.
-      </p>
+                    <p>
+                      Replace generic campaigns with behavior-based targeting
+                      tailored to the spending priorities of each customer segment.
+                    </p>
 
-    </article>
-
-
-    <article class="impact-card">
-
-      <span>
-        03
-      </span>
-
-      <i class="bi bi-graph-up-arrow"></i>
-
-      <h4>
-        Plan Ahead
-      </h4>
-
-      <p>
-        Forecasting enables organizations to anticipate changing
-        spending patterns and seasonal demand.
-      </p>
-
-    </article>
+                  </article>
 
 
-    <article class="impact-card">
+                  <article class="impact-card">
 
-      <span>
-        04
-      </span>
+                    <span>
+                      02
+                    </span>
 
-      <i class="bi bi-currency-dollar"></i>
+                    <i class="bi bi-heart"></i>
 
-      <h4>
-        Optimize Revenue
-      </h4>
+                    <h4>
+                      Better Retention
+                    </h4>
 
-      <p>
-        Prioritize valuable customer groups and high-frequency
-        categories to improve marketing efficiency.
-      </p>
+                    <p>
+                      Use customer segments to design personalized loyalty
+                      strategies based on real purchasing behavior.
+                    </p>
 
-    </article>
-
-  </div>
+                  </article>
 
 
-<div class="project-bottom-line">
+                  <article class="impact-card">
 
-  <div class="bottom-line-icon">
-    <i class="bi bi-lightning-charge"></i>
-  </div>
+                    <span>
+                      03
+                    </span>
 
-  <span>
-    THE BOTTOM LINE
-  </span>
+                    <i class="bi bi-graph-up-arrow"></i>
 
-  <h3>
-    Data becomes valuable when it leads to better decisions—not just better reports.
-  </h3>
+                    <h4>
+                      Plan Ahead
+                    </h4>
 
-  <p>
-    By combining customer segmentation, association analysis, and forecasting,
-    this project demonstrates how transaction data can support smarter targeting,
-    stronger customer retention, more informed planning, and better revenue decisions.
-  </p>
+                    <p>
+                      Forecasting enables organizations to anticipate changing
+                      spending patterns and seasonal demand.
+                    </p>
+
+                  </article>
 
 
-  <div class="bottom-line-actions">
+                  <article class="impact-card">
 
-    <a
-      href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="bottom-line-button"
-    >
+                    <span>
+                      04
+                    </span>
 
-      <i class="bi bi-github"></i>
+                    <i class="bi bi-currency-dollar"></i>
 
-      Explore the Full Analysis
+                    <h4>
+                      Optimize Revenue
+                    </h4>
 
-      <i class="bi bi-arrow-up-right"></i>
+                    <p>
+                      Prioritize valuable customer groups and high-frequency
+                      categories to improve marketing efficiency.
+                    </p>
 
-    </a>
+                  </article>
 
-  </div>
+                </div>
 
-</div>
 
-</section>
+                <div class="project-bottom-line">
 
-    <!-- CONCLUSION -->
+                  <div class="bottom-line-icon">
+                    <i class="bi bi-lightning-charge"></i>
+                  </div>
+
+                  <span>
+                    THE BOTTOM LINE
+                  </span>
+
+                  <h3>
+                    Data becomes valuable when it leads to better decisions—not just better reports.
+                  </h3>
+
+                  <p>
+                    By combining customer segmentation, association analysis, and forecasting,
+                    this project demonstrates how transaction data can support smarter targeting,
+                    stronger customer retention, more informed planning, and better revenue decisions.
+                  </p>
+
+
+                  <div class="bottom-line-actions">
+
+                    <a href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
+                      target="_blank" rel="noopener noreferrer" class="bottom-line-button">
+
+                      <i class="bi bi-github"></i>
+
+                      Explore the Full Analysis
+
+                      <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+              <!-- CONCLUSION -->
+
+            </div>
+          </div>
+
+
+          <aside class="col-lg-3 ms-auto sidebar mt-5 mt-lg-0">
+
+            <div class="project-sidebar">
+
+              <div class="project-sidebar-title">
+
+                <span>
+                  PROJECT INFO
+                </span>
+
+                <h4>
+                  At a Glance
+                </h4>
 
               </div>
+
+
+              <div class="project-info-item">
+
+                <span>
+                  ROLE
+                </span>
+
+                <strong>
+                  Data Analyst
+                </strong>
+
+              </div>
+
+
+              <div class="project-info-item">
+
+                <span>
+                  PROJECT TYPE
+                </span>
+
+                <strong>
+                  Customer Behavior Analysis
+                </strong>
+
+              </div>
+
+
+              <div class="project-info-item">
+
+                <span>
+                  FOCUS
+                </span>
+
+                <strong>
+                  Financial Transaction Data
+                </strong>
+
+              </div>
+
+
+              <div class="project-info-item">
+
+                <span>
+                  TECHNIQUES
+                </span>
+
+                <div class="project-tags">
+
+                  <span>EDA</span>
+
+                  <span>K-Means</span>
+
+                  <span>Apriori</span>
+
+                  <span>ARIMA</span>
+
+                </div>
+
+              </div>
+
+
+              <div class="project-info-item">
+
+                <span>
+                  TOOLS
+                </span>
+
+                <div class="project-tags">
+
+                  <span>Python</span>
+
+                  <span>Pandas</span>
+
+                  <span>Matplotlib</span>
+
+                  <span>Scikit-learn</span>
+
+                </div>
+
+              </div>
+
+
+              <a href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
+                target="_blank" rel="noopener noreferrer" class="sidebar-github-btn">
+
+                <i class="bi bi-github"></i>
+
+                View Repository
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
             </div>
 
-            
-<aside class="col-lg-3 ms-auto sidebar mt-5 mt-lg-0">
+          </aside>
 
-  <div class="project-sidebar">
-
-    <div class="project-sidebar-title">
-
-      <span>
-        PROJECT INFO
-      </span>
-
-      <h4>
-        At a Glance
-      </h4>
-
-    </div>
-
-
-    <div class="project-info-item">
-
-      <span>
-        ROLE
-      </span>
-
-      <strong>
-        Data Analyst
-      </strong>
-
-    </div>
-
-
-    <div class="project-info-item">
-
-      <span>
-        PROJECT TYPE
-      </span>
-
-      <strong>
-        Customer Behavior Analysis
-      </strong>
-
-    </div>
-
-
-    <div class="project-info-item">
-
-      <span>
-        FOCUS
-      </span>
-
-      <strong>
-        Financial Transaction Data
-      </strong>
-
-    </div>
-
-
-    <div class="project-info-item">
-
-      <span>
-        TECHNIQUES
-      </span>
-
-      <div class="project-tags">
-
-        <span>EDA</span>
-
-        <span>K-Means</span>
-
-        <span>Apriori</span>
-
-        <span>ARIMA</span>
-
+        </div>
+        <!--  Single Portfolio End  -->
       </div>
-
     </div>
-
-
-    <div class="project-info-item">
-
-      <span>
-        TOOLS
-      </span>
-
-      <div class="project-tags">
-
-        <span>Python</span>
-
-        <span>Pandas</span>
-
-        <span>Matplotlib</span>
-
-        <span>Scikit-learn</span>
-
-      </div>
-
-    </div>
-
-
-    <a
-      href="https://github.com/CodeofLuke/Data-Science-and-Analytics-Projects/tree/main/Spending%20Behavior%20Analysis"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="sidebar-github-btn"
-    >
-
-      <i class="bi bi-github"></i>
-
-      View Repository
-
-      <i class="bi bi-arrow-up-right"></i>
-
-    </a>
-
   </div>
 
-</aside>
-
-          </div>
-          <!--  Single Portfolio End  -->
-        </div>
-      </div>
+  <!--  Color Pallet  -->
+  <div id="color-switcher" class="color-switcher">
+    <div class="text-center color-pallet hide">
+      <h6 class="theme-skin-title">Light &amp; Dark</h6>
+      <ul class="color-scheme list-inline">
+        <li class="list-inline-item">
+          <a href="javascript:void(0)" class="light-scheme"><i class="bi bi-brightness-high"></i> Light</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="javascript:void(0)" class="dark-scheme active"><i class="bi bi-moon"></i> Dark</a>
+        </li>
+      </ul>
+      <h6 class="text-center mt-3 text-dark">Select your color</h6>
+      <ul class="pattern">
+        <li>
+          <a class="color1" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color2" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color3" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color4" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color5" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color6" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color7" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color8" href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a class="color9" href="javascript:void(0)"></a>
+        </li>
+      </ul>
     </div>
-
-    <!--  Color Pallet  -->
-    <div id="color-switcher" class="color-switcher">
-      <div class="text-center color-pallet hide">
-        <h6 class="theme-skin-title">Light &amp; Dark</h6>
-        <ul class="color-scheme list-inline">
-            <li class="list-inline-item">
-                <a href="javascript:void(0)" class="light-scheme"><i class="bi bi-brightness-high"></i> Light</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="javascript:void(0)" class="dark-scheme active"><i class="bi bi-moon"></i> Dark</a>
-            </li>
-          </ul>
-          <h6 class="text-center mt-3 text-dark">Select your color</h6>
-          <ul class="pattern">
-              <li>
-                  <a class="color1" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color2" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color3" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color4" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color5" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color6" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color7" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color8" href="javascript:void(0)"></a>
-              </li>
-              <li>
-                  <a class="color9" href="javascript:void(0)"></a>
-              </li>
-          </ul>
-      </div>
-      <div class="pallet-button hide">
-          <a href="javascript:void(0)" class="cp-toggle"><i class="bi bi-gear"></i></a>
-      </div>
+    <div class="pallet-button hide">
+      <a href="javascript:void(0)" class="cp-toggle"><i class="bi bi-gear"></i></a>
     </div>
-    
-    <!-- Mouase Magic Cursor Start -->
-    <div class="m-magic-cursor mmc-outer"></div>
-	  <div class="m-magic-cursor mmc-inner"></div>
-    <!-- Mouase Magic Cursor End -->
+  </div>
 
-    <!--  JavaScripts  -->
-    <!--  Jquery 3.4.1  -->
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-    <!--  Bootstrap Js  -->
-    <script src="assets/js/bootstrap.js"></script>
-    <!--  Malihu ScrollBar Js  -->
-    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!--  CountTo Js  -->
-    <script src="assets/js/jquery.countTo.js"></script>
-    <!--  Swiper Js  -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!--  Isotope Js  -->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!--  Magnific Popup Js  -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <!-- Mouase Magic Cursor Start -->
+  <div class="m-magic-cursor mmc-outer"></div>
+  <div class="m-magic-cursor mmc-inner"></div>
+  <!-- Mouase Magic Cursor End -->
 
-   
-    <script src="assets/js/luke.js"></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"398d0e35186742219fc4b15efc701f63","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script>
-
-/* =========================================================
-   SHARED CHART COLORS / OPTIONS
-========================================================= */
-
-const chartGold = '#dba423';
-const chartGoldSoft = 'rgba(219, 164, 35, 0.45)';
-const chartText = '#bfc0c3';
-const chartGrid = 'rgba(255, 255, 255, 0.06)';
+  <!--  JavaScripts  -->
+  <!--  Jquery 3.4.1  -->
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <!--  Bootstrap Js  -->
+  <script src="assets/js/bootstrap.js"></script>
+  <!--  Malihu ScrollBar Js  -->
+  <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!--  CountTo Js  -->
+  <script src="assets/js/jquery.countTo.js"></script>
+  <!--  Swiper Js  -->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!--  Isotope Js  -->
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <!--  Magnific Popup Js  -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
 
 
-const commonScales = {
+  <script src="assets/js/luke.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"398d0e35186742219fc4b15efc701f63","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+  <script>
 
-  x: {
+    /* =========================================================
+       SHARED CHART COLORS / OPTIONS
+    ========================================================= */
 
-    ticks: {
-      color: chartText,
-      font: {
-        size: 10
-      }
-    },
-
-    grid: {
-      color: chartGrid,
-      drawBorder: false
-    }
-
-  },
-
-  y: {
-
-    beginAtZero: true,
-
-    ticks: {
-      color: chartText,
-      font: {
-        size: 10
-      }
-    },
-
-    grid: {
-      color: chartGrid,
-      drawBorder: false
-    }
-
-  }
-
-};
+    const chartGold = '#dba423';
+    const chartGoldSoft = 'rgba(219, 164, 35, 0.45)';
+    const chartText = '#bfc0c3';
+    const chartGrid = 'rgba(255, 255, 255, 0.06)';
 
 
-/* =========================================================
-   CATEGORY CHART
-========================================================= */
+    const commonScales = {
 
-new Chart(
+      x: {
 
-  document.getElementById(
-    'categoryChart'
-  ),
+        ticks: {
+          color: chartText,
+          font: {
+            size: 10
+          }
+        },
 
-  {
-
-    type: 'bar',
-
-    data: {
-
-      labels: [
-        'Grocery',
-        'Shopping',
-        'Travel',
-        'Health',
-        'Personal Care'
-      ],
-
-      datasets: [
-
-        {
-
-          label:
-            'Relative Spending',
-
-          data: [
-            100,
-            85,
-            75,
-            40,
-            35
-          ],
-
-          backgroundColor:
-            chartGold,
-
-          borderRadius:
-            6,
-
-          borderSkipped:
-            false
-
+        grid: {
+          color: chartGrid,
+          drawBorder: false
         }
 
-      ]
+      },
 
-    },
+      y: {
 
-    options: {
+        beginAtZero: true,
 
-      responsive:
-        true,
+        ticks: {
+          color: chartText,
+          font: {
+            size: 10
+          }
+        },
 
-      maintainAspectRatio:
-        false,
-
-      scales:
-        commonScales,
-
-      plugins: {
-
-        legend: {
-          display:
-            false
+        grid: {
+          color: chartGrid,
+          drawBorder: false
         }
 
       }
 
-    }
-
-  }
-
-);
+    };
 
 
-/* =========================================================
-   GENDER CHART
-========================================================= */
+    /* =========================================================
+       CATEGORY CHART
+    ========================================================= */
 
-new Chart(
+    new Chart(
 
-  document.getElementById(
-    'genderChart'
-  ),
+      document.getElementById(
+        'categoryChart'
+      ),
 
-  {
+      {
 
-    type:
-      'doughnut',
+        type: 'bar',
 
-    data: {
+        data: {
 
-      labels: [
-        'Female',
-        'Male'
-      ],
-
-      datasets: [
-
-        {
-
-          data: [
-            55,
-            45
+          labels: [
+            'Grocery',
+            'Shopping',
+            'Travel',
+            'Health',
+            'Personal Care'
           ],
 
-          backgroundColor: [
-            chartGold,
-            '#48494d'
-          ],
+          datasets: [
 
-          borderColor: [
-            '#292a2e',
-            '#292a2e'
-          ],
+            {
 
-          borderWidth:
-            4,
+              label:
+                'Relative Spending',
 
-          hoverOffset:
-            5
+              data: [
+                100,
+                85,
+                75,
+                40,
+                35
+              ],
 
-        }
+              backgroundColor:
+                chartGold,
 
-      ]
+              borderRadius:
+                6,
 
-    },
+              borderSkipped:
+                false
 
-    options: {
+            }
 
-      responsive:
-        true,
+          ]
 
-      maintainAspectRatio:
-        false,
+        },
 
-      cutout:
-        '68%',
+        options: {
 
-      plugins: {
+          responsive:
+            true,
 
-        legend: {
+          maintainAspectRatio:
+            false,
 
-          position:
-            'bottom',
+          scales:
+            commonScales,
 
-          labels: {
+          plugins: {
 
-            color:
-              chartText,
-
-            padding:
-              18,
-
-            usePointStyle:
-              true,
-
-            pointStyle:
-              'circle',
-
-            font: {
-              size: 10
+            legend: {
+              display:
+                false
             }
 
           }
@@ -1323,297 +1200,395 @@ new Chart(
 
       }
 
-    }
-
-  }
-
-);
+    );
 
 
-/* =========================================================
-   SALARY CHART
-========================================================= */
+    /* =========================================================
+       GENDER CHART
+    ========================================================= */
 
-new Chart(
+    new Chart(
 
-  document.getElementById(
-    'salaryChart'
-  ),
+      document.getElementById(
+        'genderChart'
+      ),
 
-  {
+      {
 
-    type:
-      'bar',
+        type:
+          'doughnut',
 
-    data: {
+        data: {
 
-      labels: [
-        '15k–25k',
-        '25k–40k',
-        '40k–70k',
-        '70k–120k'
-      ],
-
-      datasets: [
-
-        {
-
-          label:
-            'Average Spending',
-
-          data: [
-            6076.43,
-            5557.11,
-            5854.50,
-            5129.76
+          labels: [
+            'Female',
+            'Male'
           ],
 
-          backgroundColor:
-            chartGold,
+          datasets: [
 
-          borderRadius:
-            6,
+            {
 
-          borderSkipped:
-            false
+              data: [
+                55,
+                45
+              ],
 
-        }
+              backgroundColor: [
+                chartGold,
+                '#48494d'
+              ],
 
-      ]
+              borderColor: [
+                '#292a2e',
+                '#292a2e'
+              ],
 
-    },
+              borderWidth:
+                4,
 
-    options: {
+              hoverOffset:
+                5
 
-      responsive:
-        true,
+            }
 
-      maintainAspectRatio:
-        false,
+          ]
 
-      scales:
-        commonScales,
+        },
 
-      plugins: {
+        options: {
 
-        legend: {
-          display:
-            false
+          responsive:
+            true,
+
+          maintainAspectRatio:
+            false,
+
+          cutout:
+            '68%',
+
+          plugins: {
+
+            legend: {
+
+              position:
+                'bottom',
+
+              labels: {
+
+                color:
+                  chartText,
+
+                padding:
+                  18,
+
+                usePointStyle:
+                  true,
+
+                pointStyle:
+                  'circle',
+
+                font: {
+                  size: 10
+                }
+
+              }
+
+            }
+
+          }
+
         }
 
       }
 
-    }
-
-  }
-
-);
+    );
 
 
-/* =========================================================
-   GENERATION CHART
-========================================================= */
+    /* =========================================================
+       SALARY CHART
+    ========================================================= */
 
-new Chart(
+    new Chart(
 
-  document.getElementById(
-    'generationChart'
-  ),
+      document.getElementById(
+        'salaryChart'
+      ),
 
-  {
+      {
 
-    type:
-      'bar',
+        type:
+          'bar',
 
-    data: {
+        data: {
 
-      labels: [
-        'Gen Z',
-        'Millennials',
-        'Gen X',
-        'Boomers'
-      ],
-
-      datasets: [
-
-        {
-
-          label:
-            'Relative Average Spending',
-
-          data: [
-            90,
-            95,
-            70,
-            60
+          labels: [
+            '15k–25k',
+            '25k–40k',
+            '40k–70k',
+            '70k–120k'
           ],
 
-          backgroundColor:
-            chartGold,
+          datasets: [
 
-          borderRadius:
-            6,
+            {
 
-          borderSkipped:
-            false
+              label:
+                'Average Spending',
 
-        }
+              data: [
+                6076.43,
+                5557.11,
+                5854.50,
+                5129.76
+              ],
 
-      ]
+              backgroundColor:
+                chartGold,
 
-    },
+              borderRadius:
+                6,
 
-    options: {
+              borderSkipped:
+                false
 
-      responsive:
-        true,
+            }
 
-      maintainAspectRatio:
-        false,
+          ]
 
-      scales:
-        commonScales,
+        },
 
-      plugins: {
+        options: {
 
-        legend: {
-          display:
-            false
+          responsive:
+            true,
+
+          maintainAspectRatio:
+            false,
+
+          scales:
+            commonScales,
+
+          plugins: {
+
+            legend: {
+              display:
+                false
+            }
+
+          }
+
         }
 
       }
 
-    }
-
-  }
-
-);
+    );
 
 
-/* =========================================================
-   TREND CHART
-========================================================= */
+    /* =========================================================
+       GENERATION CHART
+    ========================================================= */
 
-new Chart(
+    new Chart(
 
-  document.getElementById(
-    'trendChart'
-  ),
+      document.getElementById(
+        'generationChart'
+      ),
 
-  {
+      {
 
-    type:
-      'line',
+        type:
+          'bar',
 
-    data: {
+        data: {
 
-      labels: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug'
-      ],
-
-      datasets: [
-
-        {
-
-          label:
-            'Spending Trend',
-
-          data: [
-            5000,
-            5200,
-            4800,
-            6000,
-            6100,
-            5900,
-            5700,
-            5800
+          labels: [
+            'Gen Z',
+            'Millennials',
+            'Gen X',
+            'Boomers'
           ],
 
-          borderColor:
-            chartGold,
+          datasets: [
 
-          backgroundColor:
-            chartGoldSoft,
+            {
 
-          pointBackgroundColor:
-            chartGold,
+              label:
+                'Relative Average Spending',
 
-          pointBorderColor:
-            '#292a2e',
+              data: [
+                90,
+                95,
+                70,
+                60
+              ],
 
-          pointBorderWidth:
-            2,
+              backgroundColor:
+                chartGold,
 
-          pointRadius:
-            4,
+              borderRadius:
+                6,
 
-          pointHoverRadius:
-            6,
+              borderSkipped:
+                false
 
-          borderWidth:
-            2,
+            }
 
-          tension:
-            0.35,
+          ]
 
-          fill:
-            false
+        },
 
-        }
+        options: {
 
-      ]
+          responsive:
+            true,
 
-    },
+          maintainAspectRatio:
+            false,
 
-    options: {
+          scales:
+            commonScales,
 
-      responsive:
-        true,
+          plugins: {
 
-      maintainAspectRatio:
-        false,
+            legend: {
+              display:
+                false
+            }
 
-      scales:
-        commonScales,
+          }
 
-      plugins: {
-
-        legend: {
-          display:
-            false
         }
 
       }
 
-    }
+    );
 
-  }
 
-);
+    /* =========================================================
+       TREND CHART
+    ========================================================= */
 
-</script>
-<script>
-$(document).ready(function(){
-  $(".portfolio-page-carousel").owlCarousel({
-      items: 1,
-      loop: true,
-      margin: 10,
-      nav: false,
-      dots: true,
-      autoplay: true,          // ✅ Enables auto swipe
-      autoplayTimeout: 3000,   // 3 seconds per slide
-      autoplayHoverPause: true, // Pause when mouse hovers
-      smartSpeed: 800          // Smooth transition speed
-  });
-});
-</script>
+    new Chart(
+
+      document.getElementById(
+        'trendChart'
+      ),
+
+      {
+
+        type:
+          'line',
+
+        data: {
+
+          labels: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug'
+          ],
+
+          datasets: [
+
+            {
+
+              label:
+                'Spending Trend',
+
+              data: [
+                5000,
+                5200,
+                4800,
+                6000,
+                6100,
+                5900,
+                5700,
+                5800
+              ],
+
+              borderColor:
+                chartGold,
+
+              backgroundColor:
+                chartGoldSoft,
+
+              pointBackgroundColor:
+                chartGold,
+
+              pointBorderColor:
+                '#292a2e',
+
+              pointBorderWidth:
+                2,
+
+              pointRadius:
+                4,
+
+              pointHoverRadius:
+                6,
+
+              borderWidth:
+                2,
+
+              tension:
+                0.35,
+
+              fill:
+                false
+
+            }
+
+          ]
+
+        },
+
+        options: {
+
+          responsive:
+            true,
+
+          maintainAspectRatio:
+            false,
+
+          scales:
+            commonScales,
+
+          plugins: {
+
+            legend: {
+              display:
+                false
+            }
+
+          }
+
+        }
+
+      }
+
+    );
+
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".portfolio-page-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        autoplay: true,          // ✅ Enables auto swipe
+        autoplayTimeout: 3000,   // 3 seconds per slide
+        autoplayHoverPause: true, // Pause when mouse hovers
+        smartSpeed: 800          // Smooth transition speed
+      });
+    });
+  </script>
 
 
 
