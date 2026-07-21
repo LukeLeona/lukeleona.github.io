@@ -1253,4 +1253,408 @@
 
     }
 
+    .data-article-page
+.inner-thought-grid,
+
+.data-article-page
+.community-skill-grid {
+
+  grid-template-columns: 1fr;
+
+}
+
+
+.data-article-page
+.growth-stage {
+
+  grid-template-columns:
+    42px
+    minmax(0, 1fr);
+
+  gap: 14px;
+
+}
+
+
+.data-article-page
+.growth-number {
+
+  width: 40px;
+  height: 40px;
+
+}
+
+
+.data-article-page
+.growth-timeline::before {
+
+  left: 19px;
+
+}
+
+}
+
+/* =========================================================
+   COMMUNITY / VOLUNTEER STORY
+========================================================= */
+
+
+/* -----------------------------------------
+   Inner thoughts
+----------------------------------------- */
+
+.data-article-page
+.inner-thought-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 28px;
+
+}
+
+
+.data-article-page
+.inner-thought-grid > div {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--card);
+
+}
+
+
+.data-article-page
+.inner-thought-grid i {
+
+  color: var(--gold);
+
+  font-size: 18px;
+
+}
+
+
+.data-article-page
+.inner-thought-grid p {
+
+  margin: 0;
+
+  color: #c5c6c8;
+
+  font-size: 12px;
+
+  font-style: italic;
+
+}
+
+
+/* -----------------------------------------
+   Story moment
+----------------------------------------- */
+
+.data-article-page
+.story-moment {
+
+  margin: 30px 0;
+
+  padding: 28px;
+
+  border: 1px solid rgba(235, 176, 32, 0.18);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(235, 176, 32, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+
+}
+
+
+.data-article-page
+.story-moment > span {
+
+  color: var(--gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.data-article-page
+.story-moment h3 {
+
+  max-width: 650px;
+
+  margin: 8px 0 12px;
+
+  color: #fff;
+
+  font-size: 23px;
+
+}
+
+
+.data-article-page
+.story-moment p {
+
+  margin: 0;
+
+}
+
+
+/* -----------------------------------------
+   4 skill cards
+----------------------------------------- */
+
+.data-article-page
+.community-skill-grid {
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+}
+
+
+/* -----------------------------------------
+   Growth timeline
+----------------------------------------- */
+
+.data-article-page
+.growth-timeline {
+
+  position: relative;
+
+  margin-top: 35px;
+
+}
+
+
+.data-article-page
+.growth-timeline::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 22px;
+
+  top: 18px;
+
+  bottom: 18px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--gold),
+      rgba(235, 176, 32, 0.08)
+    );
+
+}
+
+
+.data-article-page
+.growth-stage {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    46px
+    minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 0 0 34px;
+
+}
+
+
+.data-article-page
+.growth-stage:last-child {
+
+  padding-bottom: 0;
+
+}
+
+
+.data-article-page
+.growth-number {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(235, 176, 32, 0.28);
+
+  border-radius: 50%;
+
+  background: #292a2e;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+}
+
+
+.data-article-page
+.growth-stage strong {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--gold);
+
+  font-size: 8px;
+
+  letter-spacing: 1.3px;
+
+}
+
+
+.data-article-page
+.growth-stage h4 {
+
+  margin: 0 0 6px;
+
+  color: #fff;
+
+  font-size: 17px;
+
+}
+
+
+.data-article-page
+.growth-stage p {
+
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: 11px;
+
+}
+
+
+/* -----------------------------------------
+   Lessons
+----------------------------------------- */
+
+.data-article-page
+.lesson-list {
+
+  margin-top: 30px;
+
+}
+
+
+.data-article-page
+.lesson-list > div {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 18px 0;
+
+  border-top: 1px solid var(--border);
+
+}
+
+
+.data-article-page
+.lesson-list > div:last-child {
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+.data-article-page
+.lesson-list span {
+
+  color: rgba(235, 176, 32, 0.55);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
+
+
+.data-article-page
+.lesson-list p {
+
+  margin: 0;
+
+  color: #c6c7c9;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+
+/* -----------------------------------------
+   Community article special accent
+----------------------------------------- */
+
+.community-story-page
+.article-takeaway {
+
+  max-width: 800px;
+
+}
+
+
+.community-story-page
+.article-conclusion {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(235, 176, 32, 0.08),
+      rgba(255, 255, 255, 0.012)
+    );
+
 }
