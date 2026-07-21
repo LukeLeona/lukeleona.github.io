@@ -9,7 +9,7 @@
    PAGE
 ========================================================= */
 
-.spending-case-study {
+.case-study-page {
   background: #232324;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
@@ -20,7 +20,7 @@
    PROJECT HERO
 ========================================================= */
 
-.spending-case-study .project-hero {
+.case-study-page .project-hero {
   position: relative;
 
   max-width: 900px;
@@ -31,7 +31,7 @@
 }
 
 
-.spending-case-study .project-eyebrow {
+.case-study-page .project-eyebrow {
   display: flex;
 
   align-items: center;
@@ -52,12 +52,12 @@
 }
 
 
-.spending-case-study .project-eyebrow span {
+.case-study-page .project-eyebrow span {
   opacity: 0.45;
 }
 
 
-.spending-case-study .project-hero h1 {
+.case-study-page .project-hero h1 {
   max-width: 850px;
 
   margin:
@@ -81,12 +81,12 @@
 }
 
 
-.spending-case-study .project-hero h1 span {
+.case-study-page .project-hero h1 span {
   color: #ebb020;
 }
 
 
-.spending-case-study .project-hero-description {
+.case-study-page .project-hero-description {
   max-width: 720px;
 
   margin-bottom: 25px;
@@ -103,8 +103,8 @@
    TECH TAGS
 ========================================================= */
 
-.spending-case-study .project-tech-list,
-.spending-case-study .project-tags {
+.case-study-page .project-tech-list,
+.case-study-page .project-tags {
 
   display: flex;
 
@@ -114,10 +114,10 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-tech-list span,
 
-.spending-case-study
+.case-study-page
 .project-tags span {
 
   display: inline-flex;
@@ -153,7 +153,7 @@
 
 /* Smaller tags inside Project Info sidebar only */
 
-.spending-case-study
+.case-study-page
 .project-sidebar
 .project-tags span {
 
@@ -167,7 +167,7 @@
    HERO BUTTONS
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-hero-actions {
 
   display: flex;
@@ -180,10 +180,10 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-primary-btn,
 
-.spending-case-study
+.case-study-page
 .project-secondary-btn {
 
   display: inline-flex;
@@ -212,7 +212,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-primary-btn {
 
   border:
@@ -227,7 +227,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-primary-btn:hover {
 
   transform:
@@ -244,7 +244,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-secondary-btn {
 
   border:
@@ -264,7 +264,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-secondary-btn:hover {
 
   transform:
@@ -282,7 +282,7 @@
    CAROUSEL
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .portfolio-page-carousel {
 
   margin-bottom: 35px;
@@ -305,7 +305,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .portfolio-page-carousel
 .entry-image img {
 
@@ -321,7 +321,7 @@
    KPI / PROJECT HIGHLIGHTS
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-stats {
 
   display: grid;
@@ -340,7 +340,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-stat-card {
 
   position: relative;
@@ -387,7 +387,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-stat-card::before {
 
   content: "";
@@ -417,7 +417,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-stat-card:hover {
 
   transform:
@@ -433,7 +433,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .stat-icon {
 
   margin-bottom: 18px;
@@ -446,7 +446,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .stat-label {
 
   display: block;
@@ -470,7 +470,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-stat-card strong {
 
   display: block;
@@ -492,7 +492,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-stat-card small {
 
   color:
@@ -507,7 +507,7 @@
    PROJECT SECTIONS
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-section {
 
   position: relative;
@@ -518,7 +518,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-section-heading {
 
   max-width:
@@ -529,7 +529,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-section-heading > span {
 
   display: block;
@@ -554,7 +554,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-section-heading h2 {
 
   margin:
@@ -579,10 +579,10 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-section-heading p,
 
-.spending-case-study
+.case-study-page
 .project-section > p {
 
   color:
@@ -593,7 +593,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-lead {
 
   color:
@@ -611,7 +611,7 @@
    DATASET
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .dataset-grid {
 
   display: grid;
@@ -626,7 +626,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card {
 
   display: flex;
@@ -660,7 +660,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card:hover {
 
   transform:
@@ -676,7 +676,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card > i {
 
   flex:
@@ -716,17 +716,17 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card strong,
 
-.spending-case-study
+.case-study-page
 .dataset-card span {
 
   display: block;
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card strong {
 
   margin-bottom:
@@ -743,7 +743,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .dataset-card span {
 
   color:
@@ -761,7 +761,7 @@
    METHODOLOGY
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .method-grid {
 
   display: grid;
@@ -777,7 +777,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-card {
 
   position: relative;
@@ -811,7 +811,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-card:hover {
 
   transform:
@@ -827,7 +827,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-number {
 
   position:
@@ -855,7 +855,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-icon {
 
   width:
@@ -895,7 +895,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-card h4 {
 
   margin:
@@ -912,7 +912,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-card > strong {
 
   display:
@@ -933,7 +933,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .method-card p {
 
   margin:
@@ -954,7 +954,7 @@
    CHART GRID
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .chart-grid {
 
   display:
@@ -971,7 +971,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-card {
 
   min-width:
@@ -1003,7 +1003,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-card:hover {
 
   border-color:
@@ -1016,7 +1016,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-card-wide {
 
   grid-column:
@@ -1024,7 +1024,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-card-header > span {
 
   display:
@@ -1050,7 +1050,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-card-header h3 {
 
   margin:
@@ -1070,7 +1070,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-container {
 
   position:
@@ -1087,7 +1087,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-container-small {
 
   height:
@@ -1095,7 +1095,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-container-wide {
 
   height:
@@ -1103,7 +1103,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-container canvas {
 
   max-width:
@@ -1114,7 +1114,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-insight {
 
   display:
@@ -1150,7 +1150,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-insight > i {
 
   margin-top:
@@ -1164,7 +1164,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-insight p {
 
   margin:
@@ -1181,7 +1181,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .chart-insight strong {
 
   color:
@@ -1193,7 +1193,7 @@
    BUSINESS IMPACT
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .impact-grid {
 
   display:
@@ -1210,7 +1210,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card {
 
   position:
@@ -1246,7 +1246,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card:hover {
 
   transform:
@@ -1262,7 +1262,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card > span {
 
   position:
@@ -1290,7 +1290,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card > i {
 
   display:
@@ -1307,7 +1307,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card h4 {
 
   margin-bottom:
@@ -1324,7 +1324,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .impact-card p {
 
   margin:
@@ -1340,12 +1340,675 @@
     1.75;
 }
 
+/* =========================================================
+   STATISTICAL SUMMARY
+========================================================= */
+
+.case-study-page
+.stats-summary-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+
+  margin-top: 28px;
+
+  margin-bottom: 26px;
+
+}
+
+
+.case-study-page
+.stats-summary-item {
+
+  padding: 18px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.02
+    );
+
+}
+
+
+.case-study-page
+.stats-summary-item span {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #88898d;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+}
+
+
+.case-study-page
+.stats-summary-item strong {
+
+  display: block;
+
+  color: #ebb020;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+}
+
+/* =========================================================
+   GEOGRAPHIC ANALYSIS
+========================================================= */
+
+.case-study-page
+.geographic-analysis-card {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.9fr);
+
+  gap: 26px;
+
+  padding: 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.065);
+
+  border-radius: 18px;
+
+  background: #292a2e;
+
+}
+
+
+/* =========================================================
+   LEFT SIDE - REGION VISUAL
+========================================================= */
+
+.case-study-page
+.geographic-visual {
+
+  padding: 25px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+}
+
+
+.case-study-page
+.geo-visual-header {
+
+  margin-bottom: 28px;
+
+}
+
+
+.case-study-page
+.geo-visual-header > span {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #77787c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+}
+
+
+.case-study-page
+.geo-visual-header h3 {
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================================
+   REGION ROW
+========================================================= */
+
+.case-study-page
+.geo-region {
+
+  margin-bottom: 24px;
+
+}
+
+
+.case-study-page
+.geo-region:last-of-type {
+
+  margin-bottom: 0;
+
+}
+
+
+.case-study-page
+.geo-region-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.case-study-page
+.geo-region-name {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+}
+
+
+.case-study-page
+.geo-region-name strong {
+
+  color: #d8d8da;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+}
+
+
+.case-study-page
+.geo-dot {
+
+  width: 8px;
+
+  height: 8px;
+
+  flex: 0 0 8px;
+
+  border-radius: 50%;
+
+  background: #66676b;
+
+}
+
+
+.case-study-page
+.geo-region-primary
+.geo-dot {
+
+  background: #ebb020;
+
+  box-shadow:
+    0 0 12px
+    rgba(235, 176, 32, 0.4);
+
+}
+
+
+.case-study-page
+.geo-percentage {
+
+  color: #c2c3c5;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+
+.case-study-page
+.geo-region-primary
+.geo-percentage {
+
+  color: #ebb020;
+
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.case-study-page
+.geo-progress {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  margin-bottom: 7px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+}
+
+
+.case-study-page
+.geo-progress span {
+
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #68696d;
+
+}
+
+
+.case-study-page
+.geo-region-primary
+.geo-progress span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #c88d11,
+      #ebb020
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(235, 176, 32, 0.2);
+
+}
+
+
+.case-study-page
+.geo-region small {
+
+  color: #77787b;
+
+  font-size: 9px;
+
+}
+
+
+/* =========================================================
+   QUICK COMPARISON
+========================================================= */
+
+.case-study-page
+.geo-summary {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 30px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+}
+
+
+.case-study-page
+.geo-summary > div {
+
+  padding: 14px;
+
+  border:
+    1px solid
+    rgba(235, 176, 32, 0.13);
+
+  border-radius: 11px;
+
+  background:
+    rgba(235, 176, 32, 0.035);
+
+}
+
+
+.case-study-page
+.geo-summary strong {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ebb020;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+}
+
+
+.case-study-page
+.geo-summary span {
+
+  color: #898a8d;
+
+  font-size: 9px;
+
+}
+
+
+/* =========================================================
+   RIGHT SIDE - INSIGHT
+========================================================= */
+
+.case-study-page
+.geographic-insight {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 12px 4px;
+
+}
+
+
+.case-study-page
+.map-eyebrow {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ebb020;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+}
+
+
+.case-study-page
+.geographic-insight > h3 {
+
+  margin-bottom: 15px;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+}
+
+
+.case-study-page
+.geographic-insight > p {
+
+  margin-bottom: 22px;
+
+  color: #aaabae;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.case-study-page
+.geo-highlight {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 24px;
+
+  padding: 14px;
+
+  border-left:
+    2px solid
+    #ebb020;
+
+  border-radius:
+    4px 10px 10px 4px;
+
+  background:
+    rgba(235, 176, 32, 0.045);
+
+}
+
+
+.case-study-page
+.geo-highlight i {
+
+  margin-top: 2px;
+
+  color: #ebb020;
+
+  font-size: 14px;
+
+}
+
+
+.case-study-page
+.geo-highlight p {
+
+  margin: 0;
+
+  color: #999a9d;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   REGION RANKING
+========================================================= */
+
+.case-study-page
+.geo-ranking {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.case-study-page
+.geo-rank-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 10px 0;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+
+}
+
+
+.case-study-page
+.geo-rank-number {
+
+  color:
+    rgba(235, 176, 32, 0.45);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+
+.case-study-page
+.geo-rank-item div {
+
+  flex: 1;
+
+}
+
+
+.case-study-page
+.geo-rank-item strong {
+
+  display: block;
+
+  color: #d5d6d8;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+}
+
+
+.case-study-page
+.geo-rank-item div > span {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color: #77787b;
+
+  font-size: 9px;
+
+}
+
+
+/* =========================================================
+   GEOGRAPHIC RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .case-study-page
+  .geographic-analysis-card {
+
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+
+    gap: 28px;
+
+  }
+
+
+  .case-study-page
+  .geographic-visual {
+
+    padding: 20px;
+
+  }
+
+
+  .case-study-page
+  .geographic-insight {
+
+    padding: 0;
+
+  }
+
+
+  .case-study-page
+  .geographic-insight > h3 {
+
+    font-size: 21px;
+
+  }
+
+}
 
 /* =========================================================
    BOTTOM LINE
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-bottom-line {
 
   position:
@@ -1391,7 +2054,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-bottom-line::after {
 
   content:
@@ -1431,7 +2094,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-bottom-line > span {
 
   display:
@@ -1454,7 +2117,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-bottom-line h3 {
 
   position:
@@ -1483,7 +2146,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-bottom-line p {
 
   position:
@@ -1504,12 +2167,503 @@
   line-height:
     1.8;
 }
+/* =========================================================
+   RESEARCH / CONTEXT SIDE NOTE
+========================================================= */
 
+.case-study-page
+.research-side-note {
+
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 32px;
+
+  padding: 25px;
+
+  border:
+
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.075
+    );
+
+  border-radius: 15px;
+
+  background:
+
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+
+}
+
+
+/* =========================================================
+   NOTE HEADER
+========================================================= */
+
+.case-study-page
+.research-note-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.case-study-page
+.research-note-icon {
+
+  width: 42px;
+
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+
+    1px solid
+    rgba(
+      235,
+      176,
+      32,
+      0.25
+    );
+
+  border-radius: 11px;
+
+  background:
+
+    rgba(
+      235,
+      176,
+      32,
+      0.065
+    );
+
+  color: #ebb020;
+
+  font-size: 17px;
+
+}
+
+
+.case-study-page
+.research-note-header span {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ebb020;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+}
+
+
+.case-study-page
+.research-note-header h4 {
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================================
+   NOTE TEXT
+========================================================= */
+
+.case-study-page
+.research-side-note > p {
+
+  max-width: none;
+
+  color: #a9aaad;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+}
+
+
+.case-study-page
+.research-note-lead {
+
+  color: #d0d1d3 !important;
+
+  font-size: 13px !important;
+
+}
+
+
+/* =========================================================
+   QUOTE / INTERPRETATION CALLOUT
+========================================================= */
+
+.case-study-page
+.research-callout {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin: 23px 0;
+
+  padding: 17px;
+
+  border-left:
+
+    2px solid
+    #ebb020;
+
+  border-radius:
+
+    4px 11px
+    11px 4px;
+
+  background:
+
+    rgba(
+      235,
+      176,
+      32,
+      0.05
+    );
+
+}
+
+
+.case-study-page
+.research-callout > i {
+
+  margin-top: 2px;
+
+  color: #ebb020;
+
+  font-size: 17px;
+
+}
+
+
+.case-study-page
+.research-callout p {
+
+  margin: 0;
+
+  color: #bcbdbf;
+
+  font-size: 11px;
+
+  line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   EVIDENCE LIST
+========================================================= */
+
+.case-study-page
+.research-evidence {
+
+  margin-top: 25px;
+
+  border-top:
+
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+}
+
+
+.case-study-page
+.research-evidence-item {
+
+  display: grid;
+
+  grid-template-columns:
+    75px
+    minmax(0, 1fr);
+
+  gap: 17px;
+
+  padding: 20px 0;
+
+  border-bottom:
+
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+}
+
+
+.case-study-page
+.evidence-year {
+
+  align-self: flex-start;
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  padding:
+
+    5px 7px;
+
+  border:
+
+    1px solid
+    rgba(
+      235,
+      176,
+      32,
+      0.2
+    );
+
+  border-radius: 50px;
+
+  color: #ebb020;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+}
+
+
+.case-study-page
+.research-evidence-item strong {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #e2e2e3;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+}
+
+
+.case-study-page
+.research-evidence-item p {
+
+  margin: 0;
+
+  color: #919296;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CAUTION / INTERPRETATION NOTE
+========================================================= */
+
+.case-study-page
+.research-caution {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  background:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+}
+
+
+.case-study-page
+.research-caution > i {
+
+  margin-top: 2px;
+
+  color: #8d8e91;
+
+  font-size: 13px;
+
+}
+
+
+.case-study-page
+.research-caution p {
+
+  margin: 0;
+
+  color: #8f9093;
+
+  font-size: 9px;
+
+  line-height: 1.7;
+
+}
+
+
+.case-study-page
+.research-caution strong {
+
+  color: #b9babc;
+
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.case-study-page
+.research-sources {
+
+  margin-top: 22px;
+
+  padding-top: 17px;
+
+  border-top:
+
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+}
+
+
+.case-study-page
+.research-sources > span {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #727377;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+}
+
+
+.case-study-page
+.research-sources p {
+
+  margin: 0;
+
+  color: #76777a;
+
+  font-size: 9px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .case-study-page
+  .research-side-note {
+
+    padding: 20px;
+
+  }
+
+
+  .case-study-page
+  .research-evidence-item {
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+  }
+
+
+  .case-study-page
+  .evidence-year {
+
+    justify-self: flex-start;
+
+  }
+
+}
 /* =========================================================
    BOTTOM LINE - EXTRA DETAILS
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .bottom-line-icon {
 
   position: relative;
@@ -1558,7 +2712,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .bottom-line-actions {
 
   position: relative;
@@ -1570,7 +2724,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .bottom-line-button {
 
   display: inline-flex;
@@ -1607,7 +2761,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .bottom-line-button:hover {
 
   transform:
@@ -1628,7 +2782,7 @@
    PROJECT SIDEBAR
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-sidebar {
 
   position: sticky;
@@ -1657,7 +2811,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar-title {
 
   margin-bottom:
@@ -1665,7 +2819,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar-title span {
 
   display:
@@ -1688,7 +2842,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar-title h4 {
 
   margin:
@@ -1705,7 +2859,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-info-item {
 
   padding: 12px 0;
@@ -1715,7 +2869,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-info-item > span {
 
   display:
@@ -1741,7 +2895,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-info-item > strong {
 
   display:
@@ -1761,7 +2915,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .sidebar-github-btn {
 
   display:
@@ -1808,7 +2962,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .sidebar-github-btn:hover {
 
   transform:
@@ -1821,12 +2975,127 @@
     #222222 !important;
 }
 
+/* =========================================================
+   LET PROJECT - COMPACT STICKY SIDEBAR
+   Keeps the full card visible without internal scrolling
+========================================================= */
+
+@media (min-width: 992px) {
+
+  .case-study-page.let-case-study
+  .project-sidebar {
+
+    position: sticky;
+
+    top: 18px;
+
+    width: 100%;
+
+    /* Remove internal scrolling */
+    max-height: none;
+
+    overflow: visible;
+
+    /* Make the entire card fit better */
+    padding: 18px;
+
+  }
+
+
+  /* Smaller heading area */
+
+  .case-study-page.let-case-study
+  .project-sidebar-title {
+
+    margin-bottom: 14px;
+
+  }
+
+
+  .case-study-page.let-case-study
+  .project-sidebar-title h4 {
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+  }
+
+
+  /* Compact each information row */
+
+  .case-study-page.let-case-study
+  .project-info-item {
+
+    padding: 9px 0;
+
+  }
+
+
+  .case-study-page.let-case-study
+  .project-info-item > span {
+
+    margin-bottom: 4px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.1px;
+
+  }
+
+
+  .case-study-page.let-case-study
+  .project-info-item > strong {
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+  }
+
+
+  /* Compact sidebar tags */
+
+  .case-study-page.let-case-study
+  .project-sidebar
+  .project-tags {
+
+    gap: 5px;
+
+  }
+
+
+  .case-study-page.let-case-study
+  .project-sidebar
+  .project-tags span {
+
+    padding: 4px 8px;
+
+    font-size: 9px;
+
+  }
+
+
+  /* Compact GitHub button */
+
+  .case-study-page.let-case-study
+  .sidebar-github-btn {
+
+    margin-top: 10px;
+
+    padding: 8px 10px;
+
+    font-size: 10px;
+
+  }
+
+}
 
 /* =========================================================
    NAVIGATION BUTTONS
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .ajax-page-nav {
 
   padding-top: 10px;
@@ -1836,7 +3105,7 @@
 
 }
 
-.spending-case-study
+.case-study-page
 .ajax-page-nav
 .nav-item a {
 
@@ -1864,7 +3133,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .ajax-page-nav
 .nav-item a:hover {
 
@@ -1893,7 +3162,7 @@
 @media
 (max-width: 991px) {
 
-  .spending-case-study
+  .case-study-page
   .project-hero {
 
     padding-top:
@@ -1901,7 +3170,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-sidebar {
 
     position:
@@ -1917,7 +3186,7 @@
    PROJECT SIDEBAR SCROLLBAR
 ========================================================= */
 
-.spending-case-study
+.case-study-page
 .project-sidebar {
 
   scrollbar-width: thin;
@@ -1929,7 +3198,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar::-webkit-scrollbar {
 
   width: 4px;
@@ -1937,7 +3206,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar::-webkit-scrollbar-track {
 
   background: transparent;
@@ -1945,7 +3214,7 @@
 }
 
 
-.spending-case-study
+.case-study-page
 .project-sidebar::-webkit-scrollbar-thumb {
 
   background:
@@ -1967,7 +3236,7 @@
 @media
 (max-width: 767px) {
 
-  .spending-case-study
+  .case-study-page
   .project-hero {
 
     padding:
@@ -1976,7 +3245,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-hero h1 {
 
     letter-spacing:
@@ -1984,7 +3253,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-hero-description {
 
     font-size:
@@ -1992,7 +3261,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-hero-actions {
 
     flex-direction:
@@ -2003,10 +3272,10 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-primary-btn,
 
-  .spending-case-study
+  .case-study-page
   .project-secondary-btn {
 
     width:
@@ -2014,19 +3283,19 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-stats,
 
-  .spending-case-study
+  .case-study-page
   .dataset-grid,
 
-  .spending-case-study
+  .case-study-page
   .method-grid,
 
-  .spending-case-study
+  .case-study-page
   .chart-grid,
 
-  .spending-case-study
+  .case-study-page
   .impact-grid {
 
     grid-template-columns:
@@ -2034,7 +3303,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .chart-card-wide {
 
     grid-column:
@@ -2042,7 +3311,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-section {
 
     margin-bottom:
@@ -2050,13 +3319,13 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .chart-container,
 
-  .spending-case-study
+  .case-study-page
   .chart-container-small,
 
-  .spending-case-study
+  .case-study-page
   .chart-container-wide {
 
     height:
@@ -2064,7 +3333,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-bottom-line {
 
     padding:
@@ -2072,7 +3341,7 @@
   }
 
 
-  .spending-case-study
+  .case-study-page
   .project-bottom-line h3 {
 
     font-size:
@@ -2089,7 +3358,7 @@
 @media
 (min-width: 1200px) {
 
-  .spending-case-study
+  .case-study-page
   .project-stats {
 
     grid-template-columns:
@@ -2108,7 +3377,7 @@
 
 @media (min-width: 992px) {
 
-  .spending-case-study
+  .case-study-page
   .project-sidebar {
 
     max-height: calc(100vh - 40px);
