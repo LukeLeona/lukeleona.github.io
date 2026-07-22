@@ -2823,3 +2823,204 @@ button.creative-mosaic-item {
   }
 
 }
+
+/* =========================================================
+   READABILITY PASS — PORTFOLIO
+========================================================= */
+
+
+/* Main intro */
+
+#portfolio .portfolio-v2-intro > p,
+#portfolio .portfolio-project-lead {
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+/* Eyebrows */
+
+#portfolio .portfolio-v2-eyebrow {
+
+  font-size: 9px;
+
+}
+
+
+/* Toolbar controls */
+
+#portfolio .portfolio-mode-btn,
+#portfolio .portfolio-v2-filter a {
+
+  font-size: 10px;
+
+}
+
+
+#portfolio .portfolio-v2-filter small {
+
+  font-size: 8px;
+
+}
+
+
+/* Project metadata */
+
+#portfolio .portfolio-project-index > span {
+
+  font-size: 9px;
+
+}
+
+
+#portfolio .portfolio-project-index small {
+
+  font-size: 8px;
+
+}
+
+
+/* Featured project details */
+
+#portfolio .portfolio-featured-details span {
+
+  font-size: 9px;
+
+}
+
+
+#portfolio .portfolio-featured-details strong {
+
+  font-size: 11px;
+
+}
+
+
+/* Project tags */
+
+#portfolio .portfolio-project-tags span {
+
+  font-size: 9px;
+
+  padding:
+    5px 9px;
+
+}
+
+
+/* Buttons */
+
+#portfolio .portfolio-quick-view-btn,
+#portfolio .portfolio-live-btn,
+#portfolio .portfolio-start-btn,
+#portfolio .portfolio-text-action,
+#portfolio .portfolio-creative-open {
+
+  font-size: 10px;
+
+}
+
+
+/* Project cards */
+
+#portfolio .portfolio-v2-card-content > p,
+#portfolio .portfolio-creative-copy > p,
+#portfolio .portfolio-final-cta p {
+
+  font-size: 12px;
+
+  line-height: 1.75;
+
+}
+
+
+/* Project explorer status */
+
+#portfolio .portfolio-grid-heading > p {
+
+  font-size: 9px;
+
+}
+
+
+/* Cursor hover label */
+
+#portfolio .portfolio-hover-label {
+
+  font-size: 8px;
+
+}
+
+
+/* Content overlay */
+
+#portfolio .portfolio-content-overlay span {
+
+  font-size: 8px;
+
+}
+
+
+#portfolio .portfolio-content-overlay strong {
+
+  font-size: 10px;
+
+}
+
+
+/* Creative tile hover text */
+
+#portfolio .creative-mosaic-item > span {
+
+  font-size: 8px;
+
+}
+
+
+/* Project details drawer */
+
+.portfolio-drawer-category {
+
+  font-size: 9px;
+
+}
+
+
+.portfolio-drawer-summary {
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+.portfolio-drawer-section > span {
+
+  font-size: 9px;
+
+}
+
+
+.portfolio-drawer-list div {
+
+  font-size: 11px;
+
+}
+
+
+.portfolio-drawer-tags span {
+
+  font-size: 9px;
+
+}
+
+
+.portfolio-drawer-actions a {
+
+  font-size: 10px;
+
+}

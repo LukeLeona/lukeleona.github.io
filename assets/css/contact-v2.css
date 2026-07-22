@@ -845,3 +845,32 @@ textarea.form-control {
   }
 
 }
+
+/* =========================================================
+   READABILITY PASS — CONTACT
+========================================================= */
+
+#contact.contact-v2
+.info-text small {
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+}
+
+
+#contact.contact-v2
+.form-control {
+
+  font-size: 12px;
+
+}
+
+
+#contact.contact-v2
+.contact-v2-submit {
+
+  font-size: 11px;
+
+}

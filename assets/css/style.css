@@ -781,61 +781,252 @@ body {
 /* ========================================
    DESKTOP SIDEBAR MENU ALIGNMENT
 ======================================== */
+
 @media (min-width: 992px) {
 
-  .left-side .menu .list-group-item {
-    padding: 0 !important;
-    margin: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    text-align: center;
+
+  .left-side {
+
+    overflow:
+      hidden;
+
   }
 
-  .left-side .menu .list-group-item a {
-    width: 100%;
-    min-height: 62px;
-    padding: 5px 2px !important;
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
+  .left-side .menu {
 
-    text-align: center;
+    position:
+      relative;
+
+    width:
+      100%;
+
   }
 
-  .left-side .menu .list-group-item a i {
-    display: block;
-    margin: 0 0 7px !important;
-    line-height: 1;
-    font-size: 18px;
-    transform: none;
+
+  .left-side .menu
+  .list-group-item {
+
+    width:
+      88px;
+
+    position:
+      absolute;
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    border:
+      none !important;
+
+    background:
+      transparent !important;
+
   }
 
-  .left-side .menu .list-group-item a span {
-    display: block !important;
-    width: 100%;
-    margin: 0 !important;
 
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+  .left-side .menu
+  .list-group-item a {
 
-    white-space: nowrap;
-    line-height: 1.2;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
+    position:
+      relative;
+
+    width:
+      calc(100% - 12px);
+
+    min-height:
+      56px;
+
+    margin:
+      0 6px;
+
+    padding:
+      6px 2px !important;
+
+    display:
+      flex !important;
+
+    flex-direction:
+      column !important;
+
+    align-items:
+      center !important;
+
+    justify-content:
+      center !important;
+
+    border-radius:
+      10px;
+
+    text-align:
+      center;
+
+    transition:
+      background .22s ease,
+      color .22s ease,
+      transform .22s ease;
+
   }
 
-  .left-side .menu .list-group-item a.active span {
-    font-weight: 700 !important;
+
+  /* Icon */
+
+  .left-side .menu
+  .list-group-item a i {
+
+    display:
+      block;
+
+    margin:
+      0 0 5px !important;
+
+    line-height:
+      1;
+
+    font-size:
+      17px;
+
+    transform:
+      none;
+
+    transition:
+      color .22s ease,
+      transform .22s ease;
+
   }
 
-  .left-side .menu .list-group-item a:hover i,
-  .left-side .menu .list-group-item a.active i {
-    transform: translateY(-2px);
+
+  /* Label */
+
+  .left-side .menu
+  .list-group-item a span {
+
+    display:
+      block !important;
+
+    width:
+      100%;
+
+    margin:
+      0 !important;
+
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    transform:
+      none !important;
+
+    white-space:
+      nowrap;
+
+    line-height:
+      1.15;
+
+    font-size:
+      12px;
+
+    font-weight:
+      400;
+
+    text-align:
+      center;
+
   }
+
+
+  /* Hover */
+
+  .left-side .menu
+  .list-group-item a:hover {
+
+    background:
+      rgba(235, 176, 32, .055);
+
+  }
+
+
+  .left-side .menu
+  .list-group-item a:hover i {
+
+    color:
+      #ebb020;
+
+    transform:
+      translateY(-2px);
+
+  }
+
+
+  /* Active page */
+
+  .left-side .menu
+  .list-group-item a.active {
+
+    background:
+      rgba(235, 176, 32, .075);
+
+  }
+
+
+  .left-side .menu
+  .list-group-item a.active::before {
+
+    content:
+      "";
+
+    position:
+      absolute;
+
+    left:
+      0;
+
+    top:
+      12px;
+
+    bottom:
+      12px;
+
+    width:
+      2px;
+
+    border-radius:
+      0 3px 3px 0;
+
+    background:
+      #ebb020;
+
+  }
+
+
+  .left-side .menu
+  .list-group-item a.active i {
+
+    color:
+      #ebb020;
+
+    transform:
+      scale(1.08);
+
+  }
+
+
+  .left-side .menu
+  .list-group-item a.active span {
+
+    color:
+      #fff;
+
+    font-weight:
+      700 !important;
+
+  }
+
 }
 
 /*------------------------- OVERLAY MENU -------------------------*/
@@ -6745,3 +6936,4 @@ body.dark-arshia,
   }
 
 }
+

@@ -451,7 +451,7 @@ function closeMenu() {
     $(".menu-align")
       .css({
         position: "absolute",
-        top: "125px",
+        top: "128px",
         bottom: "12px",
         left: "0",
         transform: "none"
@@ -465,14 +465,22 @@ function closeMenu() {
       width: "100%"
     }, 350);
 
-    $(".left-side").animate({
-      width: "80px",
-      paddingTop: "16px"
-    }, 350);
+$(".left-side").animate({
 
-    $(".left-side img").animate({
-      width: "60px"
-    }, 350);
+  width:
+    "88px",
+
+  paddingTop:
+    "15px"
+
+}, 350);
+
+$(".left-side img").animate({
+
+  width:
+    "56px"
+
+}, 350);
 
     $(".left-side h1").animate({
       fontSize: "12px"

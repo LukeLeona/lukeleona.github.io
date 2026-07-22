@@ -2829,3 +2829,208 @@
   }
 
 }
+
+
+/* =========================================================
+   READABILITY PASS — BLOG
+========================================================= */
+
+
+/* Main intro */
+
+#blog .blog-v2-intro-side > p {
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+/* Eyebrow */
+
+#blog .blog-v2-eyebrow {
+
+  font-size: 9px;
+
+}
+
+
+/* Filter */
+
+#blog .blog-v2-filter-wrap > span {
+
+  font-size: 9px;
+
+}
+
+
+#blog .blog-filter-btn {
+
+  font-size: 10px;
+
+}
+
+
+#blog .blog-filter-btn small {
+
+  font-size: 8px;
+
+}
+
+
+/* Stats */
+
+#blog .blog-v2-stats span {
+
+  font-size: 9px;
+
+}
+
+
+/* Featured article */
+
+#blog .blog-v2-index > span,
+#blog .blog-category-line {
+
+  font-size: 9px;
+
+}
+
+
+#blog .blog-v2-index small {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-featured-content > p {
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+#blog .blog-featured-meta span {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-featured-meta strong {
+
+  font-size: 10px;
+
+}
+
+
+#blog .blog-v2-read-btn {
+
+  font-size: 10px;
+
+}
+
+
+/* Article cards */
+
+#blog .blog-card-category {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-v2-card-content > p {
+
+  font-size: 11px;
+
+  line-height: 1.75;
+
+}
+
+
+#blog .blog-card-meta {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-card-read span {
+
+  font-size: 9px;
+
+}
+
+
+/* Explore by interest */
+
+#blog .blog-interest-item small {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-interest-item strong {
+
+  font-size: 12px;
+
+}
+
+
+#blog .blog-interest-count {
+
+  font-size: 8px;
+
+}
+
+
+/* Thinking Out Loud */
+
+#blog .blog-thinking-intro p {
+
+  font-size: 11px;
+
+}
+
+
+#blog .blog-thinking-grid small {
+
+  font-size: 8px;
+
+}
+
+
+#blog .blog-thinking-grid h4 {
+
+  font-size: 12px;
+
+}
+
+
+#blog .thinking-status {
+
+  font-size: 7px;
+
+}
+
+
+/* Final CTA */
+
+#blog .blog-v2-final p {
+
+  font-size: 11px;
+
+}
+
+
+#blog .blog-v2-final-btn {
+
+  font-size: 10px;
+
+}

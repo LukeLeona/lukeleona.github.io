@@ -2979,3 +2979,186 @@ small {
   }
 
 }
+
+
+/* =========================================================
+   READABILITY PASS — RESUME
+========================================================= */
+
+
+/* Main paragraphs */
+
+#resume .resume-v2-intro > p,
+#resume .resume-section-heading > p,
+#resume .resume-service-copy > p,
+#resume .resume-recommendation p,
+#resume .career-detail-main > p {
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+/* Main micro-headings */
+
+#resume .resume-v2-eyebrow,
+#resume .resume-service-number {
+
+  font-size: 9px;
+
+}
+
+
+/* Capability tabs */
+
+#resume .resume-capability-tab span {
+
+  font-size: 11px;
+
+}
+
+
+/* Service checks */
+
+#resume .resume-service-checks span {
+
+  font-size: 11px;
+
+}
+
+
+/* Technology chips */
+
+#resume .resume-service-tech span,
+#resume .recommendation-tags span,
+#resume .career-focus span,
+#resume .education-focus span {
+
+  font-size: 9px;
+
+}
+
+
+/* Links/buttons */
+
+#resume .resume-service-link,
+#resume .resume-primary-btn,
+#resume .resume-outline-btn,
+#resume .resume-task-demo-btn {
+
+  font-size: 10px;
+
+}
+
+
+/* Real UI labels — not the fake browser demo */
+
+#resume .resume-demo-label span {
+
+  font-size: 9px;
+
+}
+
+
+#resume .resume-demo-label strong {
+
+  font-size: 10px;
+
+}
+
+
+/* Client problem selector */
+
+#resume .resume-problem-btn span {
+
+  font-size: 11px;
+
+}
+
+
+#resume .resume-recommendation > div:last-child > span {
+
+  font-size: 9px;
+
+}
+
+
+/* Career timeline */
+
+#resume .career-year {
+
+  font-size: 9px;
+
+}
+
+
+#resume .career-point strong {
+
+  font-size: 11px;
+
+}
+
+
+#resume .career-point small {
+
+  font-size: 9px;
+
+}
+
+
+#resume .career-interaction-hint {
+
+  font-size: 9px;
+
+}
+
+
+/* Career details */
+
+#resume .career-detail-meta span {
+
+  font-size: 9px;
+
+}
+
+
+#resume .career-detail-meta small {
+
+  font-size: 9px;
+
+}
+
+
+#resume .career-learning > span {
+
+  font-size: 9px;
+
+}
+
+
+#resume .career-learning li {
+
+  font-size: 10px;
+
+  line-height: 1.65;
+
+}
+
+
+/* Education */
+
+#resume .education-year,
+#resume .education-main > span {
+
+  font-size: 9px;
+
+}
+
+
+#resume .education-honor small {
+
+  font-size: 8px;
+
+}
