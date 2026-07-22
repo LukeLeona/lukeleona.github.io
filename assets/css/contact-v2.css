@@ -1,0 +1,847 @@
+/* =========================================================
+   CONTACT V2
+   UI / UX REFINEMENT ONLY
+========================================================= */
+
+#contact.contact-v2 {
+
+  --contact-gold: #ebb020;
+
+  --contact-card:
+    #292a2e;
+
+  --contact-card-soft:
+    #25262a;
+
+  --contact-border:
+    rgba(255, 255, 255, .07);
+
+  --contact-border-gold:
+    rgba(235, 176, 32, .24);
+
+  --contact-muted:
+    #929397;
+
+  --contact-text:
+    #c5c6c8;
+
+}
+
+
+/* =========================================================
+   CONTAINER / TITLE
+========================================================= */
+
+#contact.contact-v2
+.container {
+
+  max-width:
+    1050px;
+
+}
+
+
+#contact.contact-v2
+.contact-v2-title {
+
+  margin-bottom:
+    0;
+
+}
+
+
+/*
+  Keep your existing subtitle design,
+  but tighten the spacing below it.
+*/
+
+#contact.contact-v2
+.subtitle {
+
+  margin-bottom:
+    0;
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+#contact.contact-v2
+.contact-v2-layout {
+
+  align-items:
+    stretch;
+
+  margin-top:
+    38px;
+
+}
+
+
+#contact.contact-v2
+.contact-v2-layout >
+[class*="col-"] {
+
+  display:
+    flex;
+
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+#contact.contact-v2
+.contact-v2-info {
+
+  width:
+    100%;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr;
+
+  gap:
+    10px;
+
+}
+
+
+/* -----------------------------------------
+   Info Card
+----------------------------------------- */
+
+#contact.contact-v2
+.contact-v2-info-card {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  min-height:
+    102px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    16px;
+
+  padding:
+    19px;
+
+  border:
+    1px solid
+    var(--contact-border);
+
+  border-radius:
+    14px;
+
+  background:
+    var(--contact-card);
+
+  color:
+    inherit;
+
+  overflow:
+    hidden;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+/*
+  Very subtle gold accent.
+  No additional visible content.
+*/
+
+#contact.contact-v2
+.contact-v2-info-card::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    18%;
+
+  bottom:
+    18%;
+
+  width:
+    2px;
+
+  border-radius:
+    0 2px 2px 0;
+
+  background:
+    var(--contact-gold);
+
+  opacity:
+    .35;
+
+  transition:
+    opacity .25s ease,
+    top .25s ease,
+    bottom .25s ease;
+
+}
+
+
+/* Hover */
+
+#contact.contact-v2
+a.contact-v2-info-card:hover {
+
+  transform:
+    translateX(4px);
+
+  border-color:
+    var(--contact-border-gold);
+
+  background:
+    rgba(235, 176, 32, .025);
+
+  box-shadow:
+    0 12px 28px
+    rgba(0, 0, 0, .12);
+
+}
+
+
+#contact.contact-v2
+a.contact-v2-info-card:hover::after {
+
+  top:
+    10%;
+
+  bottom:
+    10%;
+
+  opacity:
+    1;
+
+}
+
+
+/* =========================================================
+   CONTACT ICONS
+========================================================= */
+
+#contact.contact-v2
+.item-icon {
+
+  float:
+    none;
+
+  width:
+    46px;
+
+  height:
+    46px;
+
+  flex:
+    0 0
+    46px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    rgba(235, 176, 32, .15);
+
+  border-radius:
+    11px;
+
+  background:
+    rgba(235, 176, 32, .055);
+
+}
+
+
+#contact.contact-v2
+.item-icon i {
+
+  position:
+    static;
+
+  color:
+    var(--contact-gold);
+
+  font-size:
+    18px;
+
+  line-height:
+    1;
+
+  transition:
+    transform .25s ease;
+
+}
+
+
+#contact.contact-v2
+a.contact-v2-info-card:hover
+.item-icon i {
+
+  transform:
+    scale(1.08);
+
+}
+
+
+/* =========================================================
+   INFO TEXT
+========================================================= */
+
+#contact.contact-v2
+.info-text {
+
+  min-width:
+    0;
+
+  margin-left:
+    0;
+
+}
+
+
+#contact.contact-v2
+.info-text h5 {
+
+  margin:
+    0 0 4px;
+
+  color:
+    #fff;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+
+}
+
+
+#contact.contact-v2
+.info-text small {
+
+  display:
+    block;
+
+  max-width:
+    100%;
+
+  color:
+    var(--contact-muted);
+
+  font-size:
+    9px;
+
+  line-height:
+    1.55;
+
+  overflow-wrap:
+    anywhere;
+
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+#contact.contact-v2
+.contact-v2-form-card {
+
+  width:
+    100%;
+
+  margin-top:
+    0;
+
+  padding:
+    27px;
+
+  border:
+    1px solid
+    var(--contact-border);
+
+  border-radius:
+    16px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(235,176,32,.018),
+      rgba(255,255,255,.006)
+    ),
+
+    var(--contact-card-soft);
+
+}
+
+
+#contact.contact-v2
+.contact-form {
+
+  margin-top:
+    0;
+
+}
+
+
+/* =========================================================
+   FORM SPACING
+========================================================= */
+
+#contact.contact-v2
+.form-item {
+
+  min-width:
+    0;
+
+}
+
+
+#contact.contact-v2
+.form-group {
+
+  position:
+    relative;
+
+  margin-bottom:
+    12px;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+#contact.contact-v2
+.form-control {
+
+  width:
+    100%;
+
+  height:
+    52px;
+
+  padding:
+    0 15px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius:
+    10px;
+
+  outline:
+    none;
+
+  background:
+    rgba(255,255,255,.018);
+
+  color:
+    #e1e2e3;
+
+  font-size:
+    10px;
+
+  font-weight:
+    400;
+
+  box-shadow:
+    none;
+
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
+
+}
+
+
+/* Placeholder */
+
+#contact.contact-v2
+.form-control::placeholder {
+
+  color:
+    #797a7e;
+
+  opacity:
+    1;
+
+}
+
+
+/* Hover */
+
+#contact.contact-v2
+.form-control:hover {
+
+  border-color:
+    rgba(255,255,255,.15);
+
+  background:
+    rgba(255,255,255,.024);
+
+}
+
+
+/* Focus */
+
+#contact.contact-v2
+.form-control:focus {
+
+  border:
+    1px solid
+    rgba(235,176,32,.65);
+
+  border-radius:
+    10px;
+
+  outline:
+    0;
+
+  background:
+    rgba(235,176,32,.018);
+
+  color:
+    #fff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(235,176,32,.055);
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+#contact.contact-v2
+textarea.form-control {
+
+  min-height:
+    155px;
+
+  height:
+    155px;
+
+  padding:
+    14px 15px;
+
+  line-height:
+    1.65;
+
+  resize:
+    vertical;
+
+}
+
+
+/* =========================================================
+   AUTOFILL
+========================================================= */
+
+#contact.contact-v2
+.form-control:-webkit-autofill,
+
+#contact.contact-v2
+.form-control:-webkit-autofill:hover,
+
+#contact.contact-v2
+.form-control:-webkit-autofill:focus {
+
+  -webkit-text-fill-color:
+    #fff;
+
+  -webkit-box-shadow:
+    0 0 0 1000px
+    #292a2e inset;
+
+  transition:
+    background-color
+    9999s ease-in-out 0s;
+
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+#contact.contact-v2
+.contact-v2-submit-wrap {
+
+  margin:
+    6px 0 0 !important;
+
+}
+
+
+#contact.contact-v2
+.contact-v2-submit {
+
+  min-width:
+    145px;
+
+  padding:
+    10px 20px;
+
+  border:
+    1px solid
+    var(--contact-gold);
+
+  border-radius:
+    22px;
+
+  background:
+    var(--contact-gold);
+
+  color:
+    #202125;
+
+  font-size:
+    9px;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    none;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+}
+
+
+#contact.contact-v2
+.contact-v2-submit:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(235,176,32,.14);
+
+}
+
+
+#contact.contact-v2
+.contact-v2-submit:active {
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* Keyboard focus */
+
+#contact.contact-v2
+.contact-v2-submit:focus-visible,
+
+#contact.contact-v2
+.contact-v2-info-card:focus-visible {
+
+  outline:
+    2px solid
+    var(--contact-gold) !important;
+
+  outline-offset:
+    3px !important;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  #contact.contact-v2
+  .contact-v2-layout {
+
+    row-gap:
+      14px;
+
+  }
+
+
+  /*
+    When the form moves below the info section,
+    show the existing 3 items horizontally.
+  */
+
+  #contact.contact-v2
+  .contact-v2-info {
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+  }
+
+
+  #contact.contact-v2
+  .contact-v2-info-card {
+
+    min-height:
+      95px;
+
+    padding:
+      15px;
+
+  }
+
+
+  #contact.contact-v2
+  .item-icon {
+
+    width:
+      40px;
+
+    height:
+      40px;
+
+    flex-basis:
+      40px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  #contact.contact-v2
+  .contact-v2-layout {
+
+    margin-top:
+      28px;
+
+  }
+
+
+  #contact.contact-v2
+  .contact-v2-info {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  #contact.contact-v2
+  .contact-v2-info-card {
+
+    min-height:
+      auto;
+
+  }
+
+
+  #contact.contact-v2
+  .contact-v2-form-card {
+
+    padding:
+      20px 16px;
+
+  }
+
+
+  #contact.contact-v2
+  .form-control {
+
+    height:
+      50px;
+
+  }
+
+
+  #contact.contact-v2
+  textarea.form-control {
+
+    min-height:
+      140px;
+
+    height:
+      140px;
+
+  }
+
+
+  #contact.contact-v2
+  .contact-v2-submit {
+
+    width:
+      100%;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #contact.contact-v2
+  * {
+
+    transition:
+      none !important;
+
+  }
+
+}

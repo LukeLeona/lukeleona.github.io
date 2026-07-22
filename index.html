@@ -40,6 +40,9 @@
   <!-- Interactive Resume Styles -->
 <link rel="stylesheet" href="assets/css/resume-v2.css">
 
+<!-- Contact UI Styles -->
+<link rel="stylesheet" href="assets/css/contact-v2.css">
+
   <!-- Iconify - coded technology/tool logos -->
 <script
   src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js">
@@ -6582,103 +6585,280 @@
 <!-- ========================================
      BLOG / JOURNAL END
 ========================================= -->
+<!-- ========================================
+     CONTACT START
+========================================= -->
 
-    <!-- Contact Start -->
-    <section id="contact" class="section contact w-100">
-      <div class="container">
-        <h3 class="subtitle">Get in Touch</h3>
-        <!-- Map -->
-        <div class="row mt-5">
-        </div>
-      </div>
-      <div class="row mt-4">
-        <!-- Address Info -->
-        <div class="col-12 col-xl-5">
-          <div class="row">
-            <!--  Item 01 -->
-            <div class="col-lg-12">
-              <div class="info-box">
-                <div class="item-icon">
-                  <i class="bi bi-envelope-open"></i>
-                </div>
-                <div class="info-text">
-                  <h5>Mail Me</h5>
-                  <small>lukemarkleona9@gmail.com</small>
-                </div>
-              </div>
+<section
+  id="contact"
+  class="section contact contact-v2 w-100"
+>
+
+  <div class="container">
+
+
+    <!-- Existing heading -->
+
+    <h3 class="subtitle contact-v2-title">
+      Get in Touch
+    </h3>
+
+
+
+    <div class="row contact-v2-layout">
+
+
+      <!-- ========================================
+           CONTACT INFORMATION
+      ========================================= -->
+
+      <div class="col-12 col-xl-5">
+
+        <div class="contact-v2-info">
+
+
+          <!-- MAIL -->
+
+          <a
+            href="mailto:lukemarkleona9@gmail.com"
+            class="contact-v2-info-card"
+          >
+
+            <div class="item-icon">
+
+              <i class="bi bi-envelope-open"></i>
+
             </div>
-            <!--  Item 02 -->
-            <div class="col-lg-12">
-              <div class="info-box">
-                <div class="item-icon">
-                  <i class="bi bi-telephone"></i>
-                </div>
-                <div class="info-text">
-                  <h5>Call Me On</h5>
-                  <small>0993 499 6221</small>
-                </div>
-              </div>
+
+
+            <div class="info-text">
+
+              <h5>
+                Mail Me
+              </h5>
+
+              <small>
+                lukemarkleona9@gmail.com
+              </small>
+
             </div>
-            <!--  Item 03 -->
-            <div class="col-lg-12">
-              <div class="info-box">
-                <div class="item-icon">
-                  <i class="bi bi-map"></i>
-                </div>
-                <div class="info-text">
-                  <h5>Work With Me</h5>
-                  <small>Open for freelance & data projects.</small>
-                </div>
-              </div>
+
+          </a>
+
+
+
+          <!-- PHONE -->
+
+          <a
+            href="tel:+639934996221"
+            class="contact-v2-info-card"
+          >
+
+            <div class="item-icon">
+
+              <i class="bi bi-telephone"></i>
+
             </div>
+
+
+            <div class="info-text">
+
+              <h5>
+                Call Me On
+              </h5>
+
+              <small>
+                0993 499 6221
+              </small>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- AVAILABILITY -->
+
+          <div class="contact-v2-info-card">
+
+            <div class="item-icon">
+
+              <i class="bi bi-briefcase"></i>
+
+            </div>
+
+
+            <div class="info-text">
+
+              <h5>
+                Work With Me
+              </h5>
+
+              <small>
+                Open for freelance &amp; data projects.
+              </small>
+
+            </div>
+
           </div>
+
+
         </div>
-        <!-- Contact Form -->
-        <div class="col-12 col-xl-7">
-          <div class="contact-box">
-            <div class="contact-form">
-              <form id="contactForm">
-                <div class="row">
-                  <div class="col-lg-12 form-item">
-                    <div class="form-group">
-                      <input name="name" id="name" type="text" class="form-control" placeholder="Complate Name*"
-                        required>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 form-item">
-                    <div class="form-group">
-                      <input name="email" id="email" type="email" class="form-control" placeholder="Email Address*"
-                        required>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 form-item">
-                    <div class="form-group">
-                      <input name="subject" id="subject" type="tel" class="form-control" placeholder="Phone number*"
-                        required>
-                    </div>
-                  </div>
-                  <div class="col-12 form-item">
-                    <div class="form-group">
-                      <textarea name="comments" id="comments" rows="3" class="form-control textarea"
-                        placeholder="Your message..."></textarea>
-                    </div>
-                  </div>
-                  <div class="col-sm-12 text-left">
-                    <div class="pill-btn mt-4 mb-3">
-                      <button type="submit" class="secondary-button"> Send Message </button>
-                    </div>
+
+      </div>
+
+
+
+      <!-- ========================================
+           CONTACT FORM
+      ========================================= -->
+
+      <div class="col-12 col-xl-7">
+
+        <div class="contact-box contact-v2-form-card">
+
+          <div class="contact-form">
+
+
+            <!--
+              Keep #contactForm and all field name=""
+              attributes unchanged because your existing
+              EmailJS integration submits this form.
+            -->
+
+            <form id="contactForm">
+
+              <div class="row">
+
+
+                <!-- NAME -->
+
+                <div class="col-lg-6 form-item">
+
+                  <div class="form-group">
+
+                    <input
+                      name="name"
+                      id="name"
+                      type="text"
+                      class="form-control"
+                      placeholder="Complete Name*"
+                      autocomplete="name"
+                      aria-label="Complete Name"
+                      required
+                    >
 
                   </div>
+
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!--  Contact End  -->
 
+
+
+                <!-- EMAIL -->
+
+                <div class="col-lg-6 form-item">
+
+                  <div class="form-group">
+
+                    <input
+                      name="email"
+                      id="email"
+                      type="email"
+                      class="form-control"
+                      placeholder="Email Address*"
+                      autocomplete="email"
+                      aria-label="Email Address"
+                      required
+                    >
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="col-lg-12 form-item">
+
+                  <div class="form-group">
+
+                    <input
+                      name="subject"
+                      id="subject"
+                      type="tel"
+                      class="form-control"
+                      placeholder="Phone Number*"
+                      autocomplete="tel"
+                      aria-label="Phone Number"
+                      required
+                    >
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="col-12 form-item">
+
+                  <div class="form-group">
+
+                    <textarea
+                      name="comments"
+                      id="comments"
+                      rows="3"
+                      class="form-control textarea"
+                      placeholder="Your message."
+                      aria-label="Your message"
+                    ></textarea>
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <div class="col-sm-12 text-left">
+
+                  <div class="pill-btn contact-v2-submit-wrap">
+
+                    <button
+                      type="submit"
+                      class="secondary-button contact-v2-submit"
+                    >
+                      Send Message
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     CONTACT END
+========================================= -->
   </main>
   <!--  Main End  -->
 
