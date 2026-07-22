@@ -38,6 +38,9 @@ interactivePortfolio();
     /* Interactive Resume */
     interactiveResume();
 
+    /* Interactive Blog / Journal */
+interactiveBlog();
+
     /* Custom cursor */
     mouseMagicCursor();
 
@@ -4693,4 +4696,468 @@ creativeGalleryTriggers.forEach(
 
   }
 );
+}
+
+
+/* =========================================================
+   INTERACTIVE BLOG / JOURNAL
+========================================================= */
+
+function interactiveBlog() {
+
+  "use strict";
+
+
+  var blog =
+    document.getElementById(
+      "blog"
+    );
+
+
+  if (!blog) {
+
+    return;
+
+  }
+
+
+
+  /* =====================================================
+     ELEMENTS
+  ===================================================== */
+
+  var filterButtons =
+    blog.querySelectorAll(
+      ".blog-filter-btn"
+    );
+
+
+  var featuredArticle =
+    blog.querySelector(
+      ".blog-featured-article"
+    );
+
+
+  var articleCards =
+    blog.querySelectorAll(
+      ".blog-v2-card"
+    );
+
+
+  var interestButtons =
+    blog.querySelectorAll(
+      ".blog-interest-item"
+    );
+
+
+  var resultLabel =
+    document.getElementById(
+      "blogResultsLabel"
+    );
+
+
+
+  /* =====================================================
+     FILTER
+  ===================================================== */
+
+  function applyBlogFilter(
+    category
+  ) {
+
+
+    /* -----------------------------------------
+       Filter buttons
+    ----------------------------------------- */
+
+    filterButtons.forEach(
+      function (button) {
+
+        button.classList.toggle(
+
+          "active",
+
+          button.dataset.blogFilter ===
+            category
+
+        );
+
+      }
+    );
+
+
+
+    /* -----------------------------------------
+       Featured article
+    ----------------------------------------- */
+
+    if (featuredArticle) {
+
+      var featuredCategory =
+        featuredArticle.dataset
+          .blogCategory;
+
+
+      var showFeatured =
+        category === "all" ||
+        category ===
+          featuredCategory;
+
+
+      featuredArticle.classList.toggle(
+
+        "blog-filter-hidden",
+
+        !showFeatured
+
+      );
+
+
+      if (showFeatured) {
+
+        featuredArticle.classList.remove(
+          "blog-filter-showing"
+        );
+
+
+        /*
+         * Force a reflow so animation
+         * can replay.
+         */
+
+        void featuredArticle
+          .offsetWidth;
+
+
+        featuredArticle.classList.add(
+          "blog-filter-showing"
+        );
+
+      }
+
+    }
+
+
+
+    /* -----------------------------------------
+       Journal cards
+    ----------------------------------------- */
+
+    var visibleCount =
+      featuredArticle &&
+      (
+        category === "all" ||
+        category === "web"
+      )
+        ? 1
+        : 0;
+
+
+    articleCards.forEach(
+      function (card) {
+
+        var cardCategory =
+          card.dataset
+            .blogCategory;
+
+
+        var showCard =
+          category === "all" ||
+          cardCategory === category;
+
+
+        card.classList.toggle(
+
+          "blog-filter-hidden",
+
+          !showCard
+
+        );
+
+
+        if (showCard) {
+
+          visibleCount++;
+
+
+          card.classList.remove(
+            "blog-filter-showing"
+          );
+
+
+          void card.offsetWidth;
+
+
+          card.classList.add(
+            "blog-filter-showing"
+          );
+
+        }
+
+      }
+    );
+
+
+
+    /* -----------------------------------------
+       Result label
+    ----------------------------------------- */
+
+    if (resultLabel) {
+
+      if (
+        category === "all"
+      ) {
+
+        resultLabel.textContent =
+          "Showing all 4 insights";
+
+      } else {
+
+        var categoryLabels = {
+
+          web:
+            "web & digital strategy",
+
+          data:
+            "data & analytics",
+
+          seo:
+            "SEO & digital growth",
+
+          career:
+            "career & community"
+
+        };
+
+
+        resultLabel.textContent =
+          "Showing " +
+          visibleCount +
+          " insight about " +
+          categoryLabels[category];
+
+      }
+
+    }
+
+  }
+
+
+
+  /* =====================================================
+     FILTER BUTTON EVENTS
+  ===================================================== */
+
+  filterButtons.forEach(
+    function (button) {
+
+      button.addEventListener(
+
+        "click",
+
+        function () {
+
+          applyBlogFilter(
+            button.dataset.blogFilter
+          );
+
+        }
+
+      );
+
+    }
+  );
+
+
+
+  /* =====================================================
+     EXPLORE BY INTEREST
+  ===================================================== */
+
+  interestButtons.forEach(
+    function (button) {
+
+      button.addEventListener(
+
+        "click",
+
+        function () {
+
+          var category =
+            button.dataset.blogInterest;
+
+
+          applyBlogFilter(
+            category
+          );
+
+
+          /*
+           * Bring the visitor back
+           * to the filtered journal.
+           */
+
+          var filterArea =
+            blog.querySelector(
+              ".blog-v2-filter-wrap"
+            );
+
+
+          if (filterArea) {
+
+            filterArea.scrollIntoView({
+
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+
+            });
+
+          }
+
+        }
+
+      );
+
+    }
+  );
+
+
+
+  /* =====================================================
+     SCROLL REVEAL
+  ===================================================== */
+
+  var revealItems =
+    blog.querySelectorAll(
+      ".blog-v2-reveal"
+    );
+
+
+  var reduceMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if (reduceMotion) {
+
+    revealItems.forEach(
+      function (item) {
+
+        item.classList.add(
+          "is-visible"
+        );
+
+      }
+    );
+
+
+    return;
+
+  }
+
+
+
+  blog.classList.add(
+    "blog-animate-ready"
+  );
+
+
+
+  if (
+    !(
+      "IntersectionObserver"
+      in window
+    )
+  ) {
+
+    revealItems.forEach(
+      function (item) {
+
+        item.classList.add(
+          "is-visible"
+        );
+
+      }
+    );
+
+
+    return;
+
+  }
+
+
+
+  var observer =
+    new IntersectionObserver(
+
+      function (
+        entries,
+        revealObserver
+      ) {
+
+        entries.forEach(
+          function (entry) {
+
+            if (
+              !entry.isIntersecting
+            ) {
+
+              return;
+
+            }
+
+
+            entry.target
+              .classList.add(
+                "is-visible"
+              );
+
+
+            revealObserver
+              .unobserve(
+                entry.target
+              );
+
+          }
+        );
+
+      },
+
+      {
+
+        threshold:
+          .08,
+
+        rootMargin:
+          "0px 0px -20px 0px"
+
+      }
+
+    );
+
+
+
+  revealItems.forEach(
+    function (item) {
+
+      observer.observe(
+        item
+      );
+
+    }
+  );
+
+
+
+  /* Initial state */
+
+  applyBlogFilter(
+    "all"
+  );
+
 }
