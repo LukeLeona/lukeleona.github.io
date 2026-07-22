@@ -1902,3 +1902,294 @@ function themeOption(){
         $(this).addClass('active');
     });
 }
+
+
+/* =========================================================
+   ABOUT SECTION
+   Scroll reveal + animated metrics
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const aboutSection = document.querySelector("#about");
+
+  if (!aboutSection) {
+    return;
+  }
+
+
+  /* -----------------------------------------
+     Respect reduced-motion preference
+  ----------------------------------------- */
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
+  const revealItems = aboutSection.querySelectorAll(
+    ".about-reveal"
+  );
+
+
+  const metricNumbers = aboutSection.querySelectorAll(
+    ".about-metric-number"
+  );
+
+
+  let metricsAnimated = false;
+
+
+
+  /* -----------------------------------------
+     Finalize counters immediately
+     when motion is disabled
+  ----------------------------------------- */
+
+  function setFinalMetricValues() {
+
+    metricNumbers.forEach(function (element) {
+
+      const target = Number(
+        element.dataset.target || 0
+      );
+
+      const suffix =
+        element.dataset.suffix || "";
+
+      element.textContent =
+        target + suffix;
+
+    });
+
+  }
+
+
+  if (reduceMotion) {
+
+    revealItems.forEach(function (item) {
+
+      item.classList.add(
+        "is-visible"
+      );
+
+    });
+
+
+    setFinalMetricValues();
+
+    return;
+
+  }
+
+
+
+  /* Enable animation styles only after JS exists */
+
+  aboutSection.classList.add(
+    "about-animate-ready"
+  );
+
+
+
+  /* -----------------------------------------
+     Counter animation
+  ----------------------------------------- */
+
+  function animateMetric(element) {
+
+    const target = Number(
+      element.dataset.target || 0
+    );
+
+    const suffix =
+      element.dataset.suffix || "";
+
+    const duration = 1200;
+
+    const start =
+      performance.now();
+
+
+    function update(currentTime) {
+
+      const progress = Math.min(
+        (currentTime - start) / duration,
+        1
+      );
+
+
+      /*
+       * Ease-out cubic:
+       * fast start, smooth finish
+       */
+
+      const eased =
+        1 - Math.pow(
+          1 - progress,
+          3
+        );
+
+
+      const currentValue =
+        Math.floor(
+          target * eased
+        );
+
+
+      element.textContent =
+        currentValue + suffix;
+
+
+      if (progress < 1) {
+
+        requestAnimationFrame(
+          update
+        );
+
+      } else {
+
+        element.textContent =
+          target + suffix;
+
+      }
+
+    }
+
+
+    requestAnimationFrame(
+      update
+    );
+
+  }
+
+
+
+  function animateAllMetrics() {
+
+    if (metricsAnimated) {
+      return;
+    }
+
+
+    metricsAnimated = true;
+
+
+    metricNumbers.forEach(
+      function (element, index) {
+
+        window.setTimeout(
+          function () {
+
+            animateMetric(
+              element
+            );
+
+          },
+
+          index * 120
+        );
+
+      }
+    );
+
+  }
+
+
+
+  /* -----------------------------------------
+     Intersection observer
+  ----------------------------------------- */
+
+  if (
+    !("IntersectionObserver" in window)
+  ) {
+
+    revealItems.forEach(
+      function (item) {
+
+        item.classList.add(
+          "is-visible"
+        );
+
+      }
+    );
+
+
+    animateAllMetrics();
+
+    return;
+
+  }
+
+
+
+  const revealObserver =
+    new IntersectionObserver(
+
+      function (entries, observer) {
+
+        entries.forEach(
+          function (entry) {
+
+            if (
+              !entry.isIntersecting
+            ) {
+
+              return;
+
+            }
+
+
+            entry.target.classList.add(
+              "is-visible"
+            );
+
+
+            /*
+             * Start metrics only when
+             * the metrics row enters view
+             */
+
+            if (
+              entry.target.classList.contains(
+                "about-v2-metrics"
+              )
+            ) {
+
+              animateAllMetrics();
+
+            }
+
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+        );
+
+      },
+
+      {
+        threshold: 0.12,
+
+        rootMargin:
+          "0px 0px -30px 0px"
+      }
+
+    );
+
+
+
+  revealItems.forEach(
+    function (item) {
+
+      revealObserver.observe(
+        item
+      );
+
+    }
+  );
+
+});
