@@ -7091,257 +7091,7 @@ body.dark-arshia,
 
 }
 
-/* =========================================================
-   TALL LAPTOP / DESKTOP — HERO PORTRAIT
-   Example target: 1357 × 948 viewport
 
-   Does NOT affect the shorter Win10 viewport.
-========================================================= */
-
-@media
-(min-width: 1200px)
-and
-(max-width: 1500px)
-and
-(min-height: 760px) {
-
-
-  #hero
-  .hero-portrait-reveal {
-
-    /*
-     * Anchor the portrait directly to the bottom
-     * so we can use almost the full hero height.
-     */
-
-    top:
-      auto;
-
-    bottom:
-      -1px;
-
-    right:
-      -4%;
-
-    transform:
-      none;
-
-
-    /*
-     * OLD:
-     *
-     * width: min(43%, 470px);
-     * height: min(82%, 590px);
-     *
-     * The 470px cap was preventing the portrait
-     * from becoming larger on your taller screen.
-     */
-
-    width:
-      min(
-        61%,
-        620px
-      );
-
-    height:
-      98%;
-
-    max-width:
-      none;
-
-  }
-
-
-  /*
-   * Keep both interactive portrait layers
-   * exactly aligned and show as much of the
-   * original image as possible.
-   */
-
-  #hero
-  .hero-portrait-base,
-
-  #hero
-  .hero-portrait-layer {
-
-    width:
-      100%;
-
-    height:
-      100%;
-
-    object-fit:
-      contain !important;
-
-    object-position:
-      right bottom !important;
-
-  }
-
-}
-
-/* =========================================================
-   TALL DESKTOP READABILITY
-========================================================= */
-
-@media
-(min-width: 992px)
-and
-(min-height: 760px) {
-
-
-  /* HOME */
-
-#hero
-.hero-content {
-
-  /*
-   * Give the larger headline enough horizontal space.
-   */
-
-  width:
-    54%;
-
-  max-width:
-    560px;
-
-}
-
-
-#hero
-.hero-main-title {
-
-  font-size:
-    clamp(
-      38px,
-      3.15vw,
-      46px
-    );
-
-  line-height:
-    1.38;
-
-  letter-spacing:
-    -.6px;
-
-}
-
-
-#hero
-.hero-role-line {
-
-  margin-top:
-    14px;
-
-  font-size:
-    16px;
-
-  line-height:
-    1.5;
-
-  letter-spacing:
-    .6px;
-
-}
-
-
-#hero
-.hero-actions {
-
-  margin-top:
-    28px;
-
-}
-
-
-#hero
-.hero-work-btn {
-
-  padding:
-    12px 30px;
-
-  font-size:
-    13px;
-
-}
-
-
-#hero
-.hero-work-arrow {
-
-  font-size:
-    20px;
-
-}
-
-
-  /* ABOUT */
-
-  #about
-  .about-v2-description {
-
-    font-size:
-      13px;
-
-    line-height:
-      1.8;
-
-  }
-
-
-  #about
-  .about-v2-specialties span {
-
-    font-size:
-      10px;
-
-  }
-
-
-  #about
-  .about-v2-eyebrow {
-
-    font-size:
-      9px;
-
-  }
-
-
-
-  /* CONTACT */
-
-  #contact.contact-v2
-  .info-text small {
-
-    font-size:
-      11px;
-
-  }
-
-
-  #contact.contact-v2
-  .form-control {
-
-    font-size:
-      12px;
-
-  }
-
-}
-
-/* =========================================================
-   TALL LAPTOP / DESKTOP OPTIMIZATION
-   Target example: 1357 × 948
-
-   Keeps the shorter Win10 layout unchanged.
-========================================================= */
-
-@media
-(min-width: 1200px)
-and
-(max-width: 1500px)
-and
-(min-height: 760px) {
 
 
   /* =====================================================
@@ -7426,9 +7176,9 @@ and
 
     font-size:
       clamp(
-        38px,
+        32px,
         3.15vw,
-        46px
+        40px
       );
 
     line-height:
@@ -7449,10 +7199,10 @@ and
   .hero-role-line {
 
     margin-top:
-      14px;
+      10px;
 
     font-size:
-      16px;
+      12px;
 
     line-height:
       1.5;
@@ -7491,6 +7241,211 @@ and
 
   #hero
   .hero-work-arrow {
+
+    font-size:
+      20px;
+
+  }
+
+/* =========================================================
+   FINAL HERO RESPONSIVE OVERRIDE
+   Taller laptop screens at roughly 1200–1500px wide.
+
+   This targets the screen shown in your screenshot,
+   while avoiding your short-height Win10 viewport.
+========================================================= */
+
+@media
+(min-width: 1200px)
+and
+(max-width: 1500px)
+and
+(min-height: 560px) {
+
+
+  /* =====================================================
+     PORTRAIT WRAPPER
+  ===================================================== */
+
+  #hero .hero-portrait-reveal {
+
+    /*
+     * Fill almost the entire height of the Hero.
+     */
+
+    top:
+      0 !important;
+
+    bottom:
+      0 !important;
+
+    right:
+      -3% !important;
+
+    width:
+      58% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      680px !important;
+
+    transform:
+      none !important;
+
+
+    /*
+     * Important:
+     *
+     * The old wrapper used overflow:hidden,
+     * which can prevent the enlarged image
+     * from visibly extending beyond its box.
+     */
+
+    overflow:
+      visible !important;
+
+  }
+
+
+
+  /* =====================================================
+     ACTUAL PORTRAIT IMAGES
+  ===================================================== */
+
+  #hero .hero-portrait-base,
+  #hero .hero-portrait-layer {
+
+    position:
+      absolute;
+
+    top:
+      0;
+
+    right:
+      0;
+
+    bottom:
+      0;
+
+    left:
+      auto;
+
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+
+    object-fit:
+      contain !important;
+
+    object-position:
+      right bottom !important;
+
+
+    /*
+     * This is what actually makes Luke visibly larger.
+     *
+     * Increasing only the wrapper was not enough because
+     * object-fit:contain can preserve almost the same
+     * apparent subject size depending on image proportions.
+     */
+
+    transform:
+      scale(1.18) !important;
+
+    transform-origin:
+      right bottom !important;
+
+  }
+
+
+
+  /* =====================================================
+     HERO TEXT AREA
+  ===================================================== */
+
+  #hero .hero-content {
+
+    width:
+      55% !important;
+
+    max-width:
+      590px !important;
+
+  }
+
+
+
+  /* =====================================================
+     MAIN HEADLINE
+  ===================================================== */
+
+  #hero .hero-main-title {
+
+    font-size:
+      42px !important;
+
+    line-height:
+      1.38 !important;
+
+    letter-spacing:
+      -.7px;
+
+  }
+
+
+
+  /* =====================================================
+     ROLE TEXT
+  ===================================================== */
+
+  #hero .hero-role-line {
+
+    margin-top:
+      14px;
+
+    font-size:
+      16px !important;
+
+    line-height:
+      1.5;
+
+    letter-spacing:
+      .5px;
+
+  }
+
+
+
+  /* =====================================================
+     BUTTON
+  ===================================================== */
+
+  #hero .hero-actions {
+
+    margin-top:
+      27px;
+
+  }
+
+
+  #hero .hero-work-btn {
+
+    padding:
+      12px 30px;
+
+    font-size:
+      13px !important;
+
+  }
+
+
+  #hero .hero-work-arrow {
 
     font-size:
       20px;
