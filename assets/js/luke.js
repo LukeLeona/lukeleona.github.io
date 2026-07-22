@@ -31,6 +31,9 @@ $(document).ready(function() {
     /* Portfolio chatbot */
     portfolioChatbot();
 
+    /* Interactive Resume */
+    interactiveResume();
+
     /* Custom cursor */
     mouseMagicCursor();
 
@@ -2193,3 +2196,895 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 });
+
+/* =========================================================
+   INTERACTIVE RESUME
+========================================================= */
+
+function interactiveResume() {
+
+    "use strict";
+
+
+    var resumeSection =
+        document.querySelector("#resume");
+
+    if (!resumeSection) {
+        return;
+    }
+
+
+
+    /* =====================================================
+       1. CAPABILITY TABS
+    ===================================================== */
+
+    var serviceButtons =
+        resumeSection.querySelectorAll(
+            ".resume-capability-tab"
+        );
+
+    var servicePanels =
+        resumeSection.querySelectorAll(
+            ".resume-service-panel"
+        );
+
+
+    function activateService(serviceName) {
+
+        serviceButtons.forEach(function(button) {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.service === serviceName
+            );
+
+        });
+
+
+        servicePanels.forEach(function(panel) {
+
+            panel.classList.toggle(
+                "active",
+                panel.dataset.servicePanel === serviceName
+            );
+
+        });
+
+    }
+
+
+    serviceButtons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                activateService(
+                    button.dataset.service
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       2. RESPONSIVE WEBSITE DEMO
+    ===================================================== */
+
+    var deviceButtons =
+        resumeSection.querySelectorAll(
+            ".resume-device-btn"
+        );
+
+    var browserDemo =
+        resumeSection.querySelector(
+            ".resume-browser"
+        );
+
+
+    if (browserDemo) {
+
+        deviceButtons.forEach(function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    deviceButtons.forEach(
+                        function(item) {
+
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    browserDemo.classList.remove(
+                        "device-desktop",
+                        "device-tablet",
+                        "device-mobile"
+                    );
+
+
+                    browserDemo.classList.add(
+                        "device-" +
+                        button.dataset.device
+                    );
+
+                }
+            );
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       3. DESIGN BEFORE / AFTER
+    ===================================================== */
+
+    var designSlider =
+        resumeSection.querySelector(
+            ".resume-design-slider"
+        );
+
+    var designCompare =
+        resumeSection.querySelector(
+            ".resume-design-compare"
+        );
+
+
+    if (
+        designSlider &&
+        designCompare
+    ) {
+
+        function updateDesignComparison() {
+
+            designCompare.style.setProperty(
+                "--design-reveal",
+                designSlider.value + "%"
+            );
+
+        }
+
+
+        designSlider.addEventListener(
+            "input",
+            updateDesignComparison
+        );
+
+
+        updateDesignComparison();
+
+    }
+
+
+
+    /* =====================================================
+       4. DATA DASHBOARD DEMO
+    ===================================================== */
+
+    var chartButtons =
+        resumeSection.querySelectorAll(
+            ".data-demo-btn"
+        );
+
+    var chartBars =
+        resumeSection.querySelectorAll(
+            ".data-chart-bars span"
+        );
+
+
+    var metricOne =
+        document.getElementById(
+            "demoMetricOne"
+        );
+
+    var metricTwo =
+        document.getElementById(
+            "demoMetricTwo"
+        );
+
+    var metricThree =
+        document.getElementById(
+            "demoMetricThree"
+        );
+
+
+    var metricOneLabel =
+        document.getElementById(
+            "demoMetricOneLabel"
+        );
+
+    var metricTwoLabel =
+        document.getElementById(
+            "demoMetricTwoLabel"
+        );
+
+    var metricThreeLabel =
+        document.getElementById(
+            "demoMetricThreeLabel"
+        );
+
+
+    var dashboardViews = {
+
+        sales: {
+
+            bars:
+                [34, 52, 44, 71, 62, 86, 76],
+
+            labels:
+                ["Revenue", "Orders", "Growth"],
+
+            values:
+                ["₱482K", "1,284", "+18%"]
+
+        },
+
+
+        customers: {
+
+            bars:
+                [62, 48, 72, 55, 84, 69, 91],
+
+            labels:
+                ["Customers", "Returning", "Retention"],
+
+            values:
+                ["1,284", "42%", "76%"]
+
+        },
+
+
+        regions: {
+
+            bars:
+                [82, 58, 36, 72, 48, 64, 89],
+
+            labels:
+                ["Regions", "Top Market", "Coverage"],
+
+            values:
+                ["8", "NCR", "74%"]
+
+        }
+
+    };
+
+
+    function updateDashboard(viewName) {
+
+        var data =
+            dashboardViews[viewName];
+
+        if (!data) {
+            return;
+        }
+
+
+        chartBars.forEach(
+            function(bar, index) {
+
+                bar.style.setProperty(
+                    "--bar-height",
+                    data.bars[index] + "%"
+                );
+
+            }
+        );
+
+
+        if (metricOne) {
+
+            metricOne.textContent =
+                data.values[0];
+
+            metricOneLabel.textContent =
+                data.labels[0];
+
+        }
+
+
+        if (metricTwo) {
+
+            metricTwo.textContent =
+                data.values[1];
+
+            metricTwoLabel.textContent =
+                data.labels[1];
+
+        }
+
+
+        if (metricThree) {
+
+            metricThree.textContent =
+                data.values[2];
+
+            metricThreeLabel.textContent =
+                data.labels[2];
+
+        }
+
+    }
+
+
+    chartButtons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                chartButtons.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                updateDashboard(
+                    button.dataset.chartView
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       5. WEB VA TASK DEMO
+    ===================================================== */
+
+    var taskDemoButton =
+        resumeSection.querySelector(
+            ".resume-task-demo-btn"
+        );
+
+    var taskItems =
+        resumeSection.querySelectorAll(
+            ".support-task"
+        );
+
+
+    var taskDemoRunning = false;
+
+
+    if (taskDemoButton) {
+
+        taskDemoButton.addEventListener(
+            "click",
+            function() {
+
+                if (taskDemoRunning) {
+                    return;
+                }
+
+
+                taskDemoRunning = true;
+
+
+                taskItems.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "done"
+                        );
+
+                    }
+                );
+
+
+                taskDemoButton.innerHTML =
+                    'Working... <i class="bi bi-arrow-repeat"></i>';
+
+
+                taskItems.forEach(
+                    function(item, index) {
+
+                        window.setTimeout(
+                            function() {
+
+                                item.classList.add(
+                                    "done"
+                                );
+
+
+                                if (
+                                    index ===
+                                    taskItems.length - 1
+                                ) {
+
+                                    window.setTimeout(
+                                        function() {
+
+                                            taskDemoButton.innerHTML =
+                                                'Run Again <i class="bi bi-arrow-repeat"></i>';
+
+                                            taskDemoRunning =
+                                                false;
+
+                                        },
+                                        450
+                                    );
+
+                                }
+
+                            },
+                            index * 450
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       6. CLIENT PROBLEM SELECTOR
+    ===================================================== */
+
+    var problemButtons =
+        resumeSection.querySelectorAll(
+            ".resume-problem-btn"
+        );
+
+
+    var recommendationIcon =
+        document.getElementById(
+            "recommendationIcon"
+        );
+
+    var recommendationTitle =
+        document.getElementById(
+            "recommendationTitle"
+        );
+
+    var recommendationText =
+        document.getElementById(
+            "recommendationText"
+        );
+
+    var recommendationTags =
+        document.getElementById(
+            "recommendationTags"
+        );
+
+
+    var problemData = {
+
+        website: {
+
+            service: "web",
+
+            icon: "bi-window",
+
+            title:
+                "Build a strong digital foundation",
+
+            text:
+                "Start with Web Development, then connect design, SEO, analytics and ongoing optimization based on what the business needs.",
+
+            tags:
+                [
+                    "Web Development",
+                    "Design",
+                    "SEO"
+                ]
+
+        },
+
+
+        visibility: {
+
+            service: "seo",
+
+            icon: "bi-search",
+
+            title:
+                "Make it easier for the right audience to find you",
+
+            text:
+                "Combine SEO, content structure, technical optimization and analytics to improve discoverability and understand what is working.",
+
+            tags:
+                [
+                    "SEO",
+                    "Content",
+                    "Analytics"
+                ]
+
+        },
+
+
+        data: {
+
+            service: "data",
+
+            icon: "bi-bar-chart",
+
+            title:
+                "Turn scattered information into clearer decisions",
+
+            text:
+                "Start with data cleaning and analysis, then build reporting or dashboards around the questions that matter most.",
+
+            tags:
+                [
+                    "Data Analysis",
+                    "Dashboards",
+                    "Reporting"
+                ]
+
+        },
+
+
+        automation: {
+
+            service: "automation",
+
+            icon: "bi-diagram-3",
+
+            title:
+                "Reduce repetitive work and connect the process",
+
+            text:
+                "Map the workflow first, identify unnecessary manual steps, then connect systems and automate where it creates practical value.",
+
+            tags:
+                [
+                    "Automation",
+                    "Integration",
+                    "Workflow"
+                ]
+
+        },
+
+
+        branding: {
+
+            service: "design",
+
+            icon: "bi-palette",
+
+            title:
+                "Create a clearer and more consistent digital identity",
+
+            text:
+                "Use design, brand consistency, website visuals and content structure to make the business easier to recognize and understand.",
+
+            tags:
+                [
+                    "Design",
+                    "Branding",
+                    "Content"
+                ]
+
+        },
+
+
+        support: {
+
+            service: "support",
+
+            icon: "bi-person-workspace",
+
+            title:
+                "Create one reliable workflow for ongoing digital needs",
+
+            text:
+                "Combine website updates, content, reporting, SEO, creative support and troubleshooting instead of managing every task separately.",
+
+            tags:
+                [
+                    "Web Support",
+                    "Content",
+                    "Operations"
+                ]
+
+        }
+
+    };
+
+
+    function updateRecommendation(problemName) {
+
+        var data =
+            problemData[problemName];
+
+        if (!data) {
+            return;
+        }
+
+
+        activateService(
+            data.service
+        );
+
+
+        if (recommendationIcon) {
+
+            recommendationIcon.className =
+                "bi " + data.icon;
+
+        }
+
+
+        if (recommendationTitle) {
+
+            recommendationTitle.textContent =
+                data.title;
+
+        }
+
+
+        if (recommendationText) {
+
+            recommendationText.textContent =
+                data.text;
+
+        }
+
+
+        if (recommendationTags) {
+
+            recommendationTags.innerHTML =
+                "";
+
+
+            data.tags.forEach(
+                function(tag) {
+
+                    var span =
+                        document.createElement(
+                            "span"
+                        );
+
+                    span.textContent =
+                        tag;
+
+
+                    recommendationTags.appendChild(
+                        span
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+
+    problemButtons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                problemButtons.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                updateRecommendation(
+                    button.dataset.problem
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       7. EXPERIENCE TIMELINE
+    ===================================================== */
+
+    var careerButtons =
+        resumeSection.querySelectorAll(
+            ".career-point"
+        );
+
+    var careerPanels =
+        resumeSection.querySelectorAll(
+            ".career-detail"
+        );
+
+
+    careerButtons.forEach(function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                var careerName =
+                    button.dataset.career;
+
+
+                careerButtons.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                careerPanels.forEach(
+                    function(panel) {
+
+                        panel.classList.toggle(
+                            "active",
+                            panel.dataset.careerPanel ===
+                            careerName
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       8. SCROLL REVEAL
+    ===================================================== */
+
+    var revealItems =
+        resumeSection.querySelectorAll(
+            ".resume-v2-reveal"
+        );
+
+
+    var reduceMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    if (reduceMotion) {
+
+        revealItems.forEach(
+            function(item) {
+
+                item.classList.add(
+                    "is-visible"
+                );
+
+            }
+        );
+
+        return;
+
+    }
+
+
+    resumeSection.classList.add(
+        "resume-animate-ready"
+    );
+
+
+    if (
+        !("IntersectionObserver" in window)
+    ) {
+
+        revealItems.forEach(
+            function(item) {
+
+                item.classList.add(
+                    "is-visible"
+                );
+
+            }
+        );
+
+        return;
+
+    }
+
+
+    var revealObserver =
+        new IntersectionObserver(
+
+            function(entries, observer) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            !entry.isIntersecting
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+                );
+
+            },
+
+            {
+
+                threshold: .08,
+
+                rootMargin:
+                    "0px 0px -20px 0px"
+
+            }
+
+        );
+
+
+    revealItems.forEach(
+        function(item) {
+
+            revealObserver.observe(
+                item
+            );
+
+        }
+    );
+
+}
