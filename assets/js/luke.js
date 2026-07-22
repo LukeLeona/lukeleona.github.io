@@ -22,6 +22,10 @@ $(document).ready(function() {
     date();
     mobileDesign();
     portfolioPopup();
+
+    /* Interactive Portfolio */
+interactivePortfolio();
+
     sidebarMenu();
     mapInit();
 
@@ -753,46 +757,342 @@ function owlCrousel() {
 }
 
 /*-------------------------  ISOTOPE JS  -------------------------*/
+/* =========================================================
+   PORTFOLIO FILTERING
+   Category + Selected / All modes
+========================================================= */
+
 function portfolioIsotop() {
 
-    "use strict";
+  "use strict";
 
-    // init Isotope
-    var $pfilter = $('#portfolio-filter');
-    var $grid = $('.portfolio-items');
+
+  var $portfolio =
+    $("#portfolio");
+
+
+  var $grid =
+    $(".portfolio-items");
+
+
+  var $filter =
+    $("#portfolio-filter");
+
+
+  var $modeButtons =
+    $(".portfolio-mode-btn");
+
+
+  if (
+    !$portfolio.length ||
+    !$grid.length
+  ) {
+
+    return;
+
+  }
+
+
+
+  /* -----------------------------------------
+     Current state
+  ----------------------------------------- */
+
+  var currentFilter =
+    $portfolio.attr(
+      "data-current-filter"
+    ) || "*";
+
+
+  var currentMode =
+    $portfolio.attr(
+      "data-portfolio-mode"
+    ) || "selected";
+
+
+
+  /* -----------------------------------------
+     Initialize / refresh Isotope
+  ----------------------------------------- */
+
+  if (
+    !$grid.data(
+      "isotope"
+    )
+  ) {
+
     $grid.isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'masonry',
-    });
-    $pfilter.find('a').on("click", function() {
-        var filterValue = $(this).attr('data-filter');
-        $pfilter.find('a').removeClass('active');
-        $(this).addClass('active');
-        $grid.isotope({
-            filter: filterValue,
-        });
-        return false;
-    });
-}
 
+      itemSelector:
+        ".portfolio-item",
+
+      layoutMode:
+        "masonry",
+
+      transitionDuration:
+        "0.45s"
+
+    });
+
+  }
+
+
+
+  /* -----------------------------------------
+     Combined filtering
+  ----------------------------------------- */
+
+  function applyPortfolioFilter() {
+
+    $portfolio.attr(
+      "data-current-filter",
+      currentFilter
+    );
+
+
+    $portfolio.attr(
+      "data-portfolio-mode",
+      currentMode
+    );
+
+
+    $grid.isotope({
+
+      filter: function () {
+
+        var $item =
+          $(this);
+
+
+        var categoryMatches =
+          currentFilter === "*" ||
+          $item.is(
+            currentFilter
+          );
+
+
+        var modeMatches =
+          currentMode === "all" ||
+          $item.hasClass(
+            "selected-work"
+          );
+
+
+        return (
+          categoryMatches &&
+          modeMatches
+        );
+
+      }
+
+    });
+
+
+
+    /* ---------------------------------------
+       Featured project visibility
+    --------------------------------------- */
+
+    var showFeatured =
+      (
+        currentFilter === "*" ||
+        currentFilter === ".web"
+      );
+
+
+    $(".portfolio-featured")
+      .toggleClass(
+        "is-filtered-out",
+        !showFeatured
+      );
+
+
+
+    /* ---------------------------------------
+       Result label
+    --------------------------------------- */
+
+    var label =
+      document.getElementById(
+        "portfolioResultLabel"
+      );
+
+
+    if (label) {
+
+      if (
+        currentMode === "selected"
+      ) {
+
+        label.textContent =
+          currentFilter === "*"
+            ? "Showing selected work"
+            : "Showing selected " +
+              currentFilter
+                .replace(".", "") +
+              " projects";
+
+      } else {
+
+        label.textContent =
+          currentFilter === "*"
+            ? "Showing all projects"
+            : "Showing all " +
+              currentFilter
+                .replace(".", "") +
+              " projects";
+
+      }
+
+    }
+
+
+
+    /* ---------------------------------------
+       Recalculate after animation
+    --------------------------------------- */
+
+    window.setTimeout(
+      function () {
+
+        $grid.isotope(
+          "layout"
+        );
+
+      },
+      480
+    );
+
+  }
+
+
+
+  /* -----------------------------------------
+     Category filter
+  ----------------------------------------- */
+
+  $filter
+    .find("a")
+    .off(
+      "click.portfolioV2"
+    )
+    .on(
+      "click.portfolioV2",
+      function (event) {
+
+        event.preventDefault();
+
+
+        currentFilter =
+          $(this).attr(
+            "data-filter"
+          );
+
+
+        $filter
+          .find("a")
+          .removeClass(
+            "active"
+          );
+
+
+        $(this)
+          .addClass(
+            "active"
+          );
+
+
+        applyPortfolioFilter();
+
+      }
+    );
+
+
+
+  /* -----------------------------------------
+     Selected / All mode
+  ----------------------------------------- */
+
+  $modeButtons
+    .off(
+      "click.portfolioMode"
+    )
+    .on(
+      "click.portfolioMode",
+      function () {
+
+        currentMode =
+          $(this).attr(
+            "data-portfolio-mode"
+          );
+
+
+        $modeButtons
+          .removeClass(
+            "active"
+          );
+
+
+        $(this)
+          .addClass(
+            "active"
+          );
+
+
+        applyPortfolioFilter();
+
+      }
+    );
+
+
+  applyPortfolioFilter();
+
+}
 /*-------------------------  MAGNIFIC POPUP JS  -------------------------*/
 function portfolioPopup() {
 
     "use strict";
 
-    if (('.portfolio-items').length > 0) {
+   if ($('.portfolio-items').length > 0) {
         $('.portfolio-items').each(function() {
-            $(this).magnificPopup({
-                delegate: 'a.portfolio-magnific',
-                type: 'image',
-                removalDelay: 300,
-                mainClass: "mfp-fade",
-                image: {
-                    titleSrc: "title",
-                    gallery: {
-                        enabled: true
-                    }
-                },
+          $(this).magnificPopup({
+
+    delegate:
+      "a.portfolio-magnific",
+
+    type:
+      "image",
+
+    removalDelay:
+      300,
+
+    mainClass:
+      "mfp-fade",
+
+
+    image: {
+
+      titleSrc:
+        "title"
+
+    },
+
+
+    gallery: {
+
+      enabled:
+        true,
+
+      navigateByImgClick:
+        true,
+
+      preload:
+        [0, 2],
+
+      tCounter:
+        "%curr% of %total%"
+
+    },
                 iframe: {
                     markup: '<div class="mfp-iframe-scaler">' + '<div class="mfp-close"></div>' + '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' + '<div class="mfp-title mfp-bottom-iframe-title"></div>' + "</div>",
                     patterns: {
@@ -3087,4 +3387,1310 @@ function interactiveResume() {
         }
     );
 
+}
+
+/* =========================================================
+   INTERACTIVE PORTFOLIO
+========================================================= */
+
+function interactivePortfolio() {
+
+  "use strict";
+
+
+  var portfolio =
+    document.getElementById(
+      "portfolio"
+    );
+
+
+  if (!portfolio) {
+
+    return;
+
+  }
+
+
+
+  /* =====================================================
+     PROJECT DATA FOR QUICK VIEW
+  ===================================================== */
+
+  var projects = {
+
+
+    fire: {
+
+      category:
+        "WEB • LMS • SEO",
+
+      title:
+        "Fire & Rescue Academy",
+
+      summary:
+        "A professional digital training platform built to support emergency-services education, course delivery, content management, and online discoverability.",
+
+      contribution: [
+
+        "Website development and responsive implementation",
+
+        "Learning management system setup and course structure",
+
+        "SEO and content optimization",
+
+        "Technical troubleshooting and performance improvements"
+
+      ],
+
+      stack: [
+
+        "WordPress",
+        "Elementor",
+        "Tutor LMS",
+        "CSS",
+        "SEO"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "Visit Live",
+
+          url:
+            "https://fireandrescueacademy.com/",
+
+          external:
+            true
+        }
+
+      ]
+
+    },
+
+
+
+    iskolar: {
+
+      category:
+        "WEB • PLATFORM",
+
+      title:
+        "IskolarLink",
+
+      summary:
+        "A student information and coordination platform designed to improve academic communication and organize digital workflows in one environment.",
+
+      contribution: [
+
+        "Website and platform development",
+
+        "Information architecture and content organization",
+
+        "Responsive interface implementation",
+
+        "Digital workflow planning"
+
+      ],
+
+      stack: [
+
+        "WordPress",
+        "Web Development",
+        "UI Structure",
+        "Workflow"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "Visit Live",
+
+          url:
+            "https://dev-iskolarlink.pantheonsite.io/",
+
+          external:
+            true
+        }
+
+      ]
+
+    },
+
+
+
+    corporate: {
+
+      category:
+        "WEB • CORPORATE",
+
+      title:
+        "Corporate Disaster Response & Training",
+
+      summary:
+        "A professional corporate website created for a disaster-response and training organization, focused on presenting services clearly and strengthening its digital presence.",
+
+      contribution: [
+
+        "Website design and development",
+
+        "Responsive implementation",
+
+        "Content presentation and structure",
+
+        "Digital presence improvements"
+
+      ],
+
+      stack: [
+
+        "WordPress",
+        "Web Design",
+        "Responsive",
+        "Content"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "Visit Live",
+
+          url:
+            "https://conquerorscc.com/",
+
+          external:
+            true
+        }
+
+      ]
+
+    },
+
+
+
+    let: {
+
+      category:
+        "DATA • EDUCATION ANALYTICS",
+
+      title:
+        "LET Performance Trends",
+
+      summary:
+        "A data-analysis project exploring licensure examination performance, regional patterns, and educational outcomes across multiple years.",
+
+      contribution: [
+
+        "Data preparation and exploratory analysis",
+
+        "Trend and geographic analysis",
+
+        "Visualization and interpretation",
+
+        "Interactive case-study presentation"
+
+      ],
+
+      stack: [
+
+        "Python",
+        "Data Analysis",
+        "Visualization",
+        "Statistics"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "Explore Analysis",
+
+          url:
+            "let-performance-analysis.html",
+
+          external:
+            false
+        }
+
+      ]
+
+    },
+
+
+
+    spending: {
+
+      category:
+        "DATA • CUSTOMER BEHAVIOR",
+
+      title:
+        "Spending Behavior Analysis",
+
+      summary:
+        "An analytical project examining customer spending behavior, meaningful market segments, purchasing relationships, and future transaction patterns.",
+
+      contribution: [
+
+        "Exploratory Data Analysis",
+
+        "Customer segmentation using K-Means",
+
+        "Association-rule analysis",
+
+        "Time-series forecasting"
+
+      ],
+
+      stack: [
+
+        "Python",
+        "Pandas",
+        "K-Means",
+        "Apriori",
+        "ARIMA"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "Explore Analysis",
+
+          url:
+            "customer-spending-analysis.html",
+
+          external:
+            false
+        }
+
+      ]
+
+    },
+
+
+
+    campaign1: {
+
+      category:
+        "CONTENT • CAMPAIGN",
+
+      title:
+        "Campaign Landing Experience",
+
+      summary:
+        "A campaign-oriented digital experience combining front-end implementation, content presentation, and visual hierarchy for promotional engagement.",
+
+      contribution: [
+
+        "Front-end implementation",
+
+        "Campaign page layout",
+
+        "Responsive styling",
+
+        "Interactive content presentation"
+
+      ],
+
+      stack: [
+
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "View Campaign",
+
+          url:
+            "http://paidmediasandbox.3jzvudtzb5-dv13xg0776gq.p.temp-site.link/luke/mood/v2-20off/v2startup.html",
+
+          external:
+            true
+        }
+
+      ]
+
+    },
+
+
+
+    campaign2: {
+
+      category:
+        "CONTENT • INTERACTIVE",
+
+      title:
+        "Interactive Campaign Blog",
+
+      summary:
+        "A front-end campaign experience focused on visual storytelling, interactive presentation, and engaging content delivery.",
+
+      contribution: [
+
+        "Page development",
+
+        "Interactive front-end behavior",
+
+        "Responsive styling",
+
+        "Campaign presentation"
+
+      ],
+
+      stack: [
+
+        "HTML",
+        "CSS",
+        "JavaScript"
+
+      ],
+
+      links: [
+
+        {
+          label:
+            "View Campaign",
+
+          url:
+            "https://va-0097.github.io/Mood/",
+
+          external:
+            true
+        }
+
+      ]
+
+    }
+
+  };
+
+
+
+  /* =====================================================
+     QUICK VIEW DRAWER
+  ===================================================== */
+
+  var drawer =
+    document.getElementById(
+      "portfolioProjectDrawer"
+    );
+
+
+  var backdrop =
+    document.getElementById(
+      "portfolioDrawerBackdrop"
+    );
+
+
+  var closeButton =
+    document.getElementById(
+      "portfolioDrawerClose"
+    );
+
+
+  var category =
+    document.getElementById(
+      "portfolioDrawerCategory"
+    );
+
+
+  var title =
+    document.getElementById(
+      "portfolioDrawerTitle"
+    );
+
+
+  var summary =
+    document.getElementById(
+      "portfolioDrawerSummary"
+    );
+
+
+  var contribution =
+    document.getElementById(
+      "portfolioDrawerContribution"
+    );
+
+
+  var stack =
+    document.getElementById(
+      "portfolioDrawerStack"
+    );
+
+
+  var actions =
+    document.getElementById(
+      "portfolioDrawerActions"
+    );
+
+    /* =====================================================
+   MOVE PROJECT DETAILS UI TO <body>
+===================================================== */
+
+/*
+ * #portfolio lives inside the custom-scrolling
+ * section system.
+ *
+ * Fixed elements inside transformed/custom-scroll
+ * containers can create their own stacking context.
+ *
+ * Moving the drawer and backdrop directly under <body>
+ * guarantees that they sit above:
+ *
+ * - right sidebar
+ * - chatbot
+ * - navigation arrows
+ * - portfolio content
+ */
+
+if (
+  backdrop &&
+  backdrop.parentNode !== document.body
+) {
+
+  document.body.appendChild(
+    backdrop
+  );
+
+}
+
+
+if (
+  drawer &&
+  drawer.parentNode !== document.body
+) {
+
+  document.body.appendChild(
+    drawer
+  );
+
+}
+
+
+  function openPortfolioDrawer(
+    projectKey
+  ) {
+
+    var project =
+      projects[projectKey];
+
+
+    if (
+      !project ||
+      !drawer
+    ) {
+
+      return;
+
+    }
+
+
+    category.textContent =
+      project.category;
+
+
+    title.textContent =
+      project.title;
+
+
+    summary.textContent =
+      project.summary;
+
+
+
+    /* Contribution */
+
+    contribution.innerHTML =
+      "";
+
+
+    project.contribution.forEach(
+      function (item) {
+
+        var row =
+          document.createElement(
+            "div"
+          );
+
+
+        row.textContent =
+          item;
+
+
+        contribution.appendChild(
+          row
+        );
+
+      }
+    );
+
+
+
+    /* Stack */
+
+    stack.innerHTML =
+      "";
+
+
+    project.stack.forEach(
+      function (item) {
+
+        var tag =
+          document.createElement(
+            "span"
+          );
+
+
+        tag.textContent =
+          item;
+
+
+        stack.appendChild(
+          tag
+        );
+
+      }
+    );
+
+
+
+    /* Actions */
+
+    actions.innerHTML =
+      "";
+
+
+    project.links.forEach(
+      function (link) {
+
+        var anchor =
+          document.createElement(
+            "a"
+          );
+
+
+        anchor.href =
+          link.url;
+
+
+        anchor.innerHTML =
+          link.label +
+          ' <i class="bi bi-arrow-up-right"></i>';
+
+
+        if (
+          link.external
+        ) {
+
+          anchor.target =
+            "_blank";
+
+          anchor.rel =
+            "noopener noreferrer";
+
+        }
+
+
+        actions.appendChild(
+          anchor
+        );
+
+      }
+    );
+
+
+    document.body.classList.add(
+  "portfolio-details-open"
+);
+
+
+    drawer.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style
+      .overflow =
+      "hidden";
+
+  }
+
+
+
+  function closePortfolioDrawer() {
+
+    document.body.classList.remove(
+  "portfolio-details-open"
+);
+
+
+    if (drawer) {
+
+      drawer.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+    }
+
+
+    document.body.style
+      .overflow =
+      "";
+
+  }
+
+
+
+  portfolio
+    .querySelectorAll(
+      ".portfolio-quick-view-btn"
+    )
+    .forEach(
+      function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            openPortfolioDrawer(
+              button.dataset.project
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+
+  if (closeButton) {
+
+    closeButton.addEventListener(
+      "click",
+      closePortfolioDrawer
+    );
+
+  }
+
+
+  if (backdrop) {
+
+    backdrop.addEventListener(
+      "click",
+      closePortfolioDrawer
+    );
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+  event.key === "Escape" &&
+  document.body.classList.contains(
+    "portfolio-details-open"
+  )
+) {
+
+        closePortfolioDrawer();
+
+      }
+
+    }
+  );
+
+
+/* =====================================================
+   CLICKABLE PROJECT MEDIA + FOLLOW-CURSOR LABEL
+===================================================== */
+
+portfolio
+  .querySelectorAll(
+    ".portfolio-v2-media"
+  )
+  .forEach(
+    function (media) {
+
+      var label =
+        media.querySelector(
+          ".portfolio-hover-label"
+        );
+
+
+      /*
+       * Find the real project link that already exists
+       * inside the project's card.
+       *
+       * Web projects:
+       *   .portfolio-card-icon-link
+       *
+       * Featured project:
+       *   .portfolio-browser-live / .portfolio-live-btn
+       */
+      var projectContainer =
+        media.closest(
+          ".portfolio-v2-card, .portfolio-featured"
+        );
+
+
+      var projectLink =
+        projectContainer
+          ? projectContainer.querySelector(
+              ".portfolio-card-icon-link, " +
+              ".portfolio-browser-live, " +
+              ".portfolio-live-btn"
+            )
+          : null;
+
+
+
+      /* -----------------------------------------
+         Make the whole visual behave like a link
+      ----------------------------------------- */
+
+      if (projectLink) {
+
+        media.setAttribute(
+          "role",
+          "link"
+        );
+
+        media.setAttribute(
+          "tabindex",
+          "0"
+        );
+
+        media.setAttribute(
+          "aria-label",
+          projectLink.getAttribute(
+            "aria-label"
+          ) || "Open project"
+        );
+
+
+        function openProject() {
+
+          /*
+           * Use the existing anchor so:
+           *
+           * target="_blank" stays respected
+           * internal case-study links work normally
+           */
+          projectLink.click();
+
+        }
+
+
+        media.addEventListener(
+          "click",
+          function (event) {
+
+            /*
+             * Do not trigger twice if the visitor
+             * clicked an actual link/button inside.
+             */
+            if (
+              event.target.closest(
+                "a, button"
+              )
+            ) {
+
+              return;
+
+            }
+
+
+            openProject();
+
+          }
+        );
+
+
+        media.addEventListener(
+          "keydown",
+          function (event) {
+
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+
+              event.preventDefault();
+
+              openProject();
+
+            }
+
+          }
+        );
+
+      }
+
+
+
+      /* -----------------------------------------
+         Follow-cursor label
+      ----------------------------------------- */
+
+      if (!label) {
+
+        return;
+
+      }
+
+
+      media.addEventListener(
+        "mousemove",
+        function (event) {
+
+          var rect =
+            media.getBoundingClientRect();
+
+
+          var x =
+            event.clientX -
+            rect.left;
+
+
+          var y =
+            event.clientY -
+            rect.top;
+
+
+          label.style.left =
+            x + "px";
+
+
+          label.style.top =
+            y + "px";
+
+        }
+      );
+
+    }
+  );
+
+  /* =====================================================
+     FEATURED PROJECT SUBTLE 3D TILT
+  ===================================================== */
+
+  var featuredVisual =
+    portfolio.querySelector(
+      ".portfolio-featured-visual"
+    );
+
+
+  var featuredBrowser =
+    portfolio.querySelector(
+      ".portfolio-browser-shell"
+    );
+
+
+  if (
+    featuredVisual &&
+    featuredBrowser &&
+    !window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
+
+    featuredVisual.addEventListener(
+      "mousemove",
+      function (event) {
+
+        var rect =
+          featuredVisual
+            .getBoundingClientRect();
+
+
+        var x =
+          (
+            event.clientX -
+            rect.left
+          ) /
+          rect.width;
+
+
+        var y =
+          (
+            event.clientY -
+            rect.top
+          ) /
+          rect.height;
+
+
+        var rotateY =
+          (x - .5) * 3;
+
+
+        var rotateX =
+          (.5 - y) * 3;
+
+
+        featuredBrowser.style
+          .transform =
+          "rotateX(" +
+          rotateX +
+          "deg) rotateY(" +
+          rotateY +
+          "deg)";
+
+      }
+    );
+
+
+    featuredVisual.addEventListener(
+      "mouseleave",
+      function () {
+
+        featuredBrowser.style
+          .transform =
+          "rotateX(0deg) rotateY(0deg)";
+
+      }
+    );
+
+  }
+/* =====================================================
+   FULL CREATIVE GALLERY
+   12 WORKS INCLUDING MOTION
+===================================================== */
+
+var creativeGalleryButton =
+  document.getElementById(
+    "openCreativeGallery"
+  );
+
+
+var creativeGalleryTriggers =
+  portfolio.querySelectorAll(
+    ".creative-gallery-trigger"
+  );
+
+
+/*
+ * Complete Creative Collection
+ *
+ * 01 = GIF
+ * 02 = MP4 motion
+ * 03-09 = Graphics
+ * 10-12 = Additional visual work
+ */
+
+var creativeGalleryItems = [
+
+  {
+    src:
+      "assets/img/webdesigner/graphic1.gif",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 01"
+  },
+
+
+  {
+    src:
+      "#creativeVideo02",
+
+    type:
+      "inline",
+
+    title:
+      "Creative Work 02 — Motion"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic3.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 03"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic4.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 04"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic5.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 05"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic6.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 06"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic7.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 07"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic8.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 08"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/graphic9.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 09"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/img1.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 10"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/img2.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 11"
+  },
+
+
+  {
+    src:
+      "assets/img/webdesigner/img3.png",
+
+    type:
+      "image",
+
+    title:
+      "Creative Work 12"
+  }
+
+];
+
+
+
+function pauseCreativeVideos() {
+
+  document
+    .querySelectorAll(
+      ".creative-video-popup video"
+    )
+    .forEach(
+      function (video) {
+
+        video.pause();
+
+      }
+    );
+
+}
+
+
+
+function openCreativeGallery(
+  startIndex
+) {
+
+  $.magnificPopup.open(
+
+    {
+
+      items:
+        creativeGalleryItems,
+
+
+      gallery: {
+
+        enabled:
+          true,
+
+        navigateByImgClick:
+          true,
+
+        preload:
+          [0, 2],
+
+        tPrev:
+          "Previous work",
+
+        tNext:
+          "Next work",
+
+        tCounter:
+          "%curr% of %total%"
+
+      },
+
+
+      image: {
+
+        titleSrc:
+          function (item) {
+
+            return (
+              item.data.title ||
+              ""
+            );
+
+          }
+
+      },
+
+
+      mainClass:
+        "mfp-fade creative-gallery-popup",
+
+
+      removalDelay:
+        250,
+
+
+      callbacks: {
+
+        change:
+          function () {
+
+            pauseCreativeVideos();
+
+          },
+
+
+        close:
+          function () {
+
+            pauseCreativeVideos();
+
+          }
+
+      }
+
+    },
+
+    startIndex || 0
+
+  );
+
+}
+
+
+
+/* Main CTA */
+
+if (creativeGalleryButton) {
+
+  creativeGalleryButton.addEventListener(
+    "click",
+    function () {
+
+      openCreativeGallery(
+        0
+      );
+
+    }
+  );
+
+}
+
+
+
+/* Mosaic preview items */
+
+creativeGalleryTriggers.forEach(
+  function (trigger) {
+
+    trigger.addEventListener(
+      "click",
+      function () {
+
+        var index =
+          Number(
+            trigger.dataset
+              .galleryIndex || 0
+          );
+
+
+        openCreativeGallery(
+          index
+        );
+
+      }
+    );
+
+  }
+);
 }
