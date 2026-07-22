@@ -59,12 +59,72 @@ $window.on("load", function() {
     owlCrousel();
 });
 
-$window.on("resize", function() {
+/* =========================================================
+   RESPONSIVE RESIZE
+========================================================= */
+
+var layoutResizeTimer;
+
+var lastDesktopState =
+  $window.width() > 991;
+
+
+$window.on(
+  "resize",
+  function () {
+
     "use strict";
-    if ($lastWindowWidth != $window.width()) {
-        location.replace(location.href);
-    }
-});
+
+
+    clearTimeout(
+      layoutResizeTimer
+    );
+
+
+    layoutResizeTimer =
+      setTimeout(
+        function () {
+
+          var isDesktop =
+            $window.width() >
+            991;
+
+
+          /*
+           * Only reload when actually crossing
+           * Desktop ↔ Mobile layout mode.
+           *
+           * Normal laptop resizing does NOT reload.
+           */
+
+          if (
+            isDesktop !==
+            lastDesktopState
+          ) {
+
+            location.reload();
+
+            return;
+
+          }
+
+
+          lastDesktopState =
+            isDesktop;
+
+
+          $lastWindowWidth =
+            $window.width();
+
+
+          refreshPortfolioLayout();
+
+        },
+        180
+      );
+
+  }
+);
 
 $window.on("popstate", function(){
     "use strict";
@@ -327,204 +387,580 @@ function scrollToAnchor() {
 }
 
 /*-------------------------  Open Menu  -------------------------*/
+
 function openMenu() {
+
   "use strict";
 
-  var childrenCount = $(".left-side .menu .list-group-item").length;
-  var windowWidth = $window.width();
 
-  $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv, #main")
+  var childrenCount =
+    $(".left-side .menu .list-group-item").length;
+
+
+  var windowWidth =
+    $window.width();
+
+
+
+  /*
+   * HOME / CONTACT layout state.
+   *
+   * #main sizing is now handled entirely by CSS.
+   */
+
+  $("body")
+    .removeClass("layout-collapsed")
+    .addClass("layout-expanded");
+
+
+
+  $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv")
     .stop(true, true);
 
+
+
   if (windowWidth > 991) {
+
+
     /*
-     * Reset all collapsed-menu positioning.
-     * This is important when returning to Home.
+     * Expanded 3 × 2 menu.
      */
+
     $(".menu-align")
       .css({
-        position: "absolute",
-        top: "auto",
-        left: "0",
-        right: "auto",
-        bottom: "0",
-        transform: "none"
-      })
-      .animate({
-        height: "160px",
-        width: "300px"
-      }, 350);
+
+        position:
+          "absolute",
+
+        top:
+          "auto",
+
+        left:
+          "0",
+
+        right:
+          "auto",
+
+        bottom:
+          "0",
+
+        height:
+          "160px",
+
+        width:
+          "300px",
+
+        transform:
+          "none"
+
+      });
+
 
     $(".left-side .menu")
       .css({
-        position: "relative",
-        height: "100%",
-        width: "100%"
+
+        position:
+          "relative",
+
+        display:
+          "block",
+
+        height:
+          "100%",
+
+        width:
+          "100%"
+
       });
 
-    $("#main").animate({
-      width: (windowWidth * 0.9) - 410 + "px",
-      left: (windowWidth * 0.05) + 315 + "px"
-    }, 350);
-
-    $("#main > section.active").css({
-      width: "100%"
-    });
-  } else {
-    $(".menu-align")
-      .css({
-        position: "absolute",
-        top: "auto",
-        left: "50%",
-        right: "auto",
-        bottom: "0",
-        transform: "translateX(-50%)"
-      })
-      .animate({
-        height: "46%",
-        width: "300px"
-      }, 350);
   }
 
-  $(".left-side").animate({
-    width: "300px",
-    paddingTop: "40px"
-  }, 350);
+  else {
 
-  $(".left-side img").animate({
-    width: "180px"
-  }, 350);
 
-  $(".left-side h1").animate({
-    fontSize: "32px"
-  }, 350);
+    $(".menu-align")
+      .css({
 
-  $(".left-side a.download-cv")
-    .css({
-      display: "inline-block",
-      borderWidth: ""
-    })
+        position:
+          "absolute",
+
+        top:
+          "auto",
+
+        left:
+          "50%",
+
+        right:
+          "auto",
+
+        bottom:
+          "0",
+
+        height:
+          "46%",
+
+        width:
+          "300px",
+
+        transform:
+          "translateX(-50%)"
+
+      });
+
+  }
+
+
+
+  $(".left-side")
     .animate({
-      opacity: "1",
-      fontSize: "16px",
-      paddingTop: "10px",
-      paddingRight: "30px",
-      paddingBottom: "10px",
-      paddingLeft: "30px"
+
+      width:
+        "300px",
+
+      paddingTop:
+        "40px"
+
     }, 350);
 
+
+
+  $(".left-side img")
+    .animate({
+
+      width:
+        "180px"
+
+    }, 350);
+
+
+
+  $(".left-side h1")
+    .animate({
+
+      fontSize:
+        "32px"
+
+    }, 350);
+
+
+
+  $(".left-side a.download-cv")
+
+    .css({
+
+      display:
+        "inline-block",
+
+      borderWidth:
+        ""
+
+    })
+
+    .animate({
+
+      opacity:
+        "1",
+
+      fontSize:
+        "16px",
+
+      paddingTop:
+        "10px",
+
+      paddingRight:
+        "30px",
+
+      paddingBottom:
+        "10px",
+
+      paddingLeft:
+        "30px"
+
+    }, 350);
+
+
+
   /*
-   * Restore the Home menu into a 3 × 2 grid.
+   * Home / Contact menu = 3 × 2 grid.
    */
-  for (var i = 0; i < childrenCount; i++) {
+
+  for (
+    var i = 0;
+    i < childrenCount;
+    i++
+  ) {
+
     $(".left-side .menu")
       .children()
       .eq(i)
       .stop(true, true)
       .css({
-        position: "absolute",
-        height: "auto"
+
+        position:
+          "absolute",
+
+        height:
+          "auto",
+
+        flex:
+          ""
+
       })
       .animate({
-        left: (i % 3) * 100 + "px",
-        top: Math.floor(i / 3) * 75 + "px",
-        width: "100px"
+
+        left:
+          (i % 3) * 100 +
+          "px",
+
+        top:
+          Math.floor(i / 3) *
+          75 +
+          "px",
+
+        width:
+          "100px"
+
       }, 350);
+
   }
+
+
+
+  window.setTimeout(
+
+    refreshPortfolioLayout,
+
+    380
+
+  );
+
 }
 
+
+
 /*-------------------------  Close Menu  -------------------------*/
+
 function closeMenu() {
+
   "use strict";
 
-  var childrenCount = $(".left-side .menu .list-group-item").length;
-  var windowWidth = $window.width();
 
-  $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv, #main")
+  var windowWidth =
+    $window.width();
+
+
+
+  /*
+   * ABOUT / RESUME / WORKS / BLOG state.
+   */
+
+  $("body")
+    .removeClass("layout-expanded")
+    .addClass("layout-collapsed");
+
+
+
+  $(".menu-align, .left-side .menu, .left-side, .left-side img, .left-side h1, .left-side a.download-cv")
     .stop(true, true);
 
-  if (windowWidth > 991) {
+
+
+  if (
+    windowWidth >
+    991
+  ) {
+
+
     /*
-     * Give the collapsed menu a defined space below
-     * the profile image and name.
+     * CRITICAL FIX:
+     *
+     * Explicitly clear the old 160px height
+     * inherited from openMenu().
+     *
+     * top + bottom now define the available
+     * vertical menu space.
      */
+
     $(".menu-align")
       .css({
-        position: "absolute",
-        top: "128px",
-        bottom: "12px",
-        left: "0",
-        transform: "none"
-      })
-      .animate({
-        width: "100%"
-      }, 350);
 
-    $(".left-side .menu").animate({
-      height: "100%",
-      width: "100%"
-    }, 350);
+        position:
+          "absolute",
 
-$(".left-side").animate({
+        top:
+          "128px",
 
-  width:
-    "88px",
+        right:
+          "0",
 
-  paddingTop:
-    "15px"
+        bottom:
+          "12px",
 
-}, 350);
+        left:
+          "0",
 
-$(".left-side img").animate({
+        width:
+          "100%",
 
-  width:
-    "56px"
+        height:
+          "auto",
 
-}, 350);
+        transform:
+          "none"
 
-    $(".left-side h1").animate({
-      fontSize: "12px"
-    }, 350);
+      });
 
-    $(".left-side a.download-cv").animate({
-      opacity: "0",
-      fontSize: "0",
-      paddingTop: "0",
-      paddingRight: "0",
-      paddingBottom: "0",
-      paddingLeft: "0",
-      borderWidth: "0"
-    }, 350, function () {
-      $(this).hide();
-    });
+
 
     /*
-     * Fixed spacing prevents Contact from overlapping
-     * and removes the large gap before Home.
+     * Let CSS/Flex distribute all six menu items
+     * through the available height.
      */
-    for (var i = 0; i < childrenCount; i++) {
-      $(".left-side .menu")
-        .children()
-        .eq(i)
-        .stop(true, true)
-        .animate({
-          left: "0",
-          top: i * 60 + "px",
-          width: "80px"
-        }, 350);
+
+    $(".left-side .menu")
+      .css({
+
+        position:
+          "relative",
+
+        display:
+          "flex",
+
+        flexDirection:
+          "column",
+
+        justifyContent:
+          "space-evenly",
+
+        alignItems:
+          "stretch",
+
+        width:
+          "100%",
+
+        height:
+          "100%"
+
+      });
+
+
+
+    $(".left-side")
+      .animate({
+
+        width:
+          "88px",
+
+        paddingTop:
+          "15px"
+
+      }, 350);
+
+
+
+    $(".left-side img")
+      .animate({
+
+        width:
+          "56px"
+
+      }, 350);
+
+
+
+    $(".left-side h1")
+      .animate({
+
+        fontSize:
+          "12px"
+
+      }, 350);
+
+
+
+    $(".left-side a.download-cv")
+      .animate({
+
+        opacity:
+          "0",
+
+        fontSize:
+          "0",
+
+        paddingTop:
+          "0",
+
+        paddingRight:
+          "0",
+
+        paddingBottom:
+          "0",
+
+        paddingLeft:
+          "0",
+
+        borderWidth:
+          "0"
+
+      },
+
+      350,
+
+      function () {
+
+        $(this).hide();
+
+      }
+
+    );
+
+
+
+    /*
+     * Remove old:
+     *
+     * top: i * 60px
+     *
+     * positioning.
+     *
+     * Each menu item is now a normal Flex child.
+     */
+
+    $(".left-side .menu .list-group-item")
+      .stop(true, true)
+      .css({
+
+        position:
+          "relative",
+
+        left:
+          "auto",
+
+        right:
+          "auto",
+
+        top:
+          "auto",
+
+        bottom:
+          "auto",
+
+        width:
+          "100%",
+
+        height:
+          "auto",
+
+        flex:
+          "0 0 auto"
+
+      });
+
+  }
+
+  else {
+
+    openMenu();
+
+  }
+
+
+
+  window.setTimeout(
+
+    refreshPortfolioLayout,
+
+    380
+
+  );
+
+}
+
+/* =========================================================
+   REFRESH SECTION LAYOUT
+========================================================= */
+
+function refreshPortfolioLayout() {
+
+  "use strict";
+
+
+  /*
+   * Every page always fills the current #main frame.
+   */
+
+  $("#main > section")
+    .css({
+
+      width:
+        "100%"
+
+    });
+
+
+
+  /*
+   * mCustomScrollbar caches dimensions.
+   * Update it after menu/frame changes.
+   */
+
+  if (
+    $window.width() >
+    991 &&
+    $.fn.mCustomScrollbar
+  ) {
+
+    try {
+
+      $(".section")
+        .not(".hero")
+        .mCustomScrollbar(
+          "update"
+        );
+
     }
 
-    $("#main").animate({
-      width: (windowWidth * 0.9) - 190 + "px",
-      left: (windowWidth * 0.05) + 95 + "px"
-    }, 350);
+    catch (error) {
 
-    $("#main > section.active").css({
-      width: "100%"
-    });
-  } else {
-    openMenu();
+      /*
+       * Nothing to do if scrollbar
+       * is not initialized yet.
+       */
+
+    }
+
   }
+
+
+
+  /*
+   * Recalculate Portfolio masonry.
+   */
+
+  if (
+    $("#portfolio")
+      .hasClass("active")
+  ) {
+
+    try {
+
+      $(".portfolio-items")
+        .isotope(
+          "layout"
+        );
+
+    }
+
+    catch (error) {
+
+      /*
+       * Isotope may not be initialized yet.
+       */
+
+    }
+
+  }
+
 }
 
 /*-------------------------  Sidebar Menu  -------------------------*/
@@ -583,6 +1019,14 @@ function sidebarMenu() {
             }, 1000);
         }
         $lastHash = 1;
+
+        window.setTimeout(
+
+  refreshPortfolioLayout,
+
+  400
+
+);
 
     });
 

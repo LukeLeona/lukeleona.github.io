@@ -3034,3 +3034,71 @@
   font-size: 10px;
 
 }
+
+/* =========================================================
+   TALL DESKTOP READABILITY
+========================================================= */
+
+@media
+(min-width: 992px)
+and
+(min-height: 760px) {
+
+
+  #blog
+  .blog-v2-intro-side > p {
+
+    font-size:
+      14px;
+
+  }
+
+
+  #blog
+  .blog-v2-eyebrow {
+
+    font-size:
+      10px;
+
+  }
+
+
+  #blog
+  .blog-filter-btn {
+
+    font-size:
+      11px;
+
+  }
+
+
+  #blog
+  .blog-featured-content > p {
+
+    font-size:
+      13px;
+
+  }
+
+
+  #blog
+  .blog-v2-card-content > p {
+
+    font-size:
+      12px;
+
+  }
+
+
+  #blog
+  .blog-card-category,
+
+  #blog
+  .blog-card-meta {
+
+    font-size:
+      10px;
+
+  }
+
+}

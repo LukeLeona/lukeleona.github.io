@@ -217,7 +217,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(90vw - 190px);
+  width: 100%;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -3528,10 +3528,7 @@ textarea:-moz-placeholder {
 
 /*------------------------- Media -------------------------*/
 @media (min-width: 1440px) {
-  #main>section:not(:first-child):not(:last-child) {
-    width: calc(1296px - 190px);
-  }
-
+  
   .left-side {
     padding-top: 40px;
   }
@@ -6937,3 +6934,316 @@ body.dark-arshia,
 
 }
 
+
+/* =========================================================
+   STABLE DESKTOP SHELL
+========================================================= */
+
+@media (min-width: 992px) {
+
+  /*
+   * HOME + CONTACT
+   *
+   * Preserves the same dimensions produced by your
+   * existing openMenu() calculation.
+   */
+
+  body.layout-expanded #main {
+
+    left:
+      calc(5% + 315px) !important;
+
+    right:
+      calc(5% + 95px) !important;
+
+    width:
+      auto !important;
+
+  }
+
+
+  /*
+   * ABOUT + RESUME + WORKS + BLOG
+   *
+   * Preserves the same dimensions produced by your
+   * existing closeMenu() calculation.
+   */
+
+  body.layout-collapsed #main {
+
+    left:
+      calc(5% + 95px) !important;
+
+    right:
+      calc(5% + 95px) !important;
+
+    width:
+      auto !important;
+
+  }
+
+
+  /*
+   * Every page always fills #main.
+   */
+
+  body.layout-expanded #main > section,
+  body.layout-collapsed #main > section {
+
+    left:
+      0 !important;
+
+    right:
+      0 !important;
+
+    width:
+      100% !important;
+
+    max-width:
+      none !important;
+
+  }
+
+}
+
+/* =========================================================
+   RESPONSIVE COLLAPSED LEFT MENU
+========================================================= */
+
+@media (min-width: 992px) {
+
+
+  body.layout-collapsed
+  .left-side .menu-align {
+
+    top:
+      128px !important;
+
+    bottom:
+      12px !important;
+
+    height:
+      auto !important;
+
+  }
+
+
+  body.layout-collapsed
+  .left-side .menu {
+
+    display:
+      flex !important;
+
+    flex-direction:
+      column !important;
+
+    justify-content:
+      space-evenly !important;
+
+    align-items:
+      stretch !important;
+
+    height:
+      100% !important;
+
+  }
+
+
+  body.layout-collapsed
+  .left-side .menu
+  .list-group-item {
+
+    position:
+      relative !important;
+
+    top:
+      auto !important;
+
+    left:
+      auto !important;
+
+    width:
+      100% !important;
+
+    flex:
+      0 0 auto;
+
+  }
+
+
+  body.layout-collapsed
+  .left-side .menu
+  .list-group-item a {
+
+    width:
+      calc(100% - 10px);
+
+    min-height:
+      50px;
+
+    margin:
+      0 5px;
+
+    padding:
+      5px 2px !important;
+
+  }
+
+}
+
+/* =========================================================
+   TALL DESKTOP — HERO PORTRAIT
+   Targets taller laptop/monitor viewports without changing
+   the current compact Win10 layout.
+========================================================= */
+
+@media
+(min-width: 992px)
+and
+(min-height: 760px) {
+
+
+  #hero
+  .hero-portrait-reveal {
+
+    top:
+      50%;
+
+    right:
+      -1%;
+
+    width:
+      min(
+        43%,
+        470px
+      );
+
+    height:
+      min(
+        82%,
+        590px
+      );
+
+    transform:
+      translateY(-50%);
+
+  }
+
+
+  #hero
+  .hero-portrait-base,
+
+  #hero
+  .hero-portrait-layer {
+
+    /*
+     * Prevent portrait cropping.
+     */
+
+    object-fit:
+      contain;
+
+    object-position:
+      right bottom;
+
+  }
+
+}
+
+/* =========================================================
+   TALL DESKTOP READABILITY
+========================================================= */
+
+@media
+(min-width: 992px)
+and
+(min-height: 760px) {
+
+
+  /* HOME */
+
+  #hero
+  .hero-main-title {
+
+    font-size:
+      clamp(
+        30px,
+        2.6vw,
+        39px
+      );
+
+  }
+
+
+  #hero
+  .hero-role-line {
+
+    font-size:
+      14px;
+
+  }
+
+
+  #hero
+  .hero-work-btn {
+
+    font-size:
+      12px;
+
+  }
+
+
+
+  /* ABOUT */
+
+  #about
+  .about-v2-description {
+
+    font-size:
+      13px;
+
+    line-height:
+      1.8;
+
+  }
+
+
+  #about
+  .about-v2-specialties span {
+
+    font-size:
+      10px;
+
+  }
+
+
+  #about
+  .about-v2-eyebrow {
+
+    font-size:
+      9px;
+
+  }
+
+
+
+  /* CONTACT */
+
+  #contact.contact-v2
+  .info-text small {
+
+    font-size:
+      11px;
+
+  }
+
+
+  #contact.contact-v2
+  .form-control {
+
+    font-size:
+      12px;
+
+  }
+
+}

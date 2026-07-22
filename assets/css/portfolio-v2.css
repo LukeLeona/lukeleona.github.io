@@ -3024,3 +3024,68 @@ button.creative-mosaic-item {
   font-size: 10px;
 
 }
+
+/* =========================================================
+   TALL DESKTOP READABILITY
+========================================================= */
+
+@media
+(min-width: 992px)
+and
+(min-height: 760px) {
+
+
+  #resume
+  .resume-v2-intro > p,
+
+  #resume
+  .resume-section-heading > p {
+
+    font-size:
+      14px;
+
+  }
+
+
+  #resume
+  .resume-service-copy > p {
+
+    font-size:
+      13px;
+
+  }
+
+
+  #resume
+  .resume-v2-eyebrow,
+
+  #resume
+  .resume-service-number {
+
+    font-size:
+      10px;
+
+  }
+
+
+  #resume
+  .resume-capability-tab span,
+
+  #resume
+  .resume-service-checks span {
+
+    font-size:
+      11px;
+
+  }
+
+
+  #resume
+  .resume-service-tech span {
+
+    font-size:
+      10px;
+
+  }
+
+}
