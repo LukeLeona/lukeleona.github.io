@@ -7092,13 +7092,16 @@ body.dark-arshia,
 }
 
 /* =========================================================
-   TALL DESKTOP — HERO PORTRAIT
-   Targets taller laptop/monitor viewports without changing
-   the current compact Win10 layout.
+   TALL LAPTOP / DESKTOP — HERO PORTRAIT
+   Example target: 1357 × 948 viewport
+
+   Does NOT affect the shorter Win10 viewport.
 ========================================================= */
 
 @media
-(min-width: 992px)
+(min-width: 1200px)
+and
+(max-width: 1500px)
 and
 (min-height: 760px) {
 
@@ -7106,29 +7109,54 @@ and
   #hero
   .hero-portrait-reveal {
 
+    /*
+     * Anchor the portrait directly to the bottom
+     * so we can use almost the full hero height.
+     */
+
     top:
-      50%;
+      auto;
+
+    bottom:
+      -1px;
 
     right:
-      -1%;
+      -4%;
+
+    transform:
+      none;
+
+
+    /*
+     * OLD:
+     *
+     * width: min(43%, 470px);
+     * height: min(82%, 590px);
+     *
+     * The 470px cap was preventing the portrait
+     * from becoming larger on your taller screen.
+     */
 
     width:
       min(
-        43%,
-        470px
+        61%,
+        620px
       );
 
     height:
-      min(
-        82%,
-        590px
-      );
+      98%;
 
-    transform:
-      translateY(-50%);
+    max-width:
+      none;
 
   }
 
+
+  /*
+   * Keep both interactive portrait layers
+   * exactly aligned and show as much of the
+   * original image as possible.
+   */
 
   #hero
   .hero-portrait-base,
@@ -7136,15 +7164,17 @@ and
   #hero
   .hero-portrait-layer {
 
-    /*
-     * Prevent portrait cropping.
-     */
+    width:
+      100%;
+
+    height:
+      100%;
 
     object-fit:
-      contain;
+      contain !important;
 
     object-position:
-      right bottom;
+      right bottom !important;
 
   }
 
@@ -7162,36 +7192,87 @@ and
 
   /* HOME */
 
-  #hero
-  .hero-main-title {
+#hero
+.hero-content {
 
-    font-size:
-      clamp(
-        30px,
-        2.6vw,
-        39px
-      );
+  /*
+   * Give the larger headline enough horizontal space.
+   */
 
-  }
+  width:
+    54%;
 
+  max-width:
+    560px;
 
-  #hero
-  .hero-role-line {
-
-    font-size:
-      14px;
-
-  }
+}
 
 
-  #hero
-  .hero-work-btn {
+#hero
+.hero-main-title {
 
-    font-size:
-      12px;
+  font-size:
+    clamp(
+      38px,
+      3.15vw,
+      46px
+    );
 
-  }
+  line-height:
+    1.38;
 
+  letter-spacing:
+    -.6px;
+
+}
+
+
+#hero
+.hero-role-line {
+
+  margin-top:
+    14px;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.5;
+
+  letter-spacing:
+    .6px;
+
+}
+
+
+#hero
+.hero-actions {
+
+  margin-top:
+    28px;
+
+}
+
+
+#hero
+.hero-work-btn {
+
+  padding:
+    12px 30px;
+
+  font-size:
+    13px;
+
+}
+
+
+#hero
+.hero-work-arrow {
+
+  font-size:
+    20px;
+
+}
 
 
   /* ABOUT */
@@ -7243,6 +7324,176 @@ and
 
     font-size:
       12px;
+
+  }
+
+}
+
+/* =========================================================
+   TALL LAPTOP / DESKTOP OPTIMIZATION
+   Target example: 1357 × 948
+
+   Keeps the shorter Win10 layout unchanged.
+========================================================= */
+
+@media
+(min-width: 1200px)
+and
+(max-width: 1500px)
+and
+(min-height: 760px) {
+
+
+  /* =====================================================
+     HERO PORTRAIT
+  ===================================================== */
+
+  #hero
+  .hero-portrait-reveal {
+
+    top:
+      auto;
+
+    bottom:
+      -1px;
+
+    right:
+      -4%;
+
+    transform:
+      none;
+
+    width:
+      min(
+        61%,
+        620px
+      );
+
+    height:
+      98%;
+
+    max-width:
+      none;
+
+  }
+
+
+  #hero
+  .hero-portrait-base,
+
+  #hero
+  .hero-portrait-layer {
+
+    width:
+      100%;
+
+    height:
+      100%;
+
+    object-fit:
+      contain !important;
+
+    object-position:
+      right bottom !important;
+
+  }
+
+
+
+  /* =====================================================
+     HERO TEXT AREA
+  ===================================================== */
+
+  #hero
+  .hero-content {
+
+    width:
+      54%;
+
+    max-width:
+      560px;
+
+  }
+
+
+
+  /* =====================================================
+     MAIN TITLE
+  ===================================================== */
+
+  #hero
+  .hero-main-title {
+
+    font-size:
+      clamp(
+        38px,
+        3.15vw,
+        46px
+      );
+
+    line-height:
+      1.38;
+
+    letter-spacing:
+      -.6px;
+
+  }
+
+
+
+  /* =====================================================
+     ROTATING ROLE
+  ===================================================== */
+
+  #hero
+  .hero-role-line {
+
+    margin-top:
+      14px;
+
+    font-size:
+      16px;
+
+    line-height:
+      1.5;
+
+    letter-spacing:
+      .6px;
+
+  }
+
+
+
+  /* =====================================================
+     CTA
+  ===================================================== */
+
+  #hero
+  .hero-actions {
+
+    margin-top:
+      28px;
+
+  }
+
+
+  #hero
+  .hero-work-btn {
+
+    padding:
+      12px 30px;
+
+    font-size:
+      13px;
+
+  }
+
+
+  #hero
+  .hero-work-arrow {
+
+    font-size:
+      20px;
 
   }
 
