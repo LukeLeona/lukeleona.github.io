@@ -26,7 +26,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -57,7 +57,7 @@
 
   color: #fff;
 
-  font-size: clamp(29px, 3.5vw, 42px);
+  font-size: clamp(32px, 3.5vw, 42px);
 
   font-weight: 600;
 
@@ -83,7 +83,7 @@
 
   color: var(--resume-muted);
 
-  font-size: 11px;
+  font-size: 14px;
 
   line-height: 1.75;
 
@@ -147,14 +147,14 @@
 
 .resume-capability-tab i {
 
-  font-size: 18px;
+  font-size: 21px;
 
 }
 
 
 .resume-capability-tab span {
 
-  font-size: 9px;
+  font-size: 11px;
 
   font-weight: 600;
 
@@ -255,7 +255,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -270,7 +270,7 @@
 
   color: #fff;
 
-  font-size: clamp(25px, 3vw, 34px);
+  font-size: clamp(28px, 3vw, 37px);
 
   line-height: 1.25;
 
@@ -288,7 +288,7 @@
 
   color: var(--resume-muted);
 
-  font-size: 11px;
+  font-size: 14px;
 
   line-height: 1.8;
 
@@ -318,7 +318,7 @@
 
   color: #b5b6b8;
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -353,7 +353,7 @@
 
   color: #aaa;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -370,7 +370,7 @@
 
   color: var(--resume-gold) !important;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -396,7 +396,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -409,7 +409,7 @@
 
   color: #838488;
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 500;
 
@@ -458,7 +458,7 @@
 
   color: #88898d;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -563,7 +563,7 @@
 
   color: #696a6e;
 
-  font-size: 6px;
+  font-size: 10px;
 
   text-align: center;
 
@@ -597,7 +597,7 @@
 
   color: white;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -633,7 +633,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 6px;
+  font-size: 10px;
 
   letter-spacing: 1px;
 
@@ -646,7 +646,7 @@
 
   color: #fff;
 
-  font-size: 24px;
+  font-size: 27px;
 
   line-height: 1.15;
 
@@ -657,7 +657,7 @@
 
   color: #838488;
 
-  font-size: 8px;
+  font-size: 11px;
 
 }
 
@@ -676,7 +676,7 @@
 
   color: #202125;
 
-  font-size: 6px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -728,7 +728,7 @@
 .resume-browser.device-mobile
 .demo-site-hero h4 {
 
-  font-size: 17px;
+  font-size: 21px;
 
 }
 
@@ -810,7 +810,7 @@
 
   margin-bottom: 25px;
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -885,7 +885,7 @@
 
   color: white;
 
-  font-size: 8px;
+  font-size: 10px;
 
 }
 
@@ -894,7 +894,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 11px;
 
   letter-spacing: 2px;
 
@@ -907,7 +907,7 @@
 
   margin: 20px 0 10px;
 
-  font-size: 33px;
+  font-size: 35px;
 
   line-height: 1.1;
 
@@ -927,7 +927,7 @@
 
   color: #9b9ca0;
 
-  font-size: 9px;
+  font-size: 11px;
 
   line-height: 1.7;
 
@@ -948,7 +948,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -972,7 +972,7 @@
 
   color: #77787b;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1013,7 +1013,7 @@
 
   color: #b5b6b8;
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -1042,7 +1042,7 @@
 
   color: #68a178;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1053,7 +1053,7 @@
 
   color: #8badff;
 
-  font-size: 15px;
+  font-size: 18px;
 
 }
 
@@ -1064,7 +1064,7 @@
 
   color: #9a9b9e;
 
-  font-size: 8px;
+  font-size: 10px;
 
   line-height: 1.6;
 
@@ -1094,7 +1094,7 @@
 
   color: #aaa;
 
-  font-size: 7px;
+  font-size: 13px;
 
 }
 
@@ -1124,7 +1124,7 @@
 
   color: #909195;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1163,7 +1163,7 @@
 
   color: #88898c;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1209,7 +1209,7 @@
 
   color: #77787b;
 
-  font-size: 6px;
+  font-size: 10px;
 
 }
 
@@ -1218,7 +1218,7 @@
 
   color: #fff;
 
-  font-size: 15px;
+  font-size: 18px;
 
 }
 
@@ -1335,7 +1335,7 @@
 
   color: #c5c6c8;
 
-  font-size: 8px;
+  font-size: 10px;
 
 }
 
@@ -1344,7 +1344,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 23px;
+  font-size: 28px;
 
 }
 
@@ -1434,7 +1434,7 @@
 
   color: #999a9d;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1460,7 +1460,7 @@
 
   color: #7d7e81;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -1504,7 +1504,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 10px;
 
 }
 
@@ -1591,7 +1591,7 @@
 
   color: #222;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -1604,7 +1604,7 @@
 
   color: #c9cacc;
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -1613,7 +1613,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 6px;
+  font-size: 10px;
 
   letter-spacing: 1px;
 
@@ -1671,14 +1671,14 @@
 
   color: var(--resume-gold);
 
-  font-size: 17px;
+  font-size: 0px;
 
 }
 
 
 .resume-problem-btn span {
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -1740,7 +1740,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 20px;
+  font-size: 23px;
 
 }
 
@@ -1749,7 +1749,7 @@
 
   color: var(--resume-gold);
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -1775,7 +1775,7 @@
 
   color: #929397;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.65;
 
@@ -1805,7 +1805,7 @@
 
   color: #aaa !important;
 
-  font-size: 7px !important;
+  font-size: 10px !important;
 
   letter-spacing: 0 !important;
 
@@ -1892,7 +1892,7 @@
 
   color: #6f7074;
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -2056,7 +2056,7 @@ small {
     var(--resume-gold);
 
   font-size:
-    5px;
+    8px;
 
   font-weight:
     700;
@@ -2095,7 +2095,7 @@ small {
 
   color: #aaa;
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -2104,7 +2104,7 @@ small {
 
   color: #6f7074;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -2171,7 +2171,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -2188,7 +2188,7 @@ small {
 
   color: #77787b;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -2208,7 +2208,7 @@ small {
 
   color: #fff;
 
-  font-size: 19px;
+  font-size: 22px;
 
 }
 
@@ -2219,7 +2219,7 @@ small {
 
   color: #95969a;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.7;
 
@@ -2255,7 +2255,7 @@ small {
 
   color: #aaa;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -2281,7 +2281,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -2311,7 +2311,7 @@ small {
 
   color: #949599;
 
-  font-size: 8px;
+  font-size: 10px;
 
 }
 
@@ -2361,7 +2361,7 @@ small {
 
   color: #999a9d;
 
-  font-size: 7px;
+  font-size: 10px;
 
   letter-spacing: .4px;
 
@@ -2378,7 +2378,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 10px;
+  font-size: 13px;
 
   animation:
     careerHintPointer
@@ -2460,7 +2460,7 @@ small {
 
   color: #898a8e;
 
-  font-size: 8px;
+  font-size: 10px;
 
 }
 
@@ -2480,7 +2480,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -2495,7 +2495,7 @@ small {
 
   color: #fff;
 
-  font-size: 23px;
+  font-size: 26px;
 
   line-height: 1.3;
 
@@ -2523,7 +2523,7 @@ small {
 
   color: #999a9d;
 
-  font-size: 7px;
+  font-size: 10px;
 
 }
 
@@ -2555,7 +2555,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 26px;
+  font-size: 29px;
 
 }
 
@@ -2566,7 +2566,7 @@ small {
 
   color: #85868a;
 
-  font-size: 6px;
+  font-size: 10px;
 
   letter-spacing: 1px;
 
@@ -2581,7 +2581,7 @@ small {
 
   color: var(--resume-gold);
 
-  font-size: 15px;
+  font-size: 18px;
 
   line-height: 1.3;
 
@@ -2667,7 +2667,7 @@ small {
 
   color: #fff;
 
-  font-size: 24px;
+  font-size: 27px;
 
 }
 
@@ -2705,7 +2705,7 @@ small {
 
   border-radius: 22px;
 
-  font-size: 9px;
+  font-size: 11px;
 
   font-weight: 600;
 
@@ -2994,7 +2994,7 @@ small {
 #resume .resume-recommendation p,
 #resume .career-detail-main > p {
 
-  font-size: 13px;
+  font-size: 16px;
 
   line-height: 1.8;
 
@@ -3006,7 +3006,7 @@ small {
 #resume .resume-v2-eyebrow,
 #resume .resume-service-number {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
@@ -3015,7 +3015,7 @@ small {
 
 #resume .resume-capability-tab span {
 
-  font-size: 11px;
+  font-size: 14px;
 
 }
 
@@ -3024,7 +3024,7 @@ small {
 
 #resume .resume-service-checks span {
 
-  font-size: 11px;
+  font-size: 14px;
 
 }
 
@@ -3036,7 +3036,7 @@ small {
 #resume .career-focus span,
 #resume .education-focus span {
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -3048,7 +3048,7 @@ small {
 #resume .resume-outline-btn,
 #resume .resume-task-demo-btn {
 
-  font-size: 10px;
+  font-size: 13px;
 
 }
 
@@ -3057,14 +3057,14 @@ small {
 
 #resume .resume-demo-label span {
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
 
 #resume .resume-demo-label strong {
 
-  font-size: 10px;
+  font-size: 13px;
 
 }
 
@@ -3073,14 +3073,14 @@ small {
 
 #resume .resume-problem-btn span {
 
-  font-size: 11px;
+  font-size: 14px;
 
 }
 
 
 #resume .resume-recommendation > div:last-child > span {
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
@@ -3089,28 +3089,28 @@ small {
 
 #resume .career-year {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
 
 #resume .career-point strong {
 
-  font-size: 11px;
+  font-size: 13px;
 
 }
 
 
 #resume .career-point small {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
 
 #resume .career-interaction-hint {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
@@ -3119,28 +3119,28 @@ small {
 
 #resume .career-detail-meta span {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
 
 #resume .career-detail-meta small {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
 
 #resume .career-learning > span {
 
-  font-size: 9px;
+  font-size: 11px;
 
 }
 
 
 #resume .career-learning li {
 
-  font-size: 10px;
+  font-size: 13px;
 
   line-height: 1.65;
 
@@ -3152,14 +3152,14 @@ small {
 #resume .education-year,
 #resume .education-main > span {
 
-  font-size: 9px;
+  font-size: 12px;
 
 }
 
 
 #resume .education-honor small {
 
-  font-size: 8px;
+  font-size: 11px;
 
 }
 
@@ -3201,7 +3201,7 @@ and
   .resume-service-number {
 
     font-size:
-      10px;
+      13px;
 
   }
 
@@ -3213,7 +3213,7 @@ and
   .resume-service-checks span {
 
     font-size:
-      11px;
+      13px;
 
   }
 
@@ -3222,7 +3222,7 @@ and
   .resume-service-tech span {
 
     font-size:
-      10px;
+      12px;
 
   }
 
