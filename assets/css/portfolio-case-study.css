@@ -40,7 +40,7 @@
 
     color: #ebb020;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -66,7 +66,7 @@
     font-size:
         clamp(40px,
             6vw,
-            68px);
+            71px);
 
     font-weight: 600;
 
@@ -136,7 +136,7 @@
 
     color: #d9d9da;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 /* Smaller tags inside Project Info sidebar only */
@@ -145,7 +145,7 @@
 
     padding: 5px 10px;
 
-    font-size: 10px;
+    font-size: 13px;
 
 }
 
@@ -182,7 +182,7 @@
 
     border-radius: 50px;
 
-    font-size: 13px;
+    font-size: 16px;
 
     font-weight: 600;
 
@@ -387,7 +387,7 @@
         #ebb020;
 
     font-size:
-        21px;
+        24px;
 }
 
 
@@ -401,7 +401,7 @@
         #8f9093;
 
     font-size:
-        9px;
+        12px;
 
     font-weight:
         700;
@@ -425,7 +425,7 @@
         #ffffff;
 
     font-size:
-        17px;
+        20px;
 
     font-weight:
         600;
@@ -441,7 +441,7 @@
         #999a9d;
 
     font-size:
-        11px;
+        14px;
 }
 
 
@@ -479,7 +479,7 @@
         #ebb020;
 
     font-size:
-        10px;
+        13px;
 
     font-weight:
         700;
@@ -501,7 +501,7 @@
         #ffffff;
 
     font-size:
-        clamp(27px,
+        clamp(30px,
             4vw,
             38px);
 
@@ -531,7 +531,7 @@
         #ededee !important;
 
     font-size:
-        17px;
+        20px;
 
     line-height:
         1.85;
@@ -630,7 +630,7 @@
         #ebb020;
 
     font-size:
-        18px;
+        21px;
 }
 
 
@@ -651,7 +651,7 @@
         #ffffff;
 
     font-size:
-        13px;
+        16px;
 
     font-weight:
         600;
@@ -664,7 +664,7 @@
         #a4a5a8;
 
     font-size:
-        11px;
+        14px;
 
     line-height:
         1.5;
@@ -749,7 +749,7 @@
             0.27);
 
     font-size:
-        24px;
+        27px;
 
     font-weight:
         700;
@@ -789,7 +789,7 @@
         #ebb020;
 
     font-size:
-        18px;
+        21px;
 }
 
 
@@ -802,7 +802,7 @@
         #ffffff;
 
     font-size:
-        18px;
+        21px;
 
     font-weight:
         600;
@@ -821,7 +821,7 @@
         #ebb020;
 
     font-size:
-        10px;
+        13px;
 
     letter-spacing:
         1.2px;
@@ -837,7 +837,7 @@
         #a7a8aa;
 
     font-size:
-        12px;
+        15px;
 
     line-height:
         1.75;
@@ -919,7 +919,7 @@
         #85868a;
 
     font-size:
-        9px;
+        12px;
 
     font-weight:
         700;
@@ -941,7 +941,7 @@
         #ffffff;
 
     font-size:
-        16px;
+        19px;
 
     font-weight:
         600;
@@ -1031,7 +1031,7 @@
         #ebb020;
 
     font-size:
-        14px;
+        17px;
 }
 
 
@@ -1044,7 +1044,7 @@
         #aeb0b2;
 
     font-size:
-        11px;
+        14px;
 
     line-height:
         1.65;
@@ -1139,7 +1139,7 @@
             0.27);
 
     font-size:
-        23px;
+        26px;
 
     font-weight:
         700;
@@ -1158,7 +1158,7 @@
         #ebb020;
 
     font-size:
-        24px;
+        27px;
 }
 
 
@@ -1171,7 +1171,7 @@
         #ffffff;
 
     font-size:
-        17px;
+        20px;
 
     font-weight:
         600;
@@ -1187,7 +1187,7 @@
         #a4a5a7;
 
     font-size:
-        12px;
+        15px;
 
     line-height:
         1.75;
@@ -1243,7 +1243,7 @@
 
     color: #88898d;
 
-    font-size: 9px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -1260,7 +1260,7 @@
 
     color: #ebb020;
 
-    font-size: 22px;
+    font-size: 25px;
 
     font-weight: 600;
 
@@ -1325,7 +1325,7 @@
 
     color: #77787c;
 
-    font-size: 9px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -1340,7 +1340,7 @@
 
     color: #ffffff;
 
-    font-size: 20px;
+    font-size: 23px;
 
     font-weight: 600;
 
@@ -1395,7 +1395,7 @@
 
     color: #d8d8da;
 
-    font-size: 12px;
+    font-size: 15px;
 
     font-weight: 500;
 
@@ -1431,7 +1431,7 @@
 
     color: #c2c3c5;
 
-    font-size: 13px;
+    font-size: 16px;
 
     font-weight: 600;
 
@@ -1499,7 +1499,7 @@
 
     color: #77787b;
 
-    font-size: 9px;
+    font-size: 12px;
 
 }
 
@@ -1550,7 +1550,7 @@
 
     color: #ebb020;
 
-    font-size: 19px;
+    font-size: 22px;
 
     font-weight: 600;
 
@@ -1561,7 +1561,7 @@
 
     color: #898a8d;
 
-    font-size: 9px;
+    font-size: 12px;
 
 }
 
@@ -1591,7 +1591,7 @@
 
     color: #ebb020;
 
-    font-size: 9px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -1606,7 +1606,7 @@
 
     color: #ffffff;
 
-    font-size: 25px;
+    font-size: 28px;
 
     font-weight: 600;
 
@@ -1621,7 +1621,7 @@
 
     color: #aaabae;
 
-    font-size: 12px;
+    font-size: 15px;
 
     line-height: 1.8;
 
@@ -1662,7 +1662,7 @@
 
     color: #ebb020;
 
-    font-size: 14px;
+    font-size: 17px;
 
 }
 
@@ -1673,7 +1673,7 @@
 
     color: #999a9d;
 
-    font-size: 10px;
+    font-size: 13px;
 
     line-height: 1.7;
 
@@ -1714,7 +1714,7 @@
     color:
         rgba(235, 176, 32, 0.45);
 
-    font-size: 13px;
+    font-size: 16px;
 
     font-weight: 700;
 
@@ -1734,7 +1734,7 @@
 
     color: #d5d6d8;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 500;
 
@@ -1749,7 +1749,7 @@
 
     color: #77787b;
 
-    font-size: 9px;
+    font-size: 12px;
 
 }
 
@@ -1787,7 +1787,7 @@
 
     .case-study-page .geographic-insight>h3 {
 
-        font-size: 21px;
+        font-size: 24px;
 
     }
 
@@ -1882,7 +1882,7 @@
         #ebb020;
 
     font-size:
-        9px;
+        12px;
 
     font-weight:
         700;
@@ -1910,7 +1910,7 @@
         #ffffff;
 
     font-size:
-        24px;
+        27px;
 
     font-weight:
         600;
@@ -2023,7 +2023,7 @@
 
     color: #ebb020;
 
-    font-size: 17px;
+    font-size: 20px;
 
 }
 
@@ -2036,7 +2036,7 @@
 
     color: #ebb020;
 
-    font-size: 8px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -2051,7 +2051,7 @@
 
     color: #ffffff;
 
-    font-size: 18px;
+    font-size: 21px;
 
     font-weight: 600;
 
@@ -2068,7 +2068,7 @@
 
     color: #a9aaad;
 
-    font-size: 12px;
+    font-size: 15px;
 
     line-height: 1.8;
 
@@ -2079,7 +2079,7 @@
 
     color: #d0d1d3 !important;
 
-    font-size: 13px !important;
+    font-size: 15px !important;
 
 }
 
@@ -2135,7 +2135,7 @@
 
     color: #bcbdbf;
 
-    font-size: 11px;
+    font-size: 14px;
 
     line-height: 1.75;
 
@@ -2204,7 +2204,7 @@
 
     color: #ebb020;
 
-    font-size: 8px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -2221,7 +2221,7 @@
 
     color: #e2e2e3;
 
-    font-size: 12px;
+    font-size: 15px;
 
     font-weight: 600;
 
@@ -2234,7 +2234,7 @@
 
     color: #919296;
 
-    font-size: 10px;
+    font-size: 12px;
 
     line-height: 1.7;
 
@@ -2275,7 +2275,7 @@
 
     color: #8d8e91;
 
-    font-size: 13px;
+    font-size: 15px;
 
 }
 
@@ -2286,7 +2286,7 @@
 
     color: #8f9093;
 
-    font-size: 9px;
+    font-size: 12px;
 
     line-height: 1.7;
 
@@ -2328,7 +2328,7 @@
 
     color: #727377;
 
-    font-size: 8px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -2343,7 +2343,7 @@
 
     color: #76777a;
 
-    font-size: 9px;
+    font-size: 12px;
 
     line-height: 1.6;
 
@@ -2422,7 +2422,7 @@
 
         #ebb020;
 
-    font-size: 20px;
+    font-size: 23px;
 
 }
 
@@ -2460,7 +2460,7 @@
 
         #ebb020 !important;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -2540,7 +2540,7 @@
         #ebb020;
 
     font-size:
-        9px;
+        12px;
 
     font-weight:
         700;
@@ -2559,7 +2559,7 @@
         #ffffff;
 
     font-size:
-        21px;
+        23px;
 
     font-weight:
         600;
@@ -2587,7 +2587,7 @@
         #77787c;
 
     font-size:
-        9px;
+        12px;
 
     font-weight:
         700;
@@ -2609,7 +2609,7 @@
         #d9d9da;
 
     font-size:
-        12px;
+        15px;
 
     font-weight:
         500;
@@ -2652,7 +2652,7 @@
         #ebb020 !important;
 
     font-size:
-        11px;
+        14px;
 
     font-weight:
         600;
@@ -2713,7 +2713,7 @@
 
     .case-study-page.let-case-study .project-sidebar-title h4 {
 
-        font-size: 19px;
+        font-size: 22px;
 
         line-height: 1.25;
 
@@ -2733,7 +2733,7 @@
 
         margin-bottom: 4px;
 
-        font-size: 8px;
+        font-size: 12px;
 
         letter-spacing: 1.1px;
 
@@ -2742,7 +2742,7 @@
 
     .case-study-page.let-case-study .project-info-item>strong {
 
-        font-size: 11px;
+        font-size: 14px;
 
         line-height: 1.45;
 
@@ -2762,7 +2762,7 @@
 
         padding: 4px 8px;
 
-        font-size: 9px;
+        font-size: 12px;
 
     }
 
@@ -2775,7 +2775,7 @@
 
         padding: 8px 10px;
 
-        font-size: 10px;
+        font-size: 12px;
 
     }
 
@@ -2918,7 +2918,7 @@
     .case-study-page .project-hero-description {
 
         font-size:
-            14px;
+            17px;
     }
 
 
@@ -2991,7 +2991,7 @@
     .case-study-page .project-bottom-line h3 {
 
         font-size:
-            20px;
+            23px;
     }
 
 }
