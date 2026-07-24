@@ -296,7 +296,7 @@ a.contact-v2-info-card:hover::after {
     var(--contact-gold);
 
   font-size:
-    18px;
+    21px;
 
   line-height:
     1;
@@ -343,7 +343,7 @@ a.contact-v2-info-card:hover
     #fff;
 
   font-size:
-    13px;
+    16px;
 
   font-weight:
     500;
@@ -364,7 +364,7 @@ a.contact-v2-info-card:hover
     var(--contact-muted);
 
   font-size:
-    9px;
+    12px;
 
   line-height:
     1.55;
@@ -478,7 +478,7 @@ a.contact-v2-info-card:hover
     #e1e2e3;
 
   font-size:
-    10px;
+    13px;
 
   font-weight:
     400;
@@ -639,7 +639,7 @@ textarea.form-control {
     #202125;
 
   font-size:
-    9px;
+    12px;
 
   font-weight:
     600;
@@ -853,7 +853,7 @@ textarea.form-control {
 #contact.contact-v2
 .info-text small {
 
-  font-size: 11px;
+  font-size: 14px;
 
   line-height: 1.6;
 
@@ -863,7 +863,7 @@ textarea.form-control {
 #contact.contact-v2
 .form-control {
 
-  font-size: 12px;
+  font-size: 15px;
 
 }
 
@@ -871,6 +871,6 @@ textarea.form-control {
 #contact.contact-v2
 .contact-v2-submit {
 
-  font-size: 11px;
+  font-size: 14px;
 
 }
